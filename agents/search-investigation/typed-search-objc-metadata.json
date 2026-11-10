@@ -1,0 +1,6363 @@
+{
+  "path": "original-decrypted-ipa/455.0.0/com.burbn.instagram-455.0.0-Decrypted/Payload/Instagram.app/Instagram",
+  "source": "original Mach-O Objective-C class_ro_t and method_list_t metadata; no target execution",
+  "classes": [
+    {
+      "class": "IGPromoteAudienceAddressSearchViewController",
+      "address": "0x114e6e450",
+      "super_address": "0x115370fd8",
+      "methods": [
+        {
+          "selector": "initWithSession:audienceFlowType:canUseBusinessUser:logger:",
+          "types": "@44@0:8@16q24B32@36",
+          "imp": "0x10083d724"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10c90b35c"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b233878"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x107644ebc"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "searchBarShouldBeginEditing:",
+          "types": "B24@0:8@16",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "searchBar:didChangeSearchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10862ae10"
+        },
+        {
+          "selector": "searchBarDidTapReturnKey:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "_onBackBarButtonTapped",
+          "types": "v16@0:8",
+          "imp": "0x10b268624"
+        },
+        {
+          "selector": "promoteTitleSubtitleListSectionController:didTapCellWithViewModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b50ac74"
+        },
+        {
+          "selector": "promoteTitleSubtitleListSectionController:didTapSubtitleLink:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109bef328"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x107673cc4"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107822844"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGDirectContentSearchResultsListDataSource",
+      "address": "0x114e99500",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithLauncherSet:",
+          "types": "@24@0:8@16",
+          "imp": "0x1007fb298"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10c5ce0ec"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10c140cb4"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x10637d61c"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x1060d080c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1076ca474"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGBloksSearchResultSectionController",
+      "address": "0x114f22af0",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithBloksContext:",
+          "types": "@24@0:8@16",
+          "imp": "0x107c33d28"
+        },
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x108bf4738"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x108be0628"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10b2ab920"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10b62d2cc"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cd054c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10780721c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGSearchResultsResponse",
+      "address": "0x114fa1978",
+      "super_address": "0x7d4",
+      "methods": [],
+      "class_methods": [
+        {
+          "selector": "internal_classInfo",
+          "types": "r^v16@0:8",
+          "imp": "0x108a84cc8"
+        }
+      ]
+    },
+    {
+      "class": "IGFullscreenSearchViewController",
+      "address": "0x1150fc1a8",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithAnalyticsModule:searchBarConfig:userSession:layoutSpec:",
+          "types": "@48@0:8@16@24@32@40",
+          "imp": "0x108d1866c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:searchBarConfig:searchBarSurface:userSession:layoutSpec:",
+          "types": "@56@0:8@16@24q32@40@48",
+          "imp": "0x10c94ce34"
+        },
+        {
+          "selector": "_handleSwipeRightGesture",
+          "types": "v16@0:8",
+          "imp": "0x1076f13b4"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10c946b90"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x1087291a0"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b5f5758"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x107d68e04"
+        },
+        {
+          "selector": "prefersNavigationBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "preferredStatusBarStyle",
+          "types": "q16@0:8",
+          "imp": "0x106d6705c"
+        },
+        {
+          "selector": "preferredMinimizableInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x10871ef84"
+        },
+        {
+          "selector": "setIsLoading:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b16a844"
+        },
+        {
+          "selector": "actionableConfirmationToastSearchBarBottomInset",
+          "types": "d16@0:8",
+          "imp": "0x1097781e8"
+        },
+        {
+          "selector": "keyboardObserver:keyboardFrameDidChangeWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "keyboardObserver:keyboardFrameWillChangeWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x107d521ac"
+        },
+        {
+          "selector": "_isPresentedInWindowedModal",
+          "types": "B16@0:8",
+          "imp": "0x10b6b9890"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109bf0384"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076753a8"
+        },
+        {
+          "selector": "swipeRightBlock",
+          "types": "@?16@0:8",
+          "imp": "0x108c26868"
+        },
+        {
+          "selector": "setSwipeRightBlock:",
+          "types": "v24@0:8@?16",
+          "imp": "0x1077f6568"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1001c8a18"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGFullscreenSearchViewControllerLayoutSpec",
+      "address": "0x1150fc220",
+      "super_address": "0x7d4",
+      "methods": [],
+      "class_methods": [
+        {
+          "selector": "internal_classInfo",
+          "types": "r^v16@0:8",
+          "imp": "0x108a8a140"
+        }
+      ]
+    },
+    {
+      "class": "IGCameraEffectGallerySearchViewController",
+      "address": "0x11512f1b0",
+      "super_address": "0x62",
+      "methods": [
+        {
+          "selector": "initWithUserSession:loggingContext:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10c949404"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x108424be8"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10b5a0c90"
+        },
+        {
+          "selector": "_didTapCancel",
+          "types": "v16@0:8",
+          "imp": "0x10b2c87f0"
+        },
+        {
+          "selector": "searchBarShouldBeginEditing:",
+          "types": "B24@0:8@16",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "searchBar:didChangeSearchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x105cec2bc"
+        },
+        {
+          "selector": "searchBarDidTapReturnKey:",
+          "types": "v24@0:8@16",
+          "imp": "0x109c1d854"
+        },
+        {
+          "selector": "cameraEffectFeedViewControllerWillBeginScrolling",
+          "types": "v16@0:8",
+          "imp": "0x108bf82e8"
+        },
+        {
+          "selector": "cameraEffectFeedViewControllerDidLoadData:",
+          "types": "v24@0:8@16",
+          "imp": "0x1083e3fdc"
+        },
+        {
+          "selector": "cameraEffectFeedViewController:didSelectCategory:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "cameraEffectFeedViewController:didSelectPreview:atSectionIndex:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10b6182d8"
+        },
+        {
+          "selector": "cameraEffectFeedViewController:didSelectCreator:atSectionIndex:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10b4ecd70"
+        },
+        {
+          "selector": "cameraEffectFeedViewControllerShouldPresentCamera:",
+          "types": "B24@0:8@16",
+          "imp": "0x10ae74600"
+        },
+        {
+          "selector": "cameraEffectGallerySearchNullStateViewController:didTapRecentSearchResult:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b3b3704"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1078189e0"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGUserTaggingSearchViewController",
+      "address": "0x11529c1f0",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithUserSession:taggingConfig:isTaggingCollaborator:priorModule:userTagGroup:coauthorUserTagGroup:enableInviteTaggedUserAsCollaborator:enableTagInvitedCollaborator:fromPostFlow:media:audioClusterId:",
+          "types": "@88@0:8@16@24B32@36@44@52B60B64B68@72@80",
+          "imp": "0x1014d8b54"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10c6193c0"
+        },
+        {
+          "selector": "viewWillLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10c8ec698"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x1087a8d5c"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x107d67d8c"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x107d68e3c"
+        },
+        {
+          "selector": "prefersNavigationBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "prefersStatusBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x108d73c80"
+        },
+        {
+          "selector": "preferredStatusBarStyle",
+          "types": "q16@0:8",
+          "imp": "0x106d6705c"
+        },
+        {
+          "selector": "preferredTabBarBehavior",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10ca74098"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10b71ab30"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b3ab9b8"
+        },
+        {
+          "selector": "listAdapter:willDisplayObject:atIndex:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "listAdapter:didEndDisplayingObject:atIndex:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "listAdapter:willDisplayObject:cell:atIndexPath:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "listAdapter:didEndDisplayingObject:cell:atIndexPath:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchBarShouldBeginEditing:",
+          "types": "B24@0:8@16",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "searchBar:didChangeSearchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b15fb00"
+        },
+        {
+          "selector": "searchBarDidTapReturnKey:",
+          "types": "v24@0:8@16",
+          "imp": "0x109c1d854"
+        },
+        {
+          "selector": "_searchBarCancelButtonTapped",
+          "types": "v16@0:8",
+          "imp": "0x10b26a99c"
+        },
+        {
+          "selector": "taggingSearchDataSourceDidStartLoading",
+          "types": "v16@0:8",
+          "imp": "0x109053118"
+        },
+        {
+          "selector": "taggingSearchDataSourceDidUpdateResults",
+          "types": "v16@0:8",
+          "imp": "0x109053118"
+        },
+        {
+          "selector": "taggingSearchDataSourceDidFailLoading",
+          "types": "v16@0:8",
+          "imp": "0x10b5b4a8c"
+        },
+        {
+          "selector": "collectionView:didSelectItemAtIndexPath:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10c12dcc0"
+        },
+        {
+          "selector": "collectionView:didDeselectItemAtIndexPath:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b256cf8"
+        },
+        {
+          "selector": "taggingSearchResultSectionControllerDidSelectObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "scrollViewWillBeginDragging:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b2c7fac"
+        },
+        {
+          "selector": "scrollViewDidScroll:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b9a2340"
+        },
+        {
+          "selector": "emptyViewFooterLinkWasTapped:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "emptyViewPrimaryButtonWasTapped:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b5b90a4"
+        },
+        {
+          "selector": "reloadData",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "viewControllerForShareConfiguration",
+          "types": "@16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "shareServiceConfigureManager:didFinishLoginForService:selectedActionType:surface:",
+          "types": "v48@0:8@16q24q32q40",
+          "imp": "0x109c1f5c4"
+        },
+        {
+          "selector": "shareServiceConfigureManager:didFailLoginForService:",
+          "types": "v32@0:8@16q24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109bf1314"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x107676adc"
+        },
+        {
+          "selector": "userSession",
+          "types": "@16@0:8",
+          "imp": "0x108c2b3e0"
+        },
+        {
+          "selector": "collectionView",
+          "types": "@16@0:8",
+          "imp": "0x108c2b3ec"
+        },
+        {
+          "selector": "setCollectionView:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cd2154"
+        },
+        {
+          "selector": "listAdapter",
+          "types": "@16@0:8",
+          "imp": "0x108c2b3f8"
+        },
+        {
+          "selector": "setListAdapter:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cd2160"
+        },
+        {
+          "selector": "searchBarWithCancel",
+          "types": "@16@0:8",
+          "imp": "0x108c2b404"
+        },
+        {
+          "selector": "hasError",
+          "types": "B16@0:8",
+          "imp": "0x108c0fdb4"
+        },
+        {
+          "selector": "setHasError:",
+          "types": "v20@0:8B16",
+          "imp": "0x108cb12e4"
+        },
+        {
+          "selector": "priorModule",
+          "types": "@16@0:8",
+          "imp": "0x108c2b410"
+        },
+        {
+          "selector": "fromPostFlow",
+          "types": "B16@0:8",
+          "imp": "0x108c0fdc0"
+        },
+        {
+          "selector": "setFromPostFlow:",
+          "types": "v20@0:8B16",
+          "imp": "0x108cb12f0"
+        },
+        {
+          "selector": "media",
+          "types": "@16@0:8",
+          "imp": "0x108c2b41c"
+        },
+        {
+          "selector": "setMedia:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cd216c"
+        },
+        {
+          "selector": "audioClusterId",
+          "types": "@16@0:8",
+          "imp": "0x108c2b428"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1001ffe74"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGTaggingSearchResultSectionController",
+      "address": "0x11529c330",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithDelegate:userSession:userTagGroup:coauthorUserTagGroup:enableInviteTaggedUserAsCollaborator:enableTagInvitedCollaborator:",
+          "types": "@56@0:8@16@24@32@40B48B52",
+          "imp": "0x10bf0845c"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10bee85b4"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x109642e54"
+        },
+        {
+          "selector": "didSelectItemAtIndex:",
+          "types": "v24@0:8q16",
+          "imp": "0x10b6e7990"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cd2178"
+        },
+        {
+          "selector": "displayDelegate",
+          "types": "@16@0:8",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "workingRangeDelegate",
+          "types": "@16@0:8",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "didInviteFBUser",
+          "types": "v16@0:8",
+          "imp": "0x10c19c820"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x100200a90"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGSearchResultsViewController",
+      "address": "0x11530fee8",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithUserSession:typeaheadDataProvider:nullStateDataProvider:delegate:loggingDelegate:quickPerformanceLoggingDelegate:searchClickHandler:analyticsModule:priorModule:title:searchTypeString:shouldDisableNavigationEvent:serpOrigination:isMetaAiBranded:metaAiFixedEntryPoint:useCase:metaAiHcmQPL:keywordModelUser:precomputedMediaIdsOrdered:pinnedMediaContext:",
+          "types": "@168@0:8@16@24@32@40@48@56@64@72@80@88@96B104q108B116@120q128@136@144@152@160",
+          "imp": "0x10bc4e57c"
+        },
+        {
+          "selector": "_serpDataProvider",
+          "types": "@16@0:8",
+          "imp": "0x108bfdba0"
+        },
+        {
+          "selector": "_paginatedDataProvider",
+          "types": "@16@0:8",
+          "imp": "0x108bfdbac"
+        },
+        {
+          "selector": "_mainTypeaheadDataProvider",
+          "types": "@16@0:8",
+          "imp": "0x108bfdbb8"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x1076041a0"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x108fd6b40"
+        },
+        {
+          "selector": "viewDidDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b5fcd54"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x1075f8c10"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10c84fd00"
+        },
+        {
+          "selector": "preferredContentInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x109bf96bc"
+        },
+        {
+          "selector": "prefersNavigationBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "reload",
+          "types": "v16@0:8",
+          "imp": "0x1084cb14c"
+        },
+        {
+          "selector": "collectionView:shouldHighlightItemAtIndexPath:",
+          "types": "B32@0:8@16@24",
+          "imp": "0x108816408"
+        },
+        {
+          "selector": "collectionView:shouldSelectItemAtIndexPath:",
+          "types": "B32@0:8@16@24",
+          "imp": "0x108816418"
+        },
+        {
+          "selector": "collectionView:didSelectItemAtIndexPath:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x108816434"
+        },
+        {
+          "selector": "collectionView:willDisplayCell:forItemAtIndexPath:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x108816444"
+        },
+        {
+          "selector": "handleClickForItem:listAdapter:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x108da2628"
+        },
+        {
+          "selector": "handleClickForItem:listAdapter:selectPositionOverride:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10c4e1484"
+        },
+        {
+          "selector": "handleClickForItem:",
+          "types": "v24@0:8@16",
+          "imp": "0x108d1788c"
+        },
+        {
+          "selector": "recentSearchesHorizontalSectionController:didSelectViewModel:atIndex:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x1075f096c"
+        },
+        {
+          "selector": "collectionView:shouldHighlightItemAtIndexPath:listAdapter:",
+          "types": "B40@0:8@16@24@32",
+          "imp": "0x109053a20"
+        },
+        {
+          "selector": "collectionView:shouldSelectItemAtIndexPath:listAdapter:",
+          "types": "B40@0:8@16@24@32",
+          "imp": "0x109053a20"
+        },
+        {
+          "selector": "collectionView:didSelectItemAtIndexPath:listAdapter:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10b6c9d2c"
+        },
+        {
+          "selector": "collectionView:willDisplayCell:forItemAtIndexPath:listAdapter:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10bf438b0"
+        },
+        {
+          "selector": "scrollViewWillScrollNearBottom:triggeredByManualCheck:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x10b42da14"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidCompleteRequestWithRankToken:",
+          "types": "v24@0:8@16",
+          "imp": "0x10c80b088"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidStartRendering",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidEndRenderingWithQueryText:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b6c5fac"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidFailRequestWithError:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b290c74"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidSelectCellWithViewModel:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidSelectCellWithInterestKeyword:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidSelectAvatarWithHCMModel:storyEntryView:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1086254e0"
+        },
+        {
+          "selector": "searchSerpProfileHScrollDidSelectViewModel:atIndex:",
+          "types": "v32@0:8@16q24",
+          "imp": "0x10b4e05b0"
+        },
+        {
+          "selector": "searchSerpProfileHScrollDidSelectStoryForViewModel:atIndex:storyEntryView:",
+          "types": "v40@0:8@16q24@32",
+          "imp": "0x109d2bcec"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidSelectCellWithHCMModel:isFromEndCard:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x109053a24"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidTapMetaAIHCMPromptPillWithPrompt:",
+          "types": "v24@0:8@16",
+          "imp": "0x101cf788c"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidTapUpsellViewWithQuery:",
+          "types": "v24@0:8@16",
+          "imp": "0x101cf789c"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidTapPivotPillWithPrompt:pinnedMediaContext:pivotStyle:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10b4e98e0"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidSelectPreviewMediaWithModel:identifier:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10c0b010c"
+        },
+        {
+          "selector": "emptyStateModelsForDiscoveryGridViewController",
+          "types": "@16@0:8",
+          "imp": "0x10625d3dc"
+        },
+        {
+          "selector": "discoveryGridViewScrollNearBottom",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryGridViewDidScroll:",
+          "types": "v24@0:8d16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryGridViewRequestMoreData",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryGridViewControllerUpdateMetaAIHCMModel:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidReceiveTentpoleBackgroundColor:forQuery:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b7b51c0"
+        },
+        {
+          "selector": "discoveryGridViewControllerDidTapSeeAllAccountsWithUsers:showFollowButton:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x10c80e3fc"
+        },
+        {
+          "selector": "discoveryContentInformModuleSectionControllerShowSeeResults:hideInformModule:identifier:shouldUndoSearch:",
+          "types": "v40@0:8@16B24@28B36",
+          "imp": "0x10b6337fc"
+        },
+        {
+          "selector": "discoveryContentInformModuleSectionControllerDidTapOnDismissButton:model:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "highConfidenceModuleSectionControllerDidTapAvatarWithHcmModel:storyEntryView:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "highConfidenceModuleSectionControllerDidTapCellWithHcmModel:isFromEndCard:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x109053a24"
+        },
+        {
+          "selector": "highConfidenceModuleSectionControllerDidTapPreviewMediaWithHcmModel:identifier:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "highConfidenceModuleSectionControllerTriggerMediaCollapseWithIdentifier:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "shouldShowMediaForHighConfidenceModuleSectionControllerWithIdentifier:",
+          "types": "B24@0:8@16",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "highConfidenceModuleSectionControllerDidUpdatePreviewMediaListAdapter:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "didSelectTextViewSectionController:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b2bc120"
+        },
+        {
+          "selector": "textViewSectionController:didLongTapOnString:URL:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "textViewSectionController:didTapOnString:URL:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x1075f0978"
+        },
+        {
+          "selector": "textViewSectionController:didTapOnNonLinkedString:touchEvent:",
+          "types": "v40@0:8@16@24Q32",
+          "imp": "0x10b2bc120"
+        },
+        {
+          "selector": "didSelectLabelSectionController:",
+          "types": "v24@0:8@16",
+          "imp": "0x10ca4c9bc"
+        },
+        {
+          "selector": "didClickEditSearchResultWithProvider:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076141b0"
+        },
+        {
+          "selector": "isInBottomSheet",
+          "types": "B16@0:8",
+          "imp": "0x108bfdbc4"
+        },
+        {
+          "selector": "dismissKeyboard",
+          "types": "v16@0:8",
+          "imp": "0x109bf96c8"
+        },
+        {
+          "selector": "didClickSeeAllSuggestedUsersButton",
+          "types": "v16@0:8",
+          "imp": "0x1043629f0"
+        },
+        {
+          "selector": "didTapSeeAllSectionControllerWithItemConfiguration:",
+          "types": "v24@0:8@16",
+          "imp": "0x109053a28"
+        },
+        {
+          "selector": "discoverPeopleSearchNullStateSectionController:didTapDimissForUserWithModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1097d32b8"
+        },
+        {
+          "selector": "discoverPeopleSearchNullStateSectionController:didTapFollowButtonWithModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10338e18c"
+        },
+        {
+          "selector": "onDidTapLabelDismissButton:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cbed70"
+        },
+        {
+          "selector": "didRemoveSuggestionInChaining",
+          "types": "v16@0:8",
+          "imp": "0x109053a2c"
+        },
+        {
+          "selector": "onDidTapSeeAllChevron:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076041b4"
+        },
+        {
+          "selector": "_logRecommendedUserTapIfNeeded:selectPosition:",
+          "types": "v32@0:8@16q24",
+          "imp": "0x1075ea138"
+        },
+        {
+          "selector": "_performUpdatesWithAnimationForSuggestedUsers",
+          "types": "v16@0:8",
+          "imp": "0x102164234"
+        },
+        {
+          "selector": "_logSuggestedUserImpressionWithUser:selectPosition:",
+          "types": "v32@0:8@16q24",
+          "imp": "0x1075ea144"
+        },
+        {
+          "selector": "didFinishFetch",
+          "types": "v16@0:8",
+          "imp": "0x109a8ff9c"
+        },
+        {
+          "selector": "didFinishFetchChainingAccounts",
+          "types": "v16@0:8",
+          "imp": "0x109053a2c"
+        },
+        {
+          "selector": "searchTypeaheadDataProviderDidUpdateItems:",
+          "types": "v24@0:8@16",
+          "imp": "0x109a8ff9c"
+        },
+        {
+          "selector": "searchTypeaheadDataProvider:didFailToLoadSearchQuery:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10764630c"
+        },
+        {
+          "selector": "searchTypeaheadDataProviderDidFinishLoadingInstantSuggestions:hasOverfetchedKeywords:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x1097d32c4"
+        },
+        {
+          "selector": "searchTypeaheadDataProviderDidFinishLoading:disableLogging:searchText:chunkIndex:isGraphQLTypeaheadLastChunk:",
+          "types": "v48@0:8@16B24@28Q36B44",
+          "imp": "0x10086d22c"
+        },
+        {
+          "selector": "_onMainSearchTypeaheadDataProviderDidFinishLoading:searchText:isGraphQLTypeaheadLastChunk:",
+          "types": "v32@0:8B16@20B28",
+          "imp": "0x10c2680a8"
+        },
+        {
+          "selector": "_isInstantSuggestion:",
+          "types": "B24@0:8@16",
+          "imp": "0x10b534788"
+        },
+        {
+          "selector": "searchTypeaheadDataProvider:didReceiveMetaAiHcmResponses:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10c24f70c"
+        },
+        {
+          "selector": "searchTypeaheadDataProvider:didFailToFetchMetaAIHCMWithSearchQuery:textResponseId:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10b4e8258"
+        },
+        {
+          "selector": "searchTypeaheadDataProvider:didFinishFetchAfterSearchQueryChanged:rankToken:numFetchedResults:",
+          "types": "v48@0:8@16@24@32q40",
+          "imp": "0x1097c3ad8"
+        },
+        {
+          "selector": "searchTypeaheadDataProvider:didFinishFetchWithSearchQuery:numItems:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10c7ad618"
+        },
+        {
+          "selector": "searchTypeaheadDataProvider:didBeginFetchWithSearchQuery:isStreamingEnabled:isFromTypeaheadGqlSecondaryRequest:",
+          "types": "v40@0:8@16@24B32B36",
+          "imp": "0x10b6cf894"
+        },
+        {
+          "selector": "searchTypeaheadDataProvider:didThrottleWithSearchQuery:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1097d32d0"
+        },
+        {
+          "selector": "searchTypeaheadDataProviderShouldShowMetaAiNux:entryEnum:",
+          "types": "v32@0:8@16q24",
+          "imp": "0x10b63d118"
+        },
+        {
+          "selector": "currentSearchTextForSearchTypeaheadDataProvider:",
+          "types": "@24@0:8@16",
+          "imp": "0x107623e08"
+        },
+        {
+          "selector": "searchSessionIDForSearchTypeaheadDataProvider:",
+          "types": "@24@0:8@16",
+          "imp": "0x109053a30"
+        },
+        {
+          "selector": "typeaheadSessionIDForSearchTypeaheadDataProvider:",
+          "types": "@24@0:8@16",
+          "imp": "0x109053a34"
+        },
+        {
+          "selector": "serpSessionIDForSearchTypeaheadDataProvider:",
+          "types": "@24@0:8@16",
+          "imp": "0x108cbed7c"
+        },
+        {
+          "selector": "storyViewer:didFocusOnReelWithPK:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "storyViewer:didNavigateToStoryItem:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "storyViewerDidFinish:navigationAction:lastMediaID:viewerExitContextDict:shouldPerformDismiss:completion:",
+          "types": "v60@0:8@16q24@32@40B48@?52",
+          "imp": "0x10785d560"
+        },
+        {
+          "selector": "onSearchTextDidChange:postId:searchQueryOverride:metaAiFixedEntryPoint:cddPromptRankingToken:seedMediaID:seedMediaAuthorID:seedMediaData:isMetaAiBranded:",
+          "types": "v84@0:8@16@24@32@40@48@56@64@72B80",
+          "imp": "0x10c731058"
+        },
+        {
+          "selector": "searchDidStart",
+          "types": "v16@0:8",
+          "imp": "0x100117410"
+        },
+        {
+          "selector": "searchDidEnd",
+          "types": "v16@0:8",
+          "imp": "0x10b6be520"
+        },
+        {
+          "selector": "refetchNullState",
+          "types": "v16@0:8",
+          "imp": "0x108bfdbd0"
+        },
+        {
+          "selector": "isLoading",
+          "types": "B16@0:8",
+          "imp": "0x108ee8360"
+        },
+        {
+          "selector": "handleClickForSearchResultViewModel:echoClickType:metaAiFixedEntryPoint:precomputedMediaIdsOrdered:pinnedMediaContext:",
+          "types": "v56@0:8@16@24@32@40@48",
+          "imp": "0x10785ae40"
+        },
+        {
+          "selector": "handleClickForSearchResultViewModel:echoClickType:metaAiFixedEntryPoint:isHiddenResult:",
+          "types": "v44@0:8@16@24@32B40",
+          "imp": "0x10785ae68"
+        },
+        {
+          "selector": "_handleClickForSearchResultViewModel:echoClickType:metaAiFixedEntryPoint:listAdapter:isHiddenResult:precomputedMediaIdsOrdered:pinnedMediaContext:selectPositionOverride:quantumSignalsEntryTapRecorded:",
+          "types": "v80@0:8@16@24@32@40B48@52@60q68B76",
+          "imp": "0x10c33720c"
+        },
+        {
+          "selector": "viewModelsForSearchListKitDataSource:",
+          "types": "@24@0:8@16",
+          "imp": "0x109053a38"
+        },
+        {
+          "selector": "searchSessionId",
+          "types": "@16@0:8",
+          "imp": "0x109bf96d4"
+        },
+        {
+          "selector": "typeaheadSessionId",
+          "types": "@16@0:8",
+          "imp": "0x109bf96e0"
+        },
+        {
+          "selector": "isReadyForImpressionLogging",
+          "types": "B16@0:8",
+          "imp": "0x109bf96ec"
+        },
+        {
+          "selector": "isReadyForImpressionLoggingForViewModel:",
+          "types": "B24@0:8@16",
+          "imp": "0x107623e14"
+        },
+        {
+          "selector": "keywordRankToken",
+          "types": "@16@0:8",
+          "imp": "0x108bfdbdc"
+        },
+        {
+          "selector": "_typeaheadRankTokenForItem:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b45c63c"
+        },
+        {
+          "selector": "serpSource",
+          "types": "@16@0:8",
+          "imp": "0x109bf96f8"
+        },
+        {
+          "selector": "searchTerm",
+          "types": "@16@0:8",
+          "imp": "0x109bf9704"
+        },
+        {
+          "selector": "rankToken",
+          "types": "@16@0:8",
+          "imp": "0x10b6ab1a4"
+        },
+        {
+          "selector": "serpSessionId",
+          "types": "@16@0:8",
+          "imp": "0x102381118"
+        },
+        {
+          "selector": "searchType",
+          "types": "@16@0:8",
+          "imp": "0x10b15e0f8"
+        },
+        {
+          "selector": "priorModule",
+          "types": "@16@0:8",
+          "imp": "0x10b274f84"
+        },
+        {
+          "selector": "priorSerpSessionId",
+          "types": "@16@0:8",
+          "imp": "0x108d6ac44"
+        },
+        {
+          "selector": "priorQuery",
+          "types": "@16@0:8",
+          "imp": "0x108d6ac50"
+        },
+        {
+          "selector": "isMixedContentSerp",
+          "types": "B16@0:8",
+          "imp": "0x10b156588"
+        },
+        {
+          "selector": "followAttributionEntryTrigger",
+          "types": "@16@0:8",
+          "imp": "0x108d6ac5c"
+        },
+        {
+          "selector": "getSectionRowPairForSearchResultSectionController:viewModel:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x1097d32dc"
+        },
+        {
+          "selector": "searchClickHandler",
+          "types": "@16@0:8",
+          "imp": "0x105cc64c0"
+        },
+        {
+          "selector": "searchHideHelperDidHideItem:",
+          "types": "v24@0:8@16",
+          "imp": "0x109a8ff9c"
+        },
+        {
+          "selector": "searchHideHelperShouldShowErrorToast",
+          "types": "v16@0:8",
+          "imp": "0x10b231b28"
+        },
+        {
+          "selector": "searchClickHandlerDidRequestUpdateSearchResults:",
+          "types": "v24@0:8@16",
+          "imp": "0x109a8ff9c"
+        },
+        {
+          "selector": "performCompletion",
+          "types": "v16@0:8",
+          "imp": "0x109bf9710"
+        },
+        {
+          "selector": "forceRefetchRecentsForEmployeeCompleted",
+          "types": "v16@0:8",
+          "imp": "0x109a8ff9c"
+        },
+        {
+          "selector": "recentAccountBackfillCompleted",
+          "types": "v16@0:8",
+          "imp": "0x109a8ff9c"
+        },
+        {
+          "selector": "searchResultSectionController:didLongPressCell:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchResultSectionController:didTapAvatarOfCell:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b4a1b44"
+        },
+        {
+          "selector": "searchResultSectionController:didLongPressAvatarOfCell:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10338bf5c"
+        },
+        {
+          "selector": "searchResultSectionController:didTapActionButtonOfCell:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1097d32e8"
+        },
+        {
+          "selector": "searchResultSectionController:didTapDestructionButtonOfCell:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1097d32f4"
+        },
+        {
+          "selector": "searchResultSectionController:didTapFollowButtonOfCell:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchResultSectionController:didTapFollowButtonWithViewModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchResultSectionController:didTapMessageButtonOfCell:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "segmentedPillBarSectionController:didTapPillAtIndex:pillViewModel:",
+          "types": "v40@0:8@16Q24@32",
+          "imp": "0x10b4b8d88"
+        },
+        {
+          "selector": "segmentedPillBarSectionController:didUpdateImpressionStateForPillAtIndex:context:pillViewModel:",
+          "types": "B48@0:8@16Q24@32@40",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "segmentedPillBarSectionController:viewpointActionForBarViewModel:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "segmentedPillBarSectionController:shouldDeselectPillAtIndex:pillViewModel:",
+          "types": "B40@0:8@16Q24@32",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "segmentedPillBarSectionController:shouldSelectPillAtIndex:pillViewModel:",
+          "types": "B40@0:8@16Q24@32",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "segmentedPillBarSectionController:didSelectPillAtIndex:pillViewModel:",
+          "types": "v40@0:8@16Q24@32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "keyboardObserver:keyboardWillHideWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x1097d3300"
+        },
+        {
+          "selector": "keyboardObserverKeyboardDidShow:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cbed88"
+        },
+        {
+          "selector": "keyboardObserver:keyboardWillShowWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x1097d330c"
+        },
+        {
+          "selector": "_setCollectionViewInsets:",
+          "types": "v48@0:8{UIEdgeInsets=dddd}16",
+          "imp": "0x107d2535c"
+        },
+        {
+          "selector": "_resolvedCollectionViewInsetsForBaseInsets:",
+          "types": "{?={UIEdgeInsets=dddd}{UIEdgeInsets=dddd}B}48@0:8{UIEdgeInsets=dddd}16",
+          "imp": "0x10871aa34"
+        },
+        {
+          "selector": "_applyCollectionViewInsets:",
+          "types": "v88@0:8{?={UIEdgeInsets=dddd}{UIEdgeInsets=dddd}B}16",
+          "imp": "0x10762b028"
+        },
+        {
+          "selector": "collectionViewLayoutConfiguration",
+          "types": "@16@0:8",
+          "imp": "0x108d51ea4"
+        },
+        {
+          "selector": "contentInsetAdjustmentForIndexPath:",
+          "types": "{UIEdgeInsets=dddd}24@0:8@16",
+          "imp": "0x100256e14"
+        },
+        {
+          "selector": "contentInsetAdjustmentForIndexPath:inDirection:",
+          "types": "{UIEdgeInsets=dddd}32@0:8@16q24",
+          "imp": "0x1078a9fe4"
+        },
+        {
+          "selector": "withLayout:separatorOptionsForItemAtIndexPath:",
+          "types": "{?=BB}32@0:8@16@24",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "_scrollableChildViewController",
+          "types": "@16@0:8",
+          "imp": "0x10bfb9c80"
+        },
+        {
+          "selector": "scrollView",
+          "types": "@16@0:8",
+          "imp": "0x10b6be59c"
+        },
+        {
+          "selector": "scrollViewAnnouncer",
+          "types": "@16@0:8",
+          "imp": "0x10b6be62c"
+        },
+        {
+          "selector": "upsellCellDidTapPrimaryButton:atPosition:",
+          "types": "v28@0:8B16q20",
+          "imp": "0x107646320"
+        },
+        {
+          "selector": "upsellCellDidTapDismissButton:atPosition:",
+          "types": "v28@0:8B16q20",
+          "imp": "0x108fd4340"
+        },
+        {
+          "selector": "upsellCellDidTapSchoolsAddSchoolButtonWithViewModel:",
+          "types": "v24@0:8@16",
+          "imp": "0x107623e20"
+        },
+        {
+          "selector": "upsellCellDidTapSchoolsDismissButtonWithViewModel:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076041c8"
+        },
+        {
+          "selector": "upsellCellDidTapLink:linkText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1075ea150"
+        },
+        {
+          "selector": "upsellCellDidTapQRCodeShowButtonWithViewModel:",
+          "types": "v24@0:8@16",
+          "imp": "0x107623e2c"
+        },
+        {
+          "selector": "upsellCellDidTapQRCodeDismissButtonWithViewModel:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076041dc"
+        },
+        {
+          "selector": "upsellCellDidDisplayWithViewModel:atPosition:",
+          "types": "v32@0:8@16q24",
+          "imp": "0x100248ef8"
+        },
+        {
+          "selector": "searchBoostDisclosureDidAppear",
+          "types": "v16@0:8",
+          "imp": "0x100117424"
+        },
+        {
+          "selector": "searchBoostDisclosureDidClick",
+          "types": "v16@0:8",
+          "imp": "0x10766f620"
+        },
+        {
+          "selector": "findFriendsHelper:didAuthorizeWithDataRequest:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b5ab128"
+        },
+        {
+          "selector": "findFriendsHelper:didFailToAuthorizeWithMessage:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "_rankTokenForSerpHCMClickWithSerpSessionId:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b40be94"
+        },
+        {
+          "selector": "_handleClickForHighConfidenceModuleModel:isFromEndCard:keywordModelUser:",
+          "types": "v36@0:8@16B24@28",
+          "imp": "0x10c0b02a0"
+        },
+        {
+          "selector": "_handleClickForAccountHCM:keywordModelUser:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10c0a9d08"
+        },
+        {
+          "selector": "_handleUserScopedIntent:",
+          "types": "v24@0:8@16",
+          "imp": "0x107623e38"
+        },
+        {
+          "selector": "disableNavigationEvent",
+          "types": "B16@0:8",
+          "imp": "0x108c103a8"
+        },
+        {
+          "selector": "_handleAvatarTapForCell:selectPosition:",
+          "types": "v32@0:8@16Q24",
+          "imp": "0x10b62646c"
+        },
+        {
+          "selector": "_presentLiveBroadcastWithId:fallback:",
+          "types": "v32@0:8@16@?24",
+          "imp": "0x1084fdb9c"
+        },
+        {
+          "selector": "_handleAvatarTapForViewModel:storyEntryView:selectPosition:",
+          "types": "v40@0:8@16@24Q32",
+          "imp": "0x10c4e52a8"
+        },
+        {
+          "selector": "_isNullState",
+          "types": "B16@0:8",
+          "imp": "0x109bf971c"
+        },
+        {
+          "selector": "_setUpCollectionView",
+          "types": "v16@0:8",
+          "imp": "0x10c90d7ac"
+        },
+        {
+          "selector": "_createScrollViewAnnouncerIfNeeded",
+          "types": "v16@0:8",
+          "imp": "0x108bfdbe8"
+        },
+        {
+          "selector": "_isMediaGridShowing",
+          "types": "B16@0:8",
+          "imp": "0x10b1664d4"
+        },
+        {
+          "selector": "_setUpMediaGridWithKeywordModelUser:",
+          "types": "v24@0:8@16",
+          "imp": "0x10c6d3174"
+        },
+        {
+          "selector": "_updateDisplayModelWithKeywordModelUser:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b42e094"
+        },
+        {
+          "selector": "_shouldEnableStickyFooter",
+          "types": "B16@0:8",
+          "imp": "0x108ef4b1c"
+        },
+        {
+          "selector": "_shouldShowAccountHCMWithKeywordModelUser:",
+          "types": "B24@0:8@16",
+          "imp": "0x10b42f1b0"
+        },
+        {
+          "selector": "_applicationWillResignActive",
+          "types": "v16@0:8",
+          "imp": "0x10b4282dc"
+        },
+        {
+          "selector": "_searchResultsDisplayedWithSearchQuery:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b3ae1ec"
+        },
+        {
+          "selector": "_models",
+          "types": "@16@0:8",
+          "imp": "0x108bfdbf4"
+        },
+        {
+          "selector": "_typeaheadModels",
+          "types": "@16@0:8",
+          "imp": "0x108bfdc00"
+        },
+        {
+          "selector": "_fetchNullState",
+          "types": "v16@0:8",
+          "imp": "0x10025668c"
+        },
+        {
+          "selector": "_isSerpView",
+          "types": "B16@0:8",
+          "imp": "0x10b6fa04c"
+        },
+        {
+          "selector": "_showNetworkFailureToastForQuery:",
+          "types": "v24@0:8@16",
+          "imp": "0x107639908"
+        },
+        {
+          "selector": "_shouldNavigate:",
+          "types": "B24@0:8@16",
+          "imp": "0x107623e44"
+        },
+        {
+          "selector": "_userForAccountHcmAccess:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b40ad98"
+        },
+        {
+          "selector": "_addUserToRecentSearches:",
+          "types": "v24@0:8@16",
+          "imp": "0x10c0a6a50"
+        },
+        {
+          "selector": "_isTypeahead",
+          "types": "B16@0:8",
+          "imp": "0x10b157610"
+        },
+        {
+          "selector": "_setupTypeaheadNewQplLogger",
+          "types": "v16@0:8",
+          "imp": "0x108bfdc0c"
+        },
+        {
+          "selector": "updateTypeaheadSessionIdForQpl",
+          "types": "v16@0:8",
+          "imp": "0x108bfdc18"
+        },
+        {
+          "selector": "setOnShoppingPivotSectionsDidLoad:",
+          "types": "v24@0:8@?16",
+          "imp": "0x10b5c741c"
+        },
+        {
+          "selector": "setPreloadedProductItems:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b6363f8"
+        },
+        {
+          "selector": "setJourneyHeaderSearchBarModeEnabled:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b16dfc0"
+        },
+        {
+          "selector": "journeyHeaderSearchBarModeEnabled",
+          "types": "B16@0:8",
+          "imp": "0x108c103b4"
+        },
+        {
+          "selector": "setConversationalSerpDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x107d6a4d4"
+        },
+        {
+          "selector": "conversationalSerpDelegate",
+          "types": "@16@0:8",
+          "imp": "0x107ac8134"
+        },
+        {
+          "selector": "searchWithQueryText:postId:serpOrigination:pinnedMediaContext:",
+          "types": "v48@0:8@16@24q32@40",
+          "imp": "0x10b4dcbcc"
+        },
+        {
+          "selector": "searchWithQueryText:postId:keywordModelUser:seedMediaId:isMetaAiBranded:serpOrigination:",
+          "types": "v60@0:8@16@24@32@40B48q52",
+          "imp": "0x10b3adc6c"
+        },
+        {
+          "selector": "editQueryWithText:atSerpSessionId:keywordModelUser:serpOrigination:",
+          "types": "v48@0:8@16@24@32q40",
+          "imp": "0x10b4dd098"
+        },
+        {
+          "selector": "setCollectionViewInsets:",
+          "types": "v48@0:8{UIEdgeInsets=dddd}16",
+          "imp": "0x1080ae4ac"
+        },
+        {
+          "selector": "triggerMoreAction:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b636bf0"
+        },
+        {
+          "selector": "getSearchTextFor:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b6813d0"
+        },
+        {
+          "selector": "turnId",
+          "types": "q16@0:8",
+          "imp": "0x10b220500"
+        },
+        {
+          "selector": "turnIdForSerpSessionId:",
+          "types": "q24@0:8@16",
+          "imp": "0x10b639608"
+        },
+        {
+          "selector": "onShoppingPivotSectionsDidLoad",
+          "types": "@?16@0:8",
+          "imp": "0x108c2c400"
+        },
+        {
+          "selector": "preloadedProductItems",
+          "types": "@16@0:8",
+          "imp": "0x108c2c40c"
+        },
+        {
+          "selector": "isConfiguredForBottomSheet",
+          "types": "B16@0:8",
+          "imp": "0x108c103d8"
+        },
+        {
+          "selector": "setIsConfiguredForBottomSheet:",
+          "types": "v20@0:8B16",
+          "imp": "0x108cb1428"
+        },
+        {
+          "selector": "conversationalSerpDelegateStorage",
+          "types": "@16@0:8",
+          "imp": "0x109bf1650"
+        },
+        {
+          "selector": "setConversationalSerpDelegateStorage:",
+          "types": "v24@0:8@16",
+          "imp": "0x107676fb4"
+        },
+        {
+          "selector": "journeyHeaderSearchBarModeEnabledStorage",
+          "types": "B16@0:8",
+          "imp": "0x108c103b4"
+        },
+        {
+          "selector": "setJourneyHeaderSearchBarModeEnabledStorage:",
+          "types": "v20@0:8B16",
+          "imp": "0x108cb1434"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10b71fdec"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGSearchGenericTypeaheadDataSource",
+      "address": "0x1153100c8",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithUserSession:networkDataSource:cacheProvider:searchResultViewModelProvider:analyticsModule:loadingStateProvider:",
+          "types": "@64@0:8@16@24@32@40@48@56",
+          "imp": "0x10c0ac3c8"
+        },
+        {
+          "selector": "_networkSourceLoadingState",
+          "types": "q16@0:8",
+          "imp": "0x1078aa5f8"
+        },
+        {
+          "selector": "models",
+          "types": "@16@0:8",
+          "imp": "0x10bdbb590"
+        },
+        {
+          "selector": "mediaGrid",
+          "types": "@16@0:8",
+          "imp": "0x10002f314"
+        },
+        {
+          "selector": "isMetaAIPromptEchoDisabled",
+          "types": "B16@0:8",
+          "imp": "0x100291d9c"
+        },
+        {
+          "selector": "invalidateCache",
+          "types": "v16@0:8",
+          "imp": "0x10b2a8ed8"
+        },
+        {
+          "selector": "loadMoreResultsForSearchText:postId:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x105d06b28"
+        },
+        {
+          "selector": "loadResultsForSearchText:postId:metaAiFixedEntryPoint:cddPromptRankingToken:seedMediaID:isMetaAiBranded:serpOrigination:",
+          "types": "v68@0:8@16@24@32@40@48B56q60",
+          "imp": "0x1086753f0"
+        },
+        {
+          "selector": "isLoading",
+          "types": "B16@0:8",
+          "imp": "0x108d76518"
+        },
+        {
+          "selector": "containsMixedResults",
+          "types": "B16@0:8",
+          "imp": "0x107d5f48c"
+        },
+        {
+          "selector": "expandSeeMoreSection",
+          "types": "v16@0:8",
+          "imp": "0x10b2656f8"
+        },
+        {
+          "selector": "informModule",
+          "types": "@16@0:8",
+          "imp": "0x10002f3b4"
+        },
+        {
+          "selector": "hideInformModule",
+          "types": "v16@0:8",
+          "imp": "0x10b2b039c"
+        },
+        {
+          "selector": "showHiddenResults",
+          "types": "v16@0:8",
+          "imp": "0x10b47f350"
+        },
+        {
+          "selector": "rankToken",
+          "types": "@16@0:8",
+          "imp": "0x10002f418"
+        },
+        {
+          "selector": "isEmptySerp",
+          "types": "B16@0:8",
+          "imp": "0x109df4b9c"
+        },
+        {
+          "selector": "hasEmptySerpRec",
+          "types": "B16@0:8",
+          "imp": "0x108fb4fe8"
+        },
+        {
+          "selector": "networkDataSource:didBeginFetchForSearchText:isStreamingEnabled:isFromTypeaheadGqlSecondaryRequest:",
+          "types": "v40@0:8@16@24B32B36",
+          "imp": "0x10b4e36c4"
+        },
+        {
+          "selector": "networkDataSource:cachedResultsForSearchText:resultsResponse:serverResultsLoaded:",
+          "types": "v44@0:8@16@24@32B40",
+          "imp": "0x10b4e05e8"
+        },
+        {
+          "selector": "networkDataSource:didFinishFetchForSearchTextAfterSearchQueryChanged:results:rankToken:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10b4e0694"
+        },
+        {
+          "selector": "networkDataSource:didFinishFetchForSearchText:searchQueryModel:resultsResponse:isFromPagination:isStreamingEnabled:isCompleted:chunkIndex:",
+          "types": "v68@0:8@16@24@32@40B48B52B56Q60",
+          "imp": "0x10c0b1ba8"
+        },
+        {
+          "selector": "networkDataSource:didFailForSearchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b4abd90"
+        },
+        {
+          "selector": "networkDataSourceDidThrottleNetworkRequest:searchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b28ddd8"
+        },
+        {
+          "selector": "containerSize",
+          "types": "{CGSize=dd}16@0:8",
+          "imp": "0x108e9ec60"
+        },
+        {
+          "selector": "setContainerSize:",
+          "types": "v32@0:8{CGSize=dd}16",
+          "imp": "0x108e9ec68"
+        },
+        {
+          "selector": "searchResultState",
+          "types": "q16@0:8",
+          "imp": "0x1061382cc"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x106fa4398"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x106298918"
+        },
+        {
+          "selector": "searchType",
+          "types": "q16@0:8",
+          "imp": "0x1060cfe58"
+        },
+        {
+          "selector": "setSearchType:",
+          "types": "v24@0:8q16",
+          "imp": "0x107004c64"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1001576d8"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGDiscoveryGridSearchResultsInfo",
+      "address": "0x1153179c8",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithModels:searchResultsDelegate:searchHideHelper:collectionViewDelegate:searchTypeString:",
+          "types": "@56@0:8@16@24@32@40@48",
+          "imp": "0x10082ee50"
+        },
+        {
+          "selector": "models",
+          "types": "@16@0:8",
+          "imp": "0x1060cfbe8"
+        },
+        {
+          "selector": "searchResultsDelegate",
+          "types": "@16@0:8",
+          "imp": "0x10b120a5c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1076cb9d4"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGDirectAgentsSearchResultsIntentTarget",
+      "address": "0x11538b868",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithJsonString:",
+          "types": "@24@0:8@16",
+          "imp": "0x108ca2514"
+        },
+        {
+          "selector": "jsonString",
+          "types": "@16@0:8",
+          "imp": "0x1060cfbe8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1060b1670"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGAPITextAppTagSearchResultsConnectionEdge",
+      "address": "0x1153d6630",
+      "super_address": "0x20cb",
+      "methods": [
+        {
+          "selector": "cursor",
+          "types": "@16@0:8",
+          "imp": "0x10620e190"
+        },
+        {
+          "selector": "isTargetCommunityTopContributor",
+          "types": "@16@0:8",
+          "imp": "0x10620fe9c"
+        },
+        {
+          "selector": "node",
+          "types": "@16@0:8",
+          "imp": "0x10625b4ec"
+        },
+        {
+          "selector": "GraphQLName",
+          "types": "@16@0:8",
+          "imp": "0x108a96650"
+        }
+      ],
+      "class_methods": [
+        {
+          "selector": "APIValueObjectSchema",
+          "types": "r^{IGAPIValueObjectSchema}16@0:8",
+          "imp": "0x109c1c6fc"
+        },
+        {
+          "selector": "valueWithCursor:isTargetCommunityTopContributor:node:",
+          "types": "@40@0:8@16@24@32",
+          "imp": "0x10c784b34"
+        }
+      ]
+    },
+    {
+      "class": "IGSearchSerpSequentialPlaybackStrategy",
+      "address": "0x115425d30",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithVideoPlayDuration:",
+          "types": "@24@0:8d16",
+          "imp": "0x10106eb88"
+        },
+        {
+          "selector": "requiresUpdatesOnVisibilityUnchanged",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "resolve:withContext:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10bdf72f0"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGSearchSerpGridSectionControllerLogger",
+      "address": "0x115426e38",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithQueryText:analyticsModule:rankToken:serpSessionId:searchLoggingProvider:",
+          "types": "@56@0:8@16@24@32@40@48",
+          "imp": "0x10cab2728"
+        },
+        {
+          "selector": "isReadyForImpressionLogging",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "isReadyForImpressionLoggingForViewModel:",
+          "types": "B24@0:8@16",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "keywordRankToken",
+          "types": "@16@0:8",
+          "imp": "0x10b1614d8"
+        },
+        {
+          "selector": "analyticsModule",
+          "types": "@16@0:8",
+          "imp": "0x105ea8e74"
+        },
+        {
+          "selector": "searchSessionId",
+          "types": "@16@0:8",
+          "imp": "0x10b1877e8"
+        },
+        {
+          "selector": "typeaheadSessionId",
+          "types": "@16@0:8",
+          "imp": "0x10b1614fc"
+        },
+        {
+          "selector": "serpSource",
+          "types": "@16@0:8",
+          "imp": "0x10b161520"
+        },
+        {
+          "selector": "searchTerm",
+          "types": "@16@0:8",
+          "imp": "0x105ea8e88"
+        },
+        {
+          "selector": "rankToken",
+          "types": "@16@0:8",
+          "imp": "0x10606b7b0"
+        },
+        {
+          "selector": "serpSessionId",
+          "types": "@16@0:8",
+          "imp": "0x1060db04c"
+        },
+        {
+          "selector": "searchType",
+          "types": "@16@0:8",
+          "imp": "0x10b1877ac"
+        },
+        {
+          "selector": "priorModule",
+          "types": "@16@0:8",
+          "imp": "0x10b161544"
+        },
+        {
+          "selector": "priorSerpSessionId",
+          "types": "@16@0:8",
+          "imp": "0x10b161568"
+        },
+        {
+          "selector": "priorQuery",
+          "types": "@16@0:8",
+          "imp": "0x10b16158c"
+        },
+        {
+          "selector": "isMixedContentSerp",
+          "types": "B16@0:8",
+          "imp": "0x10b156d34"
+        },
+        {
+          "selector": "followAttributionEntryTrigger",
+          "types": "@16@0:8",
+          "imp": "0x10b1615c8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1076cae4c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGCameraEffectMiniGallerySearchViewController",
+      "address": "0x1155bc008",
+      "super_address": "0x1155bbfb8",
+      "methods": [
+        {
+          "selector": "initWithUserSession:source:loggingContext:perfLoggingContext:isPostcap:providerDelegate:",
+          "types": "@60@0:8@16Q24@32@40B48@52",
+          "imp": "0x10c950184"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x108424e18"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10b5a22c4"
+        },
+        {
+          "selector": "state",
+          "types": "Q16@0:8",
+          "imp": "0x10ae7608c"
+        },
+        {
+          "selector": "setState:",
+          "types": "v24@0:8Q16",
+          "imp": "0x10b5d0bac"
+        },
+        {
+          "selector": "scrollToSelectedEffect",
+          "types": "v16@0:8",
+          "imp": "0x109c20364"
+        },
+        {
+          "selector": "scrollToTop",
+          "types": "v16@0:8",
+          "imp": "0x108c05538"
+        },
+        {
+          "selector": "reloadData",
+          "types": "v16@0:8",
+          "imp": "0x108c05544"
+        },
+        {
+          "selector": "selectedEffect",
+          "types": "@16@0:8",
+          "imp": "0x108c05550"
+        },
+        {
+          "selector": "setSelectedEffect:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cc3c6c"
+        },
+        {
+          "selector": "dataSource",
+          "types": "@16@0:8",
+          "imp": "0x105cc64f0"
+        },
+        {
+          "selector": "setDataSource:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b624be8"
+        },
+        {
+          "selector": "cameraEffectMiniGalleryFeedViewControllerDidClearSelection:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b23e39c"
+        },
+        {
+          "selector": "cameraEffectMiniGalleryFeedViewController:didSelectEffect:index:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x101375e90"
+        },
+        {
+          "selector": "cameraEffectMiniGalleryFeedViewControllerDidLoadData:",
+          "types": "v24@0:8@16",
+          "imp": "0x1083e7dd4"
+        },
+        {
+          "selector": "cameraEffectMiniGalleryFeedViewControllerDidLogImpressionForEffectID:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b28b580"
+        },
+        {
+          "selector": "cameraEffectMiniGalleryFeedViewControllerEffectIdIsLogged:",
+          "types": "B24@0:8@16",
+          "imp": "0x1075fc9f4"
+        },
+        {
+          "selector": "cameraEffectGallerySearchNullStateViewController:didTapRecentSearchResult:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10840a99c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107812580"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGAudioSearchResultsDataSource",
+      "address": "0x11560c128",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithUserSession:logger:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x107c666bc"
+        },
+        {
+          "selector": "setSearchQuery:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b3c7a5c"
+        },
+        {
+          "selector": "setLoading:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b6d0f3c"
+        },
+        {
+          "selector": "setAdditionalSearchParameters:",
+          "types": "v24@0:8@16",
+          "imp": "0x107718000"
+        },
+        {
+          "selector": "_showSearchFailedToastForQuery:",
+          "types": "v24@0:8@16",
+          "imp": "0x1084fcc9c"
+        },
+        {
+          "selector": "searchThrottlerDidThrottle:",
+          "types": "v24@0:8@16",
+          "imp": "0x109eddb3c"
+        },
+        {
+          "selector": "_issueSearchQuery:trigger:",
+          "types": "v32@0:8@16q24",
+          "imp": "0x10bf0d37c"
+        },
+        {
+          "selector": "_removeSearchQuery:",
+          "types": "v24@0:8@16",
+          "imp": "0x105d19e40"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x10626e744"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x10626e7f0"
+        },
+        {
+          "selector": "searchQuery",
+          "types": "@16@0:8",
+          "imp": "0x1060cfb90"
+        },
+        {
+          "selector": "loading",
+          "types": "B16@0:8",
+          "imp": "0x10608cb9c"
+        },
+        {
+          "selector": "additionalSearchParameters",
+          "types": "@16@0:8",
+          "imp": "0x1060cfbb0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x100158aa8"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGAudioSearchResultsViewController",
+      "address": "0x11560c1c8",
+      "super_address": "0x32",
+      "methods": [
+        {
+          "selector": "initWithUserSession:logger:style:",
+          "types": "@40@0:8@16@24Q32",
+          "imp": "0x10b5458ec"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10c90dbb0"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x107d664c8"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x108cc44cc"
+        },
+        {
+          "selector": "viewDidDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x100ac09f8"
+        },
+        {
+          "selector": "didMoveToParentViewController:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b6c18c0"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10c8c9a04"
+        },
+        {
+          "selector": "collectionView:willDisplayCell:forItemAtIndexPath:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10be98738"
+        },
+        {
+          "selector": "collectionView:contextMenuConfigurationForItemAtIndexPath:point:",
+          "types": "@48@0:8@16@24{CGPoint=dd}32",
+          "imp": "0x10c1a8924"
+        },
+        {
+          "selector": "collectionView:previewForHighlightingContextMenuWithConfiguration:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x1097d5808"
+        },
+        {
+          "selector": "collectionView:previewForDismissingContextMenuWithConfiguration:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x1097d5814"
+        },
+        {
+          "selector": "searchQuery",
+          "types": "@16@0:8",
+          "imp": "0x1076e129c"
+        },
+        {
+          "selector": "setSearchQuery:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b5f25d8"
+        },
+        {
+          "selector": "musicSearchDataSource:didUpdateSearchResults:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10ca16258"
+        },
+        {
+          "selector": "musicSearchDataSource:didUpdateLoadingState:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x107718990"
+        },
+        {
+          "selector": "musicSearchDataSource:didFailWithError:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b6435e4"
+        },
+        {
+          "selector": "setLoading:",
+          "types": "v20@0:8B16",
+          "imp": "0x105d0110c"
+        },
+        {
+          "selector": "modelsListViewControllerDidUpdateModels:",
+          "types": "v24@0:8@16",
+          "imp": "0x105d2c1b0"
+        },
+        {
+          "selector": "setBottomInset:",
+          "types": "v24@0:8d16",
+          "imp": "0x107d5038c"
+        },
+        {
+          "selector": "_addAudioTrackModel",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "_recentsRequest",
+          "types": "@16@0:8",
+          "imp": "0x10b6bf3e4"
+        },
+        {
+          "selector": "setFilteredTypes:",
+          "types": "v24@0:8q16",
+          "imp": "0x10b16cf80"
+        },
+        {
+          "selector": "setAdditionalSearchParameters:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b16e7c4"
+        },
+        {
+          "selector": "modelsListViewController:didTapAudioTrack:context:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10b65bc88"
+        },
+        {
+          "selector": "modelsListViewController:didTapAudioPageForAudioTrack:pivotPageSessionId:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10b65c208"
+        },
+        {
+          "selector": "modelsListViewController:didTapPlayPauseForAudioTrack:context:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10b65c23c"
+        },
+        {
+          "selector": "modelsListViewController:didTapArtist:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b2a61d4"
+        },
+        {
+          "selector": "modelsListViewControllerDidTapClearAllForRecentSearches:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b64d29c"
+        },
+        {
+          "selector": "modelsListViewController:multiTrackDidTapAudioTrack:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapLimitedCatalogBannerLearnMoreLinkWithUrl:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapSubtitleInNavigationBarWithURL:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapQuickPromotionURL:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapUseAudioForAudioTrack:context:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapPromotionAction:",
+          "types": "v32@0:8@16Q24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapRefreshForOption:",
+          "types": "v32@0:8@16Q24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewControllerAudioPlayer:",
+          "types": "@24@0:8@16",
+          "imp": "0x1077ead18"
+        },
+        {
+          "selector": "modelsListViewControllerDidTapEmptyStateAction:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapActionCellModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "modelsListViewController:didTapOverflowForAudioTrack:sourceView:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x105cfca54"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10be785f0"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "audioTrackController:didTapAudioTrack:context:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10b4212dc"
+        },
+        {
+          "selector": "audioTrackController:didTapPlayPauseForAudioTrack:context:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10b65c23c"
+        },
+        {
+          "selector": "audioTrackController:didTapOverflowForAudioTrack:sourceView:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioTrackController:didTapUseAudioForAudioTrack:context:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioTrackControllerWillExpandPreview:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "artistSectionController:didTapArtist:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b2a61d4"
+        },
+        {
+          "selector": "didSelectSectionController:withObject:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1077ec230"
+        },
+        {
+          "selector": "audioLimitedCatalogBannerViewDidTapLearnMoreLinkWithUrl:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b288f9c"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109bf2c94"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x107679214"
+        },
+        {
+          "selector": "selectionManager",
+          "types": "@16@0:8",
+          "imp": "0x108c305ac"
+        },
+        {
+          "selector": "setSelectionManager:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cd354c"
+        },
+        {
+          "selector": "bottomInset",
+          "types": "d16@0:8",
+          "imp": "0x108a25e3c"
+        },
+        {
+          "selector": "loading",
+          "types": "B16@0:8",
+          "imp": "0x108c1174c"
+        },
+        {
+          "selector": "requiredMinimumAudioDurationInMs",
+          "types": "d16@0:8",
+          "imp": "0x108a25e48"
+        },
+        {
+          "selector": "setRequiredMinimumAudioDurationInMs:",
+          "types": "v24@0:8d16",
+          "imp": "0x108a270f0"
+        },
+        {
+          "selector": "searchNullStateListViewController",
+          "types": "@16@0:8",
+          "imp": "0x108c305b8"
+        },
+        {
+          "selector": "vibesNullStateViewController",
+          "types": "@16@0:8",
+          "imp": "0x108c305c4"
+        },
+        {
+          "selector": "setVibesNullStateViewController:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cd3558"
+        },
+        {
+          "selector": "analyticsModule",
+          "types": "@16@0:8",
+          "imp": "0x108c305d0"
+        },
+        {
+          "selector": "setAnalyticsModule:",
+          "types": "v24@0:8@16",
+          "imp": "0x1077f6d3c"
+        },
+        {
+          "selector": "filteredTypes",
+          "types": "q16@0:8",
+          "imp": "0x108c305dc"
+        },
+        {
+          "selector": "additionalSearchParameters",
+          "types": "@16@0:8",
+          "imp": "0x108c305e8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1001cca04"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGProCategorySelectionSearchViewController",
+      "address": "0x11586e5d0",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithDelegate:dataSource:categoryPreloader:selectedCategory:presentingSearchBar:searchBarConfig:userSession:loggingHelper:",
+          "types": "@80@0:8@16@24@32@40@48@56@64@72",
+          "imp": "0x1014d879c"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10be5ee9c"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x107cbb9d0"
+        },
+        {
+          "selector": "clearSearchText",
+          "types": "v16@0:8",
+          "imp": "0x10b6314b4"
+        },
+        {
+          "selector": "_searchDoneTapped",
+          "types": "v16@0:8",
+          "imp": "0x10b25095c"
+        },
+        {
+          "selector": "searchBar:didChangeSearchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10860a934"
+        },
+        {
+          "selector": "searchBarDidTapReturnKey:",
+          "types": "v24@0:8@16",
+          "imp": "0x109c1d854"
+        },
+        {
+          "selector": "searchBarShouldBeginEditing:",
+          "types": "B24@0:8@16",
+          "imp": "0x10b3415a8"
+        },
+        {
+          "selector": "searchBarDidTapClearButton:",
+          "types": "v24@0:8@16",
+          "imp": "0x109c20784"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10b152fa4"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x105d248d0"
+        },
+        {
+          "selector": "didSelectItem:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b481760"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1001fff20"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGInterestSearchViewControllerConfig",
+      "address": "0x115966be0",
+      "super_address": "0x7d4",
+      "methods": [],
+      "class_methods": [
+        {
+          "selector": "internal_classInfo",
+          "types": "r^v16@0:8",
+          "imp": "0x108aa7c90"
+        }
+      ]
+    },
+    {
+      "class": "_TtC27IGBlockingListIntentHandler31IGBlockListSearchViewController",
+      "address": "0x114e67338",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b17d5d4"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d714f48"
+        },
+        {
+          "selector": "preferredTabBarBehavior",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d464020"
+        },
+        {
+          "selector": "searchBarShouldBeginEditing:",
+          "types": "B24@0:8@16",
+          "imp": "0x10a53224c"
+        },
+        {
+          "selector": "searchBar:didChangeSearchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10ad58be4"
+        },
+        {
+          "selector": "searchBarDidTapReturnKey:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "scrollViewWillBeginDragging:",
+          "types": "v24@0:8@16",
+          "imp": "0x108cb8204"
+        },
+        {
+          "selector": "blockActionCompleted",
+          "types": "v16@0:8",
+          "imp": "0x10b8651d8"
+        },
+        {
+          "selector": "dismissSearchViewController",
+          "types": "v16@0:8",
+          "imp": "0x10b1dc914"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x1003036e0"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x104b015b0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ac4030"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC12IGSearchCore26IGSearchServerResultsStore",
+      "address": "0x1150f0920",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithCachingConfiguration:",
+          "types": "@24@0:8@16",
+          "imp": "0x105ca60ec"
+        },
+        {
+          "selector": "setCurrentQuery:sessionID:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x100b160e8"
+        },
+        {
+          "selector": "setCurrentQuery:sessionID:ttlInSeconds:",
+          "types": "@40@0:8@16@24d32",
+          "imp": "0x107de65d8"
+        },
+        {
+          "selector": "setResponse:query:sessionID:isPagination:",
+          "types": "v44@0:8@16@24@32B40",
+          "imp": "0x100b35a0c"
+        },
+        {
+          "selector": "invalidateSearchCache",
+          "types": "v16@0:8",
+          "imp": "0x10b1e080c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1002fc9e0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004b85c0"
+        }
+      ],
+      "class_methods": [
+        {
+          "selector": "allResultsForCacheEntry:",
+          "types": "@24@0:8@16",
+          "imp": "0x105ca361c"
+        }
+      ]
+    },
+    {
+      "class": "_TtC11IGSearchKit28IGSearchViewControllerHelper",
+      "address": "0x1150f4ce0",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1090467dc"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        }
+      ],
+      "class_methods": [
+        {
+          "selector": "kIGSearchNumberOfRecentResults",
+          "types": "q16@0:8",
+          "imp": "0x106c58dc8"
+        },
+        {
+          "selector": "IGSearchListScrollLoadDistance",
+          "types": "d16@0:8",
+          "imp": "0x1094dd45c"
+        },
+        {
+          "selector": "kIGSearchShowMoreLessRecentsIdentifier",
+          "types": "@16@0:8",
+          "imp": "0x1075d31b0"
+        },
+        {
+          "selector": "searchHeaderViewModelWithRightView:rightView:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x1097d1998"
+        },
+        {
+          "selector": "searchHeaderViewModelWithRightViewAndCompactHeight:rightView:compactHeight:offsetDown:",
+          "types": "@40@0:8@16@24B32B36",
+          "imp": "0x107de112c"
+        },
+        {
+          "selector": "searchSeeMoreLabelItemViewModel",
+          "types": "@16@0:8",
+          "imp": "0x108d515d0"
+        },
+        {
+          "selector": "searchShowMoreButtonItemViewModelWithCompact:compactHeight:",
+          "types": "@24@0:8B16B20",
+          "imp": "0x10b12ce64"
+        },
+        {
+          "selector": "bcnSearchHeaderViewModelWithRightView:rightView:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10da63248"
+        },
+        {
+          "selector": "searchHeaderButtonWithTitle:target:action:",
+          "types": "@40@0:8@16@24:32",
+          "imp": "0x10811a910"
+        },
+        {
+          "selector": "searchHeaderButtonWithIcon:target:action:",
+          "types": "@40@0:8@16@24:32",
+          "imp": "0x10b9fb064"
+        },
+        {
+          "selector": "setDictionaryOfSearchResultToIndexForSearchResults:",
+          "types": "@24@0:8@16",
+          "imp": "0x105ca36a0"
+        },
+        {
+          "selector": "searchSearchableItemsWithResultsList:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b22b6f8"
+        },
+        {
+          "selector": "searchDedupeAndFetchBackingModelFromRecentItemStore:userSession:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10b28f458"
+        },
+        {
+          "selector": "searchAddBackingModelToRecentItemStore:userSession:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x101087dc4"
+        },
+        {
+          "selector": "searchShowSearchHistoryDeletionErrorToast:",
+          "types": "v20@0:8B16",
+          "imp": "0x109651514"
+        },
+        {
+          "selector": "searchFediverseNonIngestedUserNotAvailableToast",
+          "types": "v16@0:8",
+          "imp": "0x10904bee4"
+        },
+        {
+          "selector": "searchFediverseNonIngestedUserErrorToast",
+          "types": "v16@0:8",
+          "imp": "0x10904bee8"
+        }
+      ]
+    },
+    {
+      "class": "_TtC17IGSearchViewCells31IGSearchResultSectionController",
+      "address": "0x115132700",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x10b206518"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c3f4c4"
+        },
+        {
+          "selector": "sectionRowPair",
+          "types": "@16@0:8",
+          "imp": "0x10b21a900"
+        },
+        {
+          "selector": "setSectionRowPair:",
+          "types": "v24@0:8@16",
+          "imp": "0x10760bd6c"
+        },
+        {
+          "selector": "metaAiInvocationEligibilityProvider",
+          "types": "@16@0:8",
+          "imp": "0x10b206544"
+        },
+        {
+          "selector": "setMetaAiInvocationEligibilityProvider:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c3f4d4"
+        },
+        {
+          "selector": "initWithUserSession:entrypoint:loggingProvider:positionProvider:searchClickProvider:itemHidingHelper:delegate:",
+          "types": "@72@0:8@16q24@32@40@48@56@64",
+          "imp": "0x100b122dc"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10d1734a0"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10cd19c70"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10a5b6478"
+        },
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x10774f224"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1002fe1a0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004cdf30"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC20IGSearchHelpersSwift31IGSearchViewControllerHelperNew",
+      "address": "0x115133f50",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1090467dc"
+        }
+      ],
+      "class_methods": [
+        {
+          "selector": "canAddBackingModelToRecentItemStore:",
+          "types": "B24@0:8@16",
+          "imp": "0x101088098"
+        },
+        {
+          "selector": "defaultEndpointPath",
+          "types": "@16@0:8",
+          "imp": "0x1000d0e38"
+        },
+        {
+          "selector": "followStatusForSearchableItem:",
+          "types": "q24@0:8@16",
+          "imp": "0x105cb8e7c"
+        },
+        {
+          "selector": "searchSerpButtonClickTypeWithFollowStatus:",
+          "types": "@24@0:8q16",
+          "imp": "0x10b224ea4"
+        },
+        {
+          "selector": "searchNavigationExtrasForSearchTextWithSearchText:analyticsModule:searchSession:rankToken:",
+          "types": "@48@0:8@16@24@32@40",
+          "imp": "0x100b356e4"
+        },
+        {
+          "selector": "searchNavigationExtrasForSearchResultWithResult:searchText:analyticsModule:searchSession:loggingData:rankToken:priorSerpSessionId:priorQuery:",
+          "types": "@80@0:8@16@24@32@40@48@56@64@72",
+          "imp": "0x1014ec84c"
+        },
+        {
+          "selector": "searchNavigationExtrasForNearbyPlacesWithSearchTextWithSearchText:analyticsModule:searchSession:rankToken:",
+          "types": "@48@0:8@16@24@32@40",
+          "imp": "0x107dea708"
+        },
+        {
+          "selector": "sendSearchClickRequestWithUserSession:analyticsModule:entityType:entityId:entityName:path:parameterPrefixOverride:",
+          "types": "v72@0:8@16@24@32@40@48@56@64",
+          "imp": "0x1014fc7ac"
+        }
+      ]
+    },
+    {
+      "class": "_TtC29IGDirectAgentsViewControllers41IGDirectAgentsSearchResultsViewController",
+      "address": "0x1152afd28",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithUserSession:jsonString:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x109fbc758"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d39f6b4"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x108c861d0"
+        },
+        {
+          "selector": "prefersNavigationBarDividerHidden",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x1005099ac"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10043ab94"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107abdec0"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC15IGGenericSearch47IGGenericSearchViewControllerFactoryStaticFuncs",
+      "address": "0x1153103c8",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1090467dc"
+        }
+      ],
+      "class_methods": [
+        {
+          "selector": "searchNetworkDataSourceWithCustomParsingBlock:searchType:customParametersProvider:userSession:",
+          "types": "@48@0:8@?16q24@32@40",
+          "imp": "0x10563842c"
+        },
+        {
+          "selector": "genericSearchViewControllerWithSearchType:userSession:nullStateDataProvider:delegate:customParametersProvider:clickHandler:searchAnalyticsLogger:searchBarConfig:analyticsModule:priorModule:title:",
+          "types": "@104@0:8q16@24@32@40@48@56@64@72@80@88@96",
+          "imp": "0x108682b6c"
+        }
+      ]
+    },
+    {
+      "class": "_TtC15IGGenericSearch43IGSearchAccountsSeeAllItemSectionController",
+      "address": "0x115310558",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x108a32480"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x103e77028"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10104baf4"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x100fdf24c"
+        },
+        {
+          "selector": "didSelectItemAtIndex:",
+          "types": "v24@0:8q16",
+          "imp": "0x10b27d5f4"
+        },
+        {
+          "selector": "searchCollectionViewCellDidLongPressCell:viewModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchCollectionViewCellDidTapAvatar:viewModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1086df714"
+        },
+        {
+          "selector": "searchCollectionViewCellDidLongPressAvatar:viewModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchCollectionViewCellDidTapCellButton:viewModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchCollectionViewCellDidTapCellDestructionButton:viewModel:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107922348"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ad8a84"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC15IGGenericSearch36IGSearchAccountsSeeAllViewController",
+      "address": "0x115310748",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithUserSession:users:showFollowButton:searchQuery:analyticsModule:loggingDelegate:rankToken:searchSessionId:",
+          "types": "@76@0:8@16@24B32@36@44@52@60@68",
+          "imp": "0x1014fea98"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d72bf74"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10b8eeee8"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x108bb9518"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x1086131ec"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x105e5621c"
+        },
+        {
+          "selector": "dataSourceDidStartLoading:",
+          "types": "v24@0:8@16",
+          "imp": "0x108fc65a0"
+        },
+        {
+          "selector": "dataSourceDidFinishLoading:",
+          "types": "v24@0:8@16",
+          "imp": "0x10520fbe8"
+        },
+        {
+          "selector": "dataSourceDidFailLoad:",
+          "types": "v24@0:8@16",
+          "imp": "0x108fc65a0"
+        },
+        {
+          "selector": "scrollViewWillScrollNearBottom:triggeredByManualCheck:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x10b97ac30"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x107af3c28"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x100435e68"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ae4f68"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC15IGGenericSearch38IGSearchGenericTypeaheadViewController",
+      "address": "0x115310f28",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "searchBarWithCancel",
+          "types": "@16@0:8",
+          "imp": "0x108e0b61c"
+        },
+        {
+          "selector": "setSearchBarWithCancel:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bd4d60"
+        },
+        {
+          "selector": "resultsView",
+          "types": "@16@0:8",
+          "imp": "0x108e0b628"
+        },
+        {
+          "selector": "setResultsView:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bd4d70"
+        },
+        {
+          "selector": "preferredContentInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x105d6996c"
+        },
+        {
+          "selector": "initWithUserSession:typeaheadDataProvider:nullStateDataProvider:searchClickHandler:searchViewControllerDelegate:quickPerformanceLoggingDelegate:searchAnalyticsLogger:analyticsModule:priorModule:searchType:searchBarConfig:stickyHeaderConfig:navigationBarStyle:title:isInitFromInformModuleGoBackNavigation:",
+          "types": "@132@0:8@16@24@32@40@48@56@64@72@80@88@96@104q112@120B128",
+          "imp": "0x1014f635c"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10cc71f5c"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10cc4ec30"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10cc4ed9c"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d752d78"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d56b9c0"
+        },
+        {
+          "selector": "canActivateSearch",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "activateSearch",
+          "types": "v16@0:8",
+          "imp": "0x107a7b8e0"
+        },
+        {
+          "selector": "dismissSearchIfNeeded",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "clearSearchText",
+          "types": "v16@0:8",
+          "imp": "0x10b836b78"
+        },
+        {
+          "selector": "reload",
+          "types": "v16@0:8",
+          "imp": "0x10b217760"
+        },
+        {
+          "selector": "rankToken",
+          "types": "@16@0:8",
+          "imp": "0x108f86d6c"
+        },
+        {
+          "selector": "configureForBottomSheetPresentation",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "prefersNavigationBarDividerHidden",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "prefersStatusBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "preferredStatusBarStyle",
+          "types": "q16@0:8",
+          "imp": "0x106d6705c"
+        },
+        {
+          "selector": "prefersNavigationBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x108bfdccc"
+        },
+        {
+          "selector": "currentSearchText",
+          "types": "@16@0:8",
+          "imp": "0x10b92fedc"
+        },
+        {
+          "selector": "currentKeywordModelPk",
+          "types": "@16@0:8",
+          "imp": "0x105e5621c"
+        },
+        {
+          "selector": "isReadyForImpressionLogging",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "childViewControllerWillPushView:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "scrollViewDidScroll:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "dismissKeyboard",
+          "types": "v16@0:8",
+          "imp": "0x107a7b8ec"
+        },
+        {
+          "selector": "searchChildViewControllerShouldUpdateSearchResults",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchChildViewControllerShouldNavigateToSearchResult:",
+          "types": "B24@0:8@16",
+          "imp": "0x10597ff08"
+        },
+        {
+          "selector": "searchChildViewControllerWillLoadNullStateResults:",
+          "types": "v24@0:8@16",
+          "imp": "0x108fc65a8"
+        },
+        {
+          "selector": "searchChildViewControllerDidLoadNullStateResults:",
+          "types": "v24@0:8@16",
+          "imp": "0x108fc65a8"
+        },
+        {
+          "selector": "searchChildViewControllerDidFailToLoadNullStateResults:error:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x1010dd814"
+        },
+        {
+          "selector": "searchChildViewControllerDidUpdateDisplayMode",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchAnalyticsLogger",
+          "types": "@16@0:8",
+          "imp": "0x109806ddc"
+        },
+        {
+          "selector": "searchSession",
+          "types": "@16@0:8",
+          "imp": "0x108ecfc8c"
+        },
+        {
+          "selector": "searchBar:didChangeSearchText:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10aac0e40"
+        },
+        {
+          "selector": "searchBarDidTapReturnKey:",
+          "types": "v24@0:8@16",
+          "imp": "0x10cf93d34"
+        },
+        {
+          "selector": "searchBarDidBeginEditing:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b1a89ac"
+        },
+        {
+          "selector": "searchBarShouldBeginEditing:",
+          "types": "B24@0:8@16",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "searchBarDidEndEditing:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b1a89ac"
+        },
+        {
+          "selector": "searchBar:didChangePlaceholder:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10ad193b8"
+        },
+        {
+          "selector": "coreTextView:didTapOnString:URL:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x105728a40"
+        },
+        {
+          "selector": "coreTextViewDidTapOnNonLinkedString:touchEvent:",
+          "types": "v32@0:8@16Q24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "onApplicationWillResignActive",
+          "types": "v16@0:8",
+          "imp": "0x10b987128"
+        },
+        {
+          "selector": "searchBarCancelButtonTapped",
+          "types": "v16@0:8",
+          "imp": "0x10b1e4824"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x107af32bc"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x107a6d8e8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004fb6ac"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC15IGGenericSearch32IGSearchResultsTabViewController",
+      "address": "0x115311a68",
+      "super_address": "0x11530fee8",
+      "methods": [
+        {
+          "selector": "initWithUserSession:typeaheadDataProvider:nullStateDataProvider:delegate:loggingDelegate:tabContextProvider:quickPerformanceLoggingDelegate:searchClickHandler:analyticsModule:title:searchTypeString:shouldDisableNavigationEvent:serpOrigination:isMetaAiBranded:metaAiFixedEntryPoint:useCase:metaAiHcmQPL:keywordModelUser:precomputedMediaIdsOrdered:pinnedMediaContext:",
+          "types": "@168@0:8@16@24@32@40@48@56@64@72@80@88@96B104q108B116@120q128@136@144@152@160",
+          "imp": "0x1014f7120"
+        },
+        {
+          "selector": "fallbackIcon",
+          "types": "@16@0:8",
+          "imp": "0x10767f830"
+        },
+        {
+          "selector": "leadingIcon",
+          "types": "@16@0:8",
+          "imp": "0x10b850104"
+        },
+        {
+          "selector": "accessibilityIdentifier",
+          "types": "@16@0:8",
+          "imp": "0x108f86d80"
+        },
+        {
+          "selector": "accessibilityLabel",
+          "types": "@16@0:8",
+          "imp": "0x108f8071c"
+        },
+        {
+          "selector": "setAccessibilityLabel:",
+          "types": "v24@0:8@16",
+          "imp": "0x108e6b544"
+        },
+        {
+          "selector": "accessibilityHint",
+          "types": "@16@0:8",
+          "imp": "0x108f80730"
+        },
+        {
+          "selector": "setAccessibilityHint:",
+          "types": "v24@0:8@16",
+          "imp": "0x108e6b544"
+        },
+        {
+          "selector": "horizontalPaddingForDynamicTabWidth",
+          "types": "d16@0:8",
+          "imp": "0x1080e4bdc"
+        },
+        {
+          "selector": "initWithUserSession:typeaheadDataProvider:nullStateDataProvider:delegate:loggingDelegate:quickPerformanceLoggingDelegate:searchClickHandler:analyticsModule:priorModule:title:searchTypeString:shouldDisableNavigationEvent:serpOrigination:isMetaAiBranded:metaAiFixedEntryPoint:useCase:metaAiHcmQPL:keywordModelUser:precomputedMediaIdsOrdered:pinnedMediaContext:",
+          "types": "@168@0:8@16@24@32@40@48@56@64@72@80@88@96B104q108B116@120q128@136@144@152@160",
+          "imp": "0x101505308"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x109806df0"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC15IGGenericSearch47IGSearchResultsViewControllerFactoryStaticFuncs",
+      "address": "0x115311b50",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1090467dc"
+        }
+      ],
+      "class_methods": [
+        {
+          "selector": "searchViewControllerForSearchType:userSession:delegate:clickHandler:analyticsModule:priorModule:quickPerformanceLoggingDelegate:metaAiHcmQPL:keywordModelUser:serpOrigination:isMetaAiBranded:metaAiFixedEntryPoint:useCase:precomputedMediaIdsOrdered:pinnedMediaContext:",
+          "types": "@132@0:8q16@24@32@40@48@56@64@72@80q88B96@100q108@116@124",
+          "imp": "0x1046150d8"
+        },
+        {
+          "selector": "titleForSearchType:isNonPersonalized:userSession:",
+          "types": "@36@0:8q16B24@28",
+          "imp": "0x10b92e378"
+        },
+        {
+          "selector": "updateSearchResultsViewController:searchType:isNonPersonalized:userSession:",
+          "types": "v44@0:8@16q24B32@36",
+          "imp": "0x1086e978c"
+        }
+      ]
+    },
+    {
+      "class": "_TtC15IGGenericSearch18IGSearchTabContext",
+      "address": "0x115311da0",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "fallbackIcon",
+          "types": "@16@0:8",
+          "imp": "0x109806e04"
+        },
+        {
+          "selector": "leadingIcon",
+          "types": "@16@0:8",
+          "imp": "0x109806e18"
+        },
+        {
+          "selector": "searchType",
+          "types": "q16@0:8",
+          "imp": "0x108be0cf0"
+        },
+        {
+          "selector": "accessibilityIdentifier",
+          "types": "@16@0:8",
+          "imp": "0x108bfdcd8"
+        },
+        {
+          "selector": "setAccessibilityIdentifier:",
+          "types": "v24@0:8@16",
+          "imp": "0x108e07030"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10792f774"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10787ec04"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC31IGSearchSerpShortDramaSeriesHCM48IGSearchSerpShortDramaSeriesHCMSectionController",
+      "address": "0x115313a38",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x108a2a8c4"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ccaeb0"
+        },
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b22df88"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10ada6c4c"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10a67eaec"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10808b84c"
+        },
+        {
+          "selector": "updatePreviewItems:",
+          "types": "v24@0:8@16",
+          "imp": "0x10561ab38"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x100304988"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004ef7a4"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC19IGSearchEditHistory28IGClearSearchResultsProvider",
+      "address": "0x1153159c8",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b17a764"
+        },
+        {
+          "selector": "recentItems",
+          "types": "@16@0:8",
+          "imp": "0x108c86870"
+        },
+        {
+          "selector": "searchType",
+          "types": "q16@0:8",
+          "imp": "0x10629bf08"
+        },
+        {
+          "selector": "clearSearchHistoryWithSuccessHandler:failureHandler:",
+          "types": "v32@0:8@?16@?24",
+          "imp": "0x107e04b48"
+        },
+        {
+          "selector": "analyticsModule",
+          "types": "@16@0:8",
+          "imp": "0x109053a64"
+        },
+        {
+          "selector": "clearAllTitleText",
+          "types": "@16@0:8",
+          "imp": "0x10044f4cc"
+        },
+        {
+          "selector": "noResultsText",
+          "types": "@16@0:8",
+          "imp": "0x10044f4e8"
+        },
+        {
+          "selector": "isReadyForImpressionLogging",
+          "types": "B16@0:8",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107933040"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x109806e7c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC19IGSearchEditHistory39IGDiscoveryMapEditSearchResultsProvider",
+      "address": "0x115315b38",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b17a79c"
+        },
+        {
+          "selector": "recentItems",
+          "types": "@16@0:8",
+          "imp": "0x10b92ed14"
+        },
+        {
+          "selector": "searchType",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "clearSearchHistoryWithSuccessHandler:failureHandler:",
+          "types": "v32@0:8@?16@?24",
+          "imp": "0x10aa8d2a8"
+        },
+        {
+          "selector": "clearAllTitleText",
+          "types": "@16@0:8",
+          "imp": "0x10044f478"
+        },
+        {
+          "selector": "noResultsText",
+          "types": "@16@0:8",
+          "imp": "0x10044f504"
+        },
+        {
+          "selector": "isReadyForImpressionLogging",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "analyticsModule",
+          "types": "@16@0:8",
+          "imp": "0x10ae85128"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1079383b8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x109806e90"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC19IGSearchEditHistory36IGTypeaheadEditSearchResultsProvider",
+      "address": "0x115316170",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "recentItems",
+          "types": "@16@0:8",
+          "imp": "0x108c8687c"
+        },
+        {
+          "selector": "searchType",
+          "types": "q16@0:8",
+          "imp": "0x10629bf08"
+        },
+        {
+          "selector": "clearSearchHistoryWithSuccessHandler:failureHandler:",
+          "types": "v32@0:8@?16@?24",
+          "imp": "0x107e04ba0"
+        },
+        {
+          "selector": "analyticsModule",
+          "types": "@16@0:8",
+          "imp": "0x109053a64"
+        },
+        {
+          "selector": "clearAllTitleText",
+          "types": "@16@0:8",
+          "imp": "0x10044f4cc"
+        },
+        {
+          "selector": "noResultsText",
+          "types": "@16@0:8",
+          "imp": "0x10044f4e8"
+        },
+        {
+          "selector": "isReadyForImpressionLogging",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x100301850"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x109806ea4"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC37IGAudioSearchResultsSectionController24IGAudioSearchResultsCell",
+      "address": "0x115316fe8",
+      "super_address": "0x114fc4a28",
+      "methods": [
+        {
+          "selector": "viewModel",
+          "types": "@16@0:8",
+          "imp": "0x108c98968"
+        },
+        {
+          "selector": "setViewModel:",
+          "types": "v24@0:8@16",
+          "imp": "0x10760c1fc"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x108a2a8d0"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ccaebc"
+        },
+        {
+          "selector": "initWithFrame:",
+          "types": "@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16",
+          "imp": "0x10afeb0a4"
+        },
+        {
+          "selector": "prepareForReuse",
+          "types": "v16@0:8",
+          "imp": "0x10d391f98"
+        },
+        {
+          "selector": "layoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d40ac88"
+        },
+        {
+          "selector": "isHighlighted",
+          "types": "B16@0:8",
+          "imp": "0x1021643d4"
+        },
+        {
+          "selector": "setHighlighted:",
+          "types": "v20@0:8B16",
+          "imp": "0x1080f3fc4"
+        },
+        {
+          "selector": "didTapDismissButton",
+          "types": "v16@0:8",
+          "imp": "0x10812e1c0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ae010c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC37IGAudioSearchResultsSectionController37IGAudioSearchResultsSectionController",
+      "address": "0x115317380",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "sectionRowPair",
+          "types": "@16@0:8",
+          "imp": "0x108c98974"
+        },
+        {
+          "selector": "setSectionRowPair:",
+          "types": "v24@0:8@16",
+          "imp": "0x10760c20c"
+        },
+        {
+          "selector": "initWithUserSession:loggingProvider:positionProvider:itemHidingHelper:audioPlayer:",
+          "types": "@56@0:8@16@24@32@40@48",
+          "imp": "0x107df6684"
+        },
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x10a093280"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x105396384"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x1080ba038"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x1010e2068"
+        },
+        {
+          "selector": "audioSearchResultsCellDidTapDismissButton:",
+          "types": "v24@0:8@16",
+          "imp": "0x10161f864"
+        },
+        {
+          "selector": "audioPlayerWillPrepareAudio:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bcc580"
+        },
+        {
+          "selector": "audioPlayerWillReuse:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioPlayerDidPrepareAudio:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioPlayerDidFinishPrepareAudio:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioPlayerDidLoadAudio:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioPlayer:didFailWithError:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b294bac"
+        },
+        {
+          "selector": "audioPlayer:didUpdatePlaybackProgress:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x10adbc20c"
+        },
+        {
+          "selector": "audioPlayerDidInitialPlay:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bcc590"
+        },
+        {
+          "selector": "audioPlayerDidPlayToEnd:",
+          "types": "v24@0:8@16",
+          "imp": "0x108fc65b8"
+        },
+        {
+          "selector": "audioPlayerDidPause:",
+          "types": "v24@0:8@16",
+          "imp": "0x108fc65b8"
+        },
+        {
+          "selector": "audioPlayerDidUnpause:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bcc590"
+        },
+        {
+          "selector": "audioPlayerDidStall:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bcc580"
+        },
+        {
+          "selector": "audioPlayerDidUnstall:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bcc590"
+        },
+        {
+          "selector": "audioPlayerDidStop:",
+          "types": "v24@0:8@16",
+          "imp": "0x108fc65b8"
+        },
+        {
+          "selector": "audioPlayer:didToggleAudioStatus:withReason:",
+          "types": "v36@0:8@16B24q28",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioPlayerDidEnqueueFirstAudioBuffer:firstAudioBufferDeltaSeconds:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "audioPlayerDidProcessFirstAudioBuffer:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107926ff4"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004b42cc"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC18IdentitySwitcherUI58IdentitySwitcherAccountOverflowSearchResultsViewController",
+      "address": "0x1153c6850",
+      "super_address": "0x1153c6678",
+      "methods": [
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10cd31ec0"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d45a270"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x109807f28"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC23IGAirwaveKeyboardSearch37IGAirwaveKeyboardSearchViewController",
+      "address": "0x1153e2e88",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x10a093460"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d754dd4"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b1c2fa0"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b824354"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b825f28"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d6a27ec"
+        },
+        {
+          "selector": "keyboardObserver:keyboardWillShowWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x1097d3a68"
+        },
+        {
+          "selector": "keyboardObserver:keyboardWillHideWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x1080f9d24"
+        },
+        {
+          "selector": "didTapInputArea:",
+          "types": "v24@0:8@16",
+          "imp": "0x1059388d4"
+        },
+        {
+          "selector": "didTapSubmitButton",
+          "types": "v16@0:8",
+          "imp": "0x10b1e6c1c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x10793b15c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x109fbeafc"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ae40b4"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC26IGBrandedContentAddPartner39IGAddPartnerSearchViewControllerFactory",
+      "address": "0x115409d30",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1090467dc"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10000870c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC21IGSearchSerpMediaGrid40IGSearchSerpGridShimmerSectionController",
+      "address": "0x1154a7bc8",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10d314f5c"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10d306610"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bc1198"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x108d65b64"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10980976c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC21IGSearchSerpMediaGrid44IGSearchSerpInlineAdShimmerSectionController",
+      "address": "0x1154a7da8",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x108ec83a8"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10b91ba40"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x1081a279c"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076239ac"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107938c3c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x109809794"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC21IGSearchSerpMediaGrid36IGSearchSerpMediaGridPlaybackSession",
+      "address": "0x1154a7ed0",
+      "super_address": "0x115237da8",
+      "methods": [
+        {
+          "selector": "totalPlayedDuration",
+          "types": "d16@0:8",
+          "imp": "0x1076707d8"
+        },
+        {
+          "selector": "videoDuration",
+          "types": "d16@0:8",
+          "imp": "0x10cd1ae00"
+        },
+        {
+          "selector": "resetTotalPlayedDuration",
+          "types": "v16@0:8",
+          "imp": "0x1076707e8"
+        },
+        {
+          "selector": "playbackEligibility",
+          "types": "@16@0:8",
+          "imp": "0x10764b6fc"
+        },
+        {
+          "selector": "applyCoordinatedEvent:withContext:",
+          "types": "v32@0:8q16@24",
+          "imp": "0x100bf8088"
+        },
+        {
+          "selector": "initWithView:",
+          "types": "@24@0:8@16",
+          "imp": "0x107a57b00"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107897820"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC21IGSearchSerpMediaGrid41IGSearchSerpMediaGridRowSectionController",
+      "address": "0x1154a8268",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109468f74"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c408ec"
+        },
+        {
+          "selector": "showDogfoodFeedback",
+          "types": "B16@0:8",
+          "imp": "0x108a2f180"
+        },
+        {
+          "selector": "setShowDogfoodFeedback:",
+          "types": "v20@0:8B16",
+          "imp": "0x108cca1fc"
+        },
+        {
+          "selector": "initWith:playbackCoordinator:loggingContext:",
+          "types": "@40@0:8@16@24@32",
+          "imp": "0x108b6b578"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x1078b8c60"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10cd1a174"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x108cb51ac"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bc11a8"
+        },
+        {
+          "selector": "didSelectItemAtIndex:",
+          "types": "v24@0:8q16",
+          "imp": "0x10b2a7a5c"
+        },
+        {
+          "selector": "minimumInteritemSpacing",
+          "types": "d16@0:8",
+          "imp": "0x10701e634"
+        },
+        {
+          "selector": "setMinimumInteritemSpacing:",
+          "types": "v24@0:8d16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "minimumLineSpacing",
+          "types": "d16@0:8",
+          "imp": "0x10701e634"
+        },
+        {
+          "selector": "setMinimumLineSpacing:",
+          "types": "v24@0:8d16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107938478"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ad6ad0"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC21IGSearchSerpMediaGrid38IGSearchSerpMediaRailSectionController",
+      "address": "0x1154a8590",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109468f80"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c408fc"
+        },
+        {
+          "selector": "tileSize",
+          "types": "q16@0:8",
+          "imp": "0x108a31334"
+        },
+        {
+          "selector": "setTileSize:",
+          "types": "v24@0:8q16",
+          "imp": "0x108cb360c"
+        },
+        {
+          "selector": "initWith:playbackCoordinator:loggingContext:",
+          "types": "@40@0:8@16@24@32",
+          "imp": "0x108b6b594"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x105d52c10"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10b91bad0"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10d2e9784"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bc11b8"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10793db0c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004f44ec"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC43IGSearchSerpProfileHScrollSectionController31IGSearchSerpProfileHScrollModel",
+      "address": "0x1154a8ad0",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "viewModels",
+          "types": "@16@0:8",
+          "imp": "0x10b225848"
+        },
+        {
+          "selector": "initWithViewModels:",
+          "types": "@24@0:8@16",
+          "imp": "0x105a07000"
+        },
+        {
+          "selector": "diffIdentifier",
+          "types": "@16@0:8",
+          "imp": "0x1098097a8"
+        },
+        {
+          "selector": "isEqualToDiffableObject:",
+          "types": "B24@0:8@16",
+          "imp": "0x108cc0b64"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107931eb8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x100263a68"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC43IGSearchSerpProfileHScrollSectionController43IGSearchSerpProfileHScrollSectionController",
+      "address": "0x1154a8c98",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x108a2acc0"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ccb2d0"
+        },
+        {
+          "selector": "initWithUserSession:module:loggingProvider:positionProvider:searchClickProvider:delegate:",
+          "types": "@64@0:8@16@24@32@40@48@56",
+          "imp": "0x107e0ea18"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x108bffb7c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10ada0f74"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10af0cf94"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10a4ece54"
+        },
+        {
+          "selector": "didSelectItemAtIndex:",
+          "types": "v24@0:8q16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x108cc0b70"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x101609548"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x10664f580"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1002ff37c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ad8b04"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC30IGSearchSerpSundialHCMPlayback37IGSearchSerpSundialHCMPlaybackSession",
+      "address": "0x1154a9578",
+      "super_address": "0x115237da8",
+      "methods": [
+        {
+          "selector": "initWithCell:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b22e4e0"
+        },
+        {
+          "selector": "totalPlayedDuration",
+          "types": "d16@0:8",
+          "imp": "0x1076707f8"
+        },
+        {
+          "selector": "videoDuration",
+          "types": "d16@0:8",
+          "imp": "0x10b803ac4"
+        },
+        {
+          "selector": "overridePlaybackEligibilityWith:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ca456c"
+        },
+        {
+          "selector": "removePlaybackEligibilityOverride",
+          "types": "v16@0:8",
+          "imp": "0x108a47084"
+        },
+        {
+          "selector": "resetTotalPlayedDuration",
+          "types": "v16@0:8",
+          "imp": "0x107670808"
+        },
+        {
+          "selector": "playbackEligibility",
+          "types": "@16@0:8",
+          "imp": "0x10764b718"
+        },
+        {
+          "selector": "applyCoordinatedEvent:withContext:",
+          "types": "v32@0:8q16@24",
+          "imp": "0x100bfabfc"
+        },
+        {
+          "selector": "initWithView:",
+          "types": "@24@0:8@16",
+          "imp": "0x107a57b10"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10789783c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC30IGSearchSerpSundialHCMPlayback46IGSearchSerpSundialHCMVideoConfigurationHelper",
+      "address": "0x1154a9668",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "initWithUserSession:playbackCoordinator:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x108a12314"
+        },
+        {
+          "selector": "configureVideoFor:at:clipFragment:",
+          "types": "v40@0:8@16q24@32",
+          "imp": "0x10b98b160"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1079285a8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ad4b3c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC20IGSearchSerpAudioHCM32IGSearchAudioPlaybackCoordinator",
+      "address": "0x1154a9ef0",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10793cbfc"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004ef32c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC20IGSearchSerpAudioHCM37IGSearchSerpAudioHCMSectionController",
+      "address": "0x1154aa9a8",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "displayStyle",
+          "types": "q16@0:8",
+          "imp": "0x1002935a0"
+        },
+        {
+          "selector": "resultSubTypeString",
+          "types": "@16@0:8",
+          "imp": "0x10b26acec"
+        },
+        {
+          "selector": "audioItems",
+          "types": "@16@0:8",
+          "imp": "0x108c884d0"
+        },
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x10b207a94"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c4090c"
+        },
+        {
+          "selector": "userSession",
+          "types": "@16@0:8",
+          "imp": "0x10b21bcfc"
+        },
+        {
+          "selector": "setUserSession:",
+          "types": "v24@0:8@16",
+          "imp": "0x10760c5cc"
+        },
+        {
+          "selector": "loggingProvider",
+          "types": "@16@0:8",
+          "imp": "0x10b207ac0"
+        },
+        {
+          "selector": "setLoggingProvider:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c4091c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x105ad3998"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x101c03b58"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x1059bd4f8"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x109d01694"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x105a0ef80"
+        },
+        {
+          "selector": "didSelectItemAtIndex:",
+          "types": "v24@0:8q16",
+          "imp": "0x101127540"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ad81c8"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC21IGSearchSerpMapModule38IGSearchSerpMapModuleSectionController",
+      "address": "0x1154ab020",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x108a2accc"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ccb2dc"
+        },
+        {
+          "selector": "initWithUserSession:contentStore:searchID:query:",
+          "types": "@48@0:8@16@24@32@40",
+          "imp": "0x1097c3dc0"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x105cc08ac"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x107624090"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10543558c"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x1035e0854"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1079285b4"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ac5ddc"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC36IGSearchSerpShoppingDisclaimerBanner53IGSearchSerpShoppingDisclaimerBannerSectionController",
+      "address": "0x1154ac010",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x108a2acd8"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ccb2e8"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10d9128a0"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10cbb9f24"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10cc77b54"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bc11c8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004ece88"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC36IGSearchSerpShoppingDisclaimerBanner54IGSearchSerpShoppingDisclaimerShimmerSectionController",
+      "address": "0x1154ac220",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10d9129c4"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10cbba018"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10ccee35c"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bc11d8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1098097f8"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC22IGSearchSerpStoriesHCM39IGSearchSerpStoriesHCMSectionController",
+      "address": "0x1154acba8",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x10b207b18"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c4093c"
+        },
+        {
+          "selector": "loggingProvider",
+          "types": "@16@0:8",
+          "imp": "0x10b207b44"
+        },
+        {
+          "selector": "setLoggingProvider:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c4094c"
+        },
+        {
+          "selector": "userSession",
+          "types": "@16@0:8",
+          "imp": "0x10b21bd28"
+        },
+        {
+          "selector": "setUserSession:",
+          "types": "v24@0:8@16",
+          "imp": "0x10760c5dc"
+        },
+        {
+          "selector": "loggingContext",
+          "types": "@16@0:8",
+          "imp": "0x10b21bd54"
+        },
+        {
+          "selector": "setLoggingContext:",
+          "types": "v24@0:8@16",
+          "imp": "0x10760c5ec"
+        },
+        {
+          "selector": "storySeenStateStore",
+          "types": "@16@0:8",
+          "imp": "0x10b21bd80"
+        },
+        {
+          "selector": "setStorySeenStateStore:",
+          "types": "v24@0:8@16",
+          "imp": "0x10760c5fc"
+        },
+        {
+          "selector": "usePreviewLayout",
+          "types": "B16@0:8",
+          "imp": "0x108dfd4d8"
+        },
+        {
+          "selector": "setUsePreviewLayout:",
+          "types": "v20@0:8B16",
+          "imp": "0x1076084d4"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x100d15b9c"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x108c88518"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10d15bc98"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10808b8d4"
+        },
+        {
+          "selector": "stopRingLoading",
+          "types": "v16@0:8",
+          "imp": "0x108ef5c78"
+        },
+        {
+          "selector": "scrollToStoryForReelPK:animated:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x1086108f4"
+        },
+        {
+          "selector": "presentationViewForReelPK:",
+          "types": "@24@0:8@16",
+          "imp": "0x108bbc77c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ad0da0"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC22IGSearchSerpStoriesHCM46IGSearchSerpStoriesHCMShimmerSectionController",
+      "address": "0x1154acff8",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "usePreviewLayout",
+          "types": "B16@0:8",
+          "imp": "0x108dfd4e4"
+        },
+        {
+          "selector": "setUsePreviewLayout:",
+          "types": "v20@0:8B16",
+          "imp": "0x1076084e4"
+        },
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b22e4f8"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x108c88524"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10cc46208"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076239ac"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10793ec08"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x109809834"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC22IGSearchSerpSundialHCM39IGSearchSerpSundialHCMSectionController",
+      "address": "0x1154adab8",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109468f98"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c4096c"
+        },
+        {
+          "selector": "loggingProvider",
+          "types": "@16@0:8",
+          "imp": "0x109468fa4"
+        },
+        {
+          "selector": "setLoggingProvider:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c4097c"
+        },
+        {
+          "selector": "loggingContext",
+          "types": "@16@0:8",
+          "imp": "0x108bf1048"
+        },
+        {
+          "selector": "setLoggingContext:",
+          "types": "v24@0:8@16",
+          "imp": "0x107878798"
+        },
+        {
+          "selector": "sectionHeader",
+          "types": "@16@0:8",
+          "imp": "0x108bdb538"
+        },
+        {
+          "selector": "setSectionHeader:",
+          "types": "v24@0:8@16",
+          "imp": "0x108e070b4"
+        },
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b17eef4"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x108c88530"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10a67fe50"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10a2b4d08"
+        },
+        {
+          "selector": "scrollToClipAt:animated:",
+          "types": "v28@0:8q16B24",
+          "imp": "0x1097cad6c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107936458"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004ef6d4"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC22IGSearchSerpSundialHCM46IGSearchSerpSundialHCMShimmerSectionController",
+      "address": "0x1154adf48",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b17ef24"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x108c88548"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10aaf3b58"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076239ac"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10793db9c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10980985c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC26IGSearchSerpTentpoleBanner43IGSearchSerpTentpoleBannerSectionController",
+      "address": "0x1154ae408",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b22e510"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10aaf1884"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10aaf403c"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10808b974"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1079285c0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107883324"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC26IGSearchSerpTentpoleUpsell43IGSearchSerpTentpoleUpsellSectionController",
+      "address": "0x1154ae7f0",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x108a2ace4"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ccb2f4"
+        },
+        {
+          "selector": "promptText",
+          "types": "@16@0:8",
+          "imp": "0x108ef5c8c"
+        },
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x10b22e528"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10aaf1954"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x109132028"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x10808b924"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1079285cc"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004ed904"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC28IGSearchSerpContinueWithMuse45IGSearchSerpContinueWithMuseSectionController",
+      "address": "0x1154afec0",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithUserSession:",
+          "types": "@24@0:8@16",
+          "imp": "0x100c2b500"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x1076230d8"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10b9af0e4"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10b9f12c4"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107936c80"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10027a6f0"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC28IGShoppableEverythingSerpKit39IGSearchSerpSeeMoreCTASectionController",
+      "address": "0x1154b04b8",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithRapPostClickLogger:onTap:",
+          "types": "@32@0:8@16@?24",
+          "imp": "0x109854e3c"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bc11f8"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10b91ce7c"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10cf35b28"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107936a58"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ac8294"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC28IGShoppableEverythingSerpKit42IGSearchSerpShoppingPivotSectionController",
+      "address": "0x1154b06b0",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "initWithUserSession:sessionTracker:rapPostClickLogger:onAdsLoad:onProductTapped:onSeeAllTapped:forcesModuleRendering:layoutResolution:",
+          "types": "@76@0:8@16@24@32@?40@?48@?56B64@68",
+          "imp": "0x101501228"
+        },
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x10a093598"
+        },
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x100294ad4"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10d2c7568"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10d1c2338"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x108bc1208"
+        },
+        {
+          "selector": "logModuleImpressionIfNeeded",
+          "types": "v16@0:8",
+          "imp": "0x10b1e856c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10793e504"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004f6d30"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC17IGSearchTypeahead34IGSearchNewTypeaheadViewController",
+      "address": "0x1154bc4d0",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "searchBarWithCancel",
+          "types": "@16@0:8",
+          "imp": "0x108c9a750"
+        },
+        {
+          "selector": "setSearchBarWithCancel:",
+          "types": "v24@0:8@16",
+          "imp": "0x107845b10"
+        },
+        {
+          "selector": "resultsView",
+          "types": "@16@0:8",
+          "imp": "0x108c9a75c"
+        },
+        {
+          "selector": "setResultsView:",
+          "types": "v24@0:8@16",
+          "imp": "0x107845b2c"
+        },
+        {
+          "selector": "initWith:title:searchClickHandler:searchAnalyticsLogger:searchViewControllerDelegate:sourceMedia:placeholderText:priorModule:textFieldShouldBecomeFirstResponder:isInitFromInformModuleGoBackNavigation:",
+          "types": "@88@0:8@16@24@32@40@48@56@64@72B80B84",
+          "imp": "0x1015086ec"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d723ff0"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10d3009e4"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b1c3900"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b1c3930"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d6a403c"
+        },
+        {
+          "selector": "viewDidDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10ccd0588"
+        },
+        {
+          "selector": "searchBarCancelButtonTapped",
+          "types": "v16@0:8",
+          "imp": "0x10b1e860c"
+        },
+        {
+          "selector": "applicationWillResignActive",
+          "types": "v16@0:8",
+          "imp": "0x1081ae73c"
+        },
+        {
+          "selector": "preferredContentInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x1075fad70"
+        },
+        {
+          "selector": "managesAdaptiveHorizontalSafeArea",
+          "types": "B16@0:8",
+          "imp": "0x10b8f5ae0"
+        },
+        {
+          "selector": "prefersStatusBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "prefersNavigationBarDividerHidden",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "preferredStatusBarStyle",
+          "types": "q16@0:8",
+          "imp": "0x106d6705c"
+        },
+        {
+          "selector": "prefersNavigationBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "keyboardObserver:keyboardWillShowWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x108611aa4"
+        },
+        {
+          "selector": "keyboardObserver:keyboardWillHideWithBeginFrame:endFrame:duration:curve:",
+          "types": "v104@0:8@16{CGRect={CGPoint=dd}{CGSize=dd}}24{CGRect={CGPoint=dd}{CGSize=dd}}56d88q96",
+          "imp": "0x108611b2c"
+        },
+        {
+          "selector": "keyboardObserverKeyboardDidShow:",
+          "types": "v24@0:8@16",
+          "imp": "0x10cfa34c0"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x10793b45c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x109fbed60"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004c3b54"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC17IGSearchEvolution41IGSearchViewControllerNavigationBarConfig",
+      "address": "0x1154bd088",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "style",
+          "types": "q16@0:8",
+          "imp": "0x108be0e40"
+        },
+        {
+          "selector": "title",
+          "types": "@16@0:8",
+          "imp": "0x108a30ed8"
+        },
+        {
+          "selector": "initWithStyle:title:",
+          "types": "@32@0:8q16@24",
+          "imp": "0x1097d42d8"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x107928734"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10977557c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC25FOAGenAICharacterHomeGrid37FOAGenAICharacterSearchViewController",
+      "address": "0x1155df330",
+      "super_address": "0x64e",
+      "methods": [
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x10b199c78"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d72aef4"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d555a3c"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x108bb9710"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x108618bec"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x105e5621c"
+        },
+        {
+          "selector": "hideKeyboard",
+          "types": "v16@0:8",
+          "imp": "0x10b9c6e8c"
+        },
+        {
+          "selector": "searchBar:textDidChange:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10597a060"
+        },
+        {
+          "selector": "searchBarCancelButtonClicked:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b864b14"
+        },
+        {
+          "selector": "searchBarSearchButtonClicked:",
+          "types": "v24@0:8@16",
+          "imp": "0x108970820"
+        },
+        {
+          "selector": "initWithNibName:bundle:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x10043bac8"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ae3f48"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC17IGSavedCategories27IGSavedSearchViewController",
+      "address": "0x1156e6130",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x10b19a0d4"
+        },
+        {
+          "selector": "loadView",
+          "types": "v16@0:8",
+          "imp": "0x102167104"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d3a4df4"
+        },
+        {
+          "selector": "wantsLayoutOnKeyboardChanges",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b8fcd18"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b829940"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d697050"
+        },
+        {
+          "selector": "tappedCancelSearch",
+          "types": "v16@0:8",
+          "imp": "0x108a444ac"
+        },
+        {
+          "selector": "objectsForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x108bb97b0"
+        },
+        {
+          "selector": "listAdapter:sectionControllerForObject:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x108619af8"
+        },
+        {
+          "selector": "emptyViewForListAdapter:",
+          "types": "@24@0:8@16",
+          "imp": "0x105e5621c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x10050b7ec"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x100438a00"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004a1240"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC22IGSavedCategoryMetaMap39IGSavedCategoryMetaMapSearchResultsView",
+      "address": "0x1156e90b8",
+      "super_address": "0x8ff",
+      "methods": [
+        {
+          "selector": "initWithFrame:",
+          "types": "@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16",
+          "imp": "0x10d945bbc"
+        },
+        {
+          "selector": "layoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d425f98"
+        },
+        {
+          "selector": "tableView:numberOfRowsInSection:",
+          "types": "q32@0:8@16q24",
+          "imp": "0x1097cd2bc"
+        },
+        {
+          "selector": "tableView:cellForRowAtIndexPath:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x108619b58"
+        },
+        {
+          "selector": "tableView:didSelectRowAtIndexPath:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x108619b70"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107acb83c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC27IGSearchResultsSerpKitUtils28IGHashtagFollowStatusFetcher",
+      "address": "0x115802150",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109469a60"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c41c38"
+        },
+        {
+          "selector": "initWithUserSession:sessionTracker:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x1097ca640"
+        },
+        {
+          "selector": "fetch:",
+          "types": "v24@0:8@16",
+          "imp": "0x10c4fb59c"
+        },
+        {
+          "selector": "hashtagNetworker:didStartLoadingWithConfig:networkRequestType:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "hashtagNetworker:didCompleteInfoRequest:config:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x101126c68"
+        },
+        {
+          "selector": "hashtagNetworker:didCompleteMainFeedRequest:config:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "hashtagNetworker:didFailDataRequest:networkRequestType:config:",
+          "types": "v48@0:8@16@24q32@40",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10792c280"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107abf264"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC27IGSearchResultsSerpKitUtils41IGSearchResultsSerpKitRightBarButtonUtils",
+      "address": "0x115802248",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x1001d3ce0"
+        }
+      ],
+      "class_methods": [
+        {
+          "selector": "hashtagModelWithSearchText:",
+          "types": "@24@0:8@16",
+          "imp": "0x100bd024c"
+        },
+        {
+          "selector": "rightBarButtonsWithUserSession:analyticsModule:hashtag:",
+          "types": "@40@0:8@16@24@32",
+          "imp": "0x104384ef0"
+        },
+        {
+          "selector": "rightButtonViewsWithUserSession:analyticsModule:hashtag:",
+          "types": "@40@0:8@16@24@32",
+          "imp": "0x104384f1c"
+        }
+      ]
+    },
+    {
+      "class": "_TtC27IGSearchResultsSerpKitUtilsP33_753EFB739722B95215567F8D1A50679423ExtendedTapTargetButton",
+      "address": "0x1158022e8",
+      "super_address": "0xee4",
+      "methods": [
+        {
+          "selector": "pointInside:withEvent:",
+          "types": "B40@0:8{CGPoint=dd}16@32",
+          "imp": "0x101043938"
+        },
+        {
+          "selector": "initWithFrame:",
+          "types": "@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16",
+          "imp": "0x108c07f88"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC27IGSearchResultsSerpKitUtils38IGSearchSerpJourneyHeaderBackTitleView",
+      "address": "0x115802618",
+      "super_address": "0x8ff",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x109469a6c"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108c41c48"
+        },
+        {
+          "selector": "isTitleTappable",
+          "types": "B16@0:8",
+          "imp": "0x108dfe738"
+        },
+        {
+          "selector": "setIsTitleTappable:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b8a7f40"
+        },
+        {
+          "selector": "initWithLauncherSet:isShoppingEntryPoint:useCloseButton:centerTitle:isSearchBarStyleEnabled:serpOrigination:",
+          "types": "@48@0:8@16B24B28B32B36q40",
+          "imp": "0x100b121ec"
+        },
+        {
+          "selector": "willMoveToWindow:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b7ca0ec"
+        },
+        {
+          "selector": "didMoveToWindow",
+          "types": "v16@0:8",
+          "imp": "0x10b8ed868"
+        },
+        {
+          "selector": "traitCollectionDidChange:",
+          "types": "v24@0:8@16",
+          "imp": "0x10ccc6764"
+        },
+        {
+          "selector": "sizeThatFits:",
+          "types": "{CGSize=dd}32@0:8{CGSize=dd}16",
+          "imp": "0x1080aaaf4"
+        },
+        {
+          "selector": "layoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d5088d0"
+        },
+        {
+          "selector": "keepsTrailingButtonsInHeader",
+          "types": "B16@0:8",
+          "imp": "0x108dfb47c"
+        },
+        {
+          "selector": "setKeepsTrailingButtonsInHeader:",
+          "types": "v20@0:8B16",
+          "imp": "0x10760ffdc"
+        },
+        {
+          "selector": "setMoreButtonHidden:",
+          "types": "v20@0:8B16",
+          "imp": "0x1077d32a0"
+        },
+        {
+          "selector": "setBackButtonHidden:",
+          "types": "v20@0:8B16",
+          "imp": "0x100184ee4"
+        },
+        {
+          "selector": "setNewJourneyButtonHidden:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b9123c4"
+        },
+        {
+          "selector": "titleTextColor",
+          "types": "@16@0:8",
+          "imp": "0x103af5388"
+        },
+        {
+          "selector": "setTitleTextColor:",
+          "types": "v24@0:8@16",
+          "imp": "0x1002314ec"
+        },
+        {
+          "selector": "backButtonTintColor",
+          "types": "@16@0:8",
+          "imp": "0x103af539c"
+        },
+        {
+          "selector": "setBackButtonTintColor:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ed4a50"
+        },
+        {
+          "selector": "moreButtonTintColor",
+          "types": "@16@0:8",
+          "imp": "0x109467aa8"
+        },
+        {
+          "selector": "setMoreButtonTintColor:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ed4a68"
+        },
+        {
+          "selector": "configureWithTitle:shouldShowMoreButton:isTitleTappable:isSummarizing:serpSessionId:",
+          "types": "v44@0:8@16B24B28B32@36",
+          "imp": "0x100b11a98"
+        },
+        {
+          "selector": "didTapBackButton",
+          "types": "v16@0:8",
+          "imp": "0x10b1f4b90"
+        },
+        {
+          "selector": "didTapMoreButton",
+          "types": "v16@0:8",
+          "imp": "0x108ecf894"
+        },
+        {
+          "selector": "didTapNewJourneyButton",
+          "types": "v16@0:8",
+          "imp": "0x108efaad8"
+        },
+        {
+          "selector": "didTapTitleLabel",
+          "types": "v16@0:8",
+          "imp": "0x10111c0b4"
+        },
+        {
+          "selector": "configureIfNecessaryWithSerpSessionId:queryText:shouldShowMoreButton:isTitleTappable:",
+          "types": "v40@0:8@16@24B32B36",
+          "imp": "0x1058b5004"
+        },
+        {
+          "selector": "initWithFrame:",
+          "types": "@48@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16",
+          "imp": "0x10792c28c"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004bdb20"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC26IGSchoolsRecommendAccounts54IGSchoolsRecommendAccountSearchResultSectionController",
+      "address": "0x115837980",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x100fdf20c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x10b91d188"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10d819674"
+        },
+        {
+          "selector": "didSelectItemAtIndex:",
+          "types": "v24@0:8q16",
+          "imp": "0x10b7bba38"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10792ccc4"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004eec2c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC29IGBrandedContentSettingsSwift49IGAllowlistedPartnersSearchViewControllerDelegate",
+      "address": "0x11588a070",
+      "super_address": "0x4d",
+      "methods": [
+        {
+          "selector": "searchViewControllerDidCancelSearch:",
+          "types": "v24@0:8@16",
+          "imp": "0x108200f20"
+        },
+        {
+          "selector": "searchViewControllerDidExitSearch:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "searchViewControllerShouldTriggerSearchWithReturnKeyClick:",
+          "types": "B24@0:8@16",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x108d65c34"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x10980fb6c"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC22IGSuggestedUsersSearch36IGSuggestedUsersSearchViewController",
+      "address": "0x1158eb388",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithAnalyticsModule:searchBarConfig:userSession:",
+          "types": "@40@0:8@16@24@32",
+          "imp": "0x1075f21b4"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d6fb824"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d579230"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x10793c38c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x109fbf8d0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004af7a4"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC21IGInterestPickBrowser30IGInterestSearchViewController",
+      "address": "0x115968540",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "delegate",
+          "types": "@16@0:8",
+          "imp": "0x108a2b86c"
+        },
+        {
+          "selector": "setDelegate:",
+          "types": "v24@0:8@16",
+          "imp": "0x108ccbcc0"
+        },
+        {
+          "selector": "initWithUserSession:service:logger:emptyStateFriendPicks:viewConfig:",
+          "types": "@56@0:8@16#24#32@40@48",
+          "imp": "0x107dceb20"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x10d82c294"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x1076047e0"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x10d5e63b0"
+        },
+        {
+          "selector": "initWithAnalyticsModule:",
+          "types": "@24@0:8@16",
+          "imp": "0x107af3c7c"
+        },
+        {
+          "selector": "initWithAnalyticsModule:performanceListener:",
+          "types": "@32@0:8@16@24",
+          "imp": "0x100435768"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1004fb1f4"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "_TtC16BCNSearchSerpKit43BCNSearchSerpFeedTagHeaderSectionController",
+      "address": "0x115a37b68",
+      "super_address": "0x48",
+      "methods": [
+        {
+          "selector": "numberOfItems",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "sizeForItemAtIndex:",
+          "types": "{CGSize=dd}24@0:8q16",
+          "imp": "0x1080b9fc4"
+        },
+        {
+          "selector": "cellForItemAtIndex:",
+          "types": "@24@0:8q16",
+          "imp": "0x10aaf0ba8"
+        },
+        {
+          "selector": "didUpdateToObject:",
+          "types": "v24@0:8@16",
+          "imp": "0x100278c80"
+        },
+        {
+          "selector": "init",
+          "types": "@16@0:8",
+          "imp": "0x10769a9b0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x107ad4b8c"
+        }
+      ],
+      "class_methods": []
+    }
+  ]
+}
