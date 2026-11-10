@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme LastUpgradeVersion="2620" version="1.7">
+  <BuildAction parallelizeBuildables="YES" buildImplicitDependencies="YES">
+    <PostActions>
+      <ExecutionAction ActionType="Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+        <ActionContent title="Build framework for Sideloadly" scriptText="&quot;${PROJECT_DIR}/../scripts/build-framework.sh&quot;&#10;">
+          <EnvironmentBuildable>
+            <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="08CCFBD330A2F326003E0FA5" BuildableName="NotTheInstagramFrameworkCode.framework" BlueprintName="NotTheInstagramFrameworkCode" ReferencedContainer="container:NotTheInstagramFrameworkCode.xcodeproj"/>
+          </EnvironmentBuildable>
+        </ActionContent>
+      </ExecutionAction>
+    </PostActions>
+    <BuildActionEntries>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="YES" buildForProfiling="YES" buildForArchiving="YES" buildForAnalyzing="YES">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="08CCFBD330A2F326003E0FA5" BuildableName="NotTheInstagramFrameworkCode.framework" BlueprintName="NotTheInstagramFrameworkCode" ReferencedContainer="container:NotTheInstagramFrameworkCode.xcodeproj"/>
+      </BuildActionEntry>
+    </BuildActionEntries>
+  </BuildAction>
+  <TestAction buildConfiguration="Debug"/>
+  <LaunchAction buildConfiguration="Debug"/>
+  <ProfileAction buildConfiguration="Release"/>
+  <AnalyzeAction buildConfiguration="Debug"/>
+  <ArchiveAction buildConfiguration="Release" revealArchiveInOrganizer="YES"/>
+</Scheme>

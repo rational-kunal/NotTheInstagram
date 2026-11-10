@@ -1,0 +1,12 @@
+# macOS and Xcode user state
+.DS_Store
+xcuserdata/
+*.xcuserstate
+
+# Build output
+/build/
+/DerivedData/
+/latest-framework/
+
+# Decrypted app bundles and archives
+/original-decrypted-ipa/
