@@ -1,0 +1,697 @@
+{
+  "path": "original-decrypted-ipa/455.0.0/com.burbn.instagram-455.0.0-Decrypted/Payload/Instagram.app/Instagram",
+  "source": "original Mach-O Objective-C class_ro_t and method_list_t metadata; no target execution",
+  "classes": [
+    {
+      "class": "IGExploreGridViewController",
+      "address": "0x115421488",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithTopic:userSession:dataController:sessionTracker:layoutConfig:layoutStyle:loggingContext:feedStore:firstAppearanceCallback:layoutContext:delegate:useTransparentBackground:",
+          "types": "@172@0:8@16@24@32@40{IGGridLayoutConfiguration=dd{UIEdgeInsets=dddd}ddd}48q120@128@136@?144@152@160B168",
+          "imp": "0x106daa054"
+        },
+        {
+          "selector": "initWithTopic:userSession:dataControllerSwift:sessionTracker:layoutConfig:layoutStyle:loggingContext:feedStore:firstAppearanceCallback:layoutContext:delegate:useTransparentBackground:",
+          "types": "@172@0:8@16@24@32@40{IGGridLayoutConfiguration=dd{UIEdgeInsets=dddd}ddd}48q120@128@136@?144@152@160B168",
+          "imp": "0x108657194"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x106d6d88c"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x106d6c93c"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x106db1734"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x107d579f0"
+        },
+        {
+          "selector": "viewDidDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x107d66664"
+        },
+        {
+          "selector": "viewWillLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x106d6feec"
+        },
+        {
+          "selector": "viewSafeAreaInsetsDidChange",
+          "types": "v16@0:8",
+          "imp": "0x106d6f258"
+        },
+        {
+          "selector": "preferredContentInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x108718404"
+        },
+        {
+          "selector": "disableNavigationEvent",
+          "types": "B16@0:8",
+          "imp": "0x106d6f228"
+        },
+        {
+          "selector": "allowsMultipleSelection",
+          "types": "B16@0:8",
+          "imp": "0x109c20194"
+        },
+        {
+          "selector": "setAllowsMultipleSelection:",
+          "types": "v20@0:8B16",
+          "imp": "0x10b5d0788"
+        },
+        {
+          "selector": "scrollToTopAnimated:",
+          "types": "v20@0:8B16",
+          "imp": "0x108fc6798"
+        },
+        {
+          "selector": "didDismissQpMegaphoneSectionControllerPresenter:",
+          "types": "v24@0:8@16",
+          "imp": "0x109ce1328"
+        },
+        {
+          "selector": "surfaceFormat",
+          "types": "q16@0:8",
+          "imp": "0x106269dac"
+        },
+        {
+          "selector": "_contextualContentInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x106db7534"
+        },
+        {
+          "selector": "_displayAddTopicPill",
+          "types": "v16@0:8",
+          "imp": "0x10c977024"
+        },
+        {
+          "selector": "_removeAddTopicPill",
+          "types": "v16@0:8",
+          "imp": "0x108bff3a0"
+        },
+        {
+          "selector": "_handleRefreshControlTriggered:",
+          "types": "v24@0:8@16",
+          "imp": "0x109ce1c88"
+        },
+        {
+          "selector": "_handleAddTopicPillTapped",
+          "types": "v16@0:8",
+          "imp": "0x107cdb104"
+        },
+        {
+          "selector": "idleTopContentInsetForRefreshControl:",
+          "types": "d24@0:8@16",
+          "imp": "0x109053d44"
+        },
+        {
+          "selector": "listAdapter:willDisplayObject:atIndex:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x106daded8"
+        },
+        {
+          "selector": "listAdapter:didEndDisplayingObject:atIndex:",
+          "types": "v40@0:8@16@24q32",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "listAdapter:willDisplayObject:cell:atIndexPath:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "listAdapter:didEndDisplayingObject:cell:atIndexPath:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "exploreDataController:didUpdateDataStore:forTopic:loggingContext:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10c2983ac"
+        },
+        {
+          "selector": "exploreDataController:didUpdateFetchState:forTopic:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x106db51d0"
+        },
+        {
+          "selector": "exploreLayoutContext:didUpdateContentInset:",
+          "types": "v56@0:8@16{UIEdgeInsets=dddd}24",
+          "imp": "0x109055d54"
+        },
+        {
+          "selector": "exploreLayoutContext:didUpdateMaxTopContentInsetAdjustment:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x109055d54"
+        },
+        {
+          "selector": "exploreLayoutContext:didUpdateTopContentInsetAdjustment:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x109055d54"
+        },
+        {
+          "selector": "scrollView",
+          "types": "@16@0:8",
+          "imp": "0x106d6f3d8"
+        },
+        {
+          "selector": "scrollViewAnnouncer",
+          "types": "@16@0:8",
+          "imp": "0x106d6f3b0"
+        },
+        {
+          "selector": "scrollViewWillBeginDragging:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b6c9aa8"
+        },
+        {
+          "selector": "scrollViewDidScroll:",
+          "types": "v24@0:8@16",
+          "imp": "0x106d6b480"
+        },
+        {
+          "selector": "scrollViewDidEndDragging:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b6c9ae8"
+        },
+        {
+          "selector": "scrollViewWillScrollNearBottom:triggeredByManualCheck:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x109055d58"
+        },
+        {
+          "selector": "_prefetchClipsMediaFromGridItems:",
+          "types": "v24@0:8@16",
+          "imp": "0x10b520ea8"
+        },
+        {
+          "selector": "exploreTopicGridSundialFeedSourceRequestLoadMore:",
+          "types": "B24@0:8@16",
+          "imp": "0x10395b944"
+        },
+        {
+          "selector": "prepareForFeedsCacheResetWithReason:",
+          "types": "v24@0:8q16",
+          "imp": "0x10b5c1c90"
+        },
+        {
+          "selector": "didResetFeedCaches:",
+          "types": "v24@0:8q16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "eventGridSectionController:didSelect:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x109055d5c"
+        },
+        {
+          "selector": "mediaSectionController:didSelectItem:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x109055d5c"
+        },
+        {
+          "selector": "mediaSectionController:didUpdateAudioToggleStatus:",
+          "types": "v28@0:8@16B24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "mediaSectionController:didSelectItemToShowComments:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10c33b79c"
+        },
+        {
+          "selector": "mediaSectionController:didSelectItemToShowProfile:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10c802e00"
+        },
+        {
+          "selector": "mediaSectionController:updatedActiveFeedItem:oldGridItem:wantsImmediateUpdate:",
+          "types": "v44@0:8@16@24@32B40",
+          "imp": "0x10c79fc74"
+        },
+        {
+          "selector": "mediaThumbnailSectionController:didRequestImageWithURL:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x106db049c"
+        },
+        {
+          "selector": "mediaThumbnailSectionController:didLoadImageForMedia:source:",
+          "types": "v40@0:8@16@24Q32",
+          "imp": "0x106db3fdc"
+        },
+        {
+          "selector": "mediaThumbnailSectionController:didFailLoadImageForMedia:error:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x109c23678"
+        },
+        {
+          "selector": "discoveryChannelSectionController:didSelectItem:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10b5b978c"
+        },
+        {
+          "selector": "discoveryTopReelsSectionController:updatedActiveFeedItem:oldGridItem:wantsImmediateUpdate:",
+          "types": "v44@0:8@16@24@32B40",
+          "imp": "0x10c7b7bdc"
+        },
+        {
+          "selector": "discoveryTopReelsSectionController:sundialFeedWillDismissWithTimeSpent:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x10b6accbc"
+        },
+        {
+          "selector": "discoveryTopReelsSectionControllerDidShareToDirect",
+          "types": "v16@0:8",
+          "imp": "0x1076f7988"
+        },
+        {
+          "selector": "discoveryTopReelsSectionControllerDidShareToStory",
+          "types": "v16@0:8",
+          "imp": "0x10b2af3cc"
+        },
+        {
+          "selector": "discoveryTopReelsSectionControllerDidSavePost",
+          "types": "v16@0:8",
+          "imp": "0x1076f79a8"
+        },
+        {
+          "selector": "shouldPreventPlaybackForTopReelsSectionController:",
+          "types": "B24@0:8@16",
+          "imp": "0x106dbae04"
+        },
+        {
+          "selector": "discoveryTopReelsSectionController:didSelectItem:",
+          "types": "B32@0:8@16@24",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "chainingContainerAdditionalBottomInsetForPill:",
+          "types": "d24@0:8@16",
+          "imp": "0x10709731c"
+        },
+        {
+          "selector": "chainingContainerDidShowPill:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "chainingContainerDidTapPill:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "shouldShowPillForChainingController:",
+          "types": "B24@0:8@16",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "chainingContainer:didRetrieveChainingPaginationToken:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "chainingContainer:didTapSendButtonForMedia:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x10c235378"
+        },
+        {
+          "selector": "chainingContainer:willDismissWithTimeSpent:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x10b271560"
+        },
+        {
+          "selector": "chainingContainerDidSavePost",
+          "types": "v16@0:8",
+          "imp": "0x10b2af3e4"
+        },
+        {
+          "selector": "chainingContainerDidShareToStory",
+          "types": "v16@0:8",
+          "imp": "0x10b2af3cc"
+        },
+        {
+          "selector": "chainingContainerDidShareToDirect",
+          "types": "v16@0:8",
+          "imp": "0x10b2af3fc"
+        },
+        {
+          "selector": "entryPoint:didUpdateFocusedMedia:forFeedItemChain:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x10c223eb4"
+        },
+        {
+          "selector": "previewHandler:loggingExtrasForMedia:atIndexPath:",
+          "types": "@40@0:8@16@24@32",
+          "imp": "0x10c7add60"
+        },
+        {
+          "selector": "promptStickerModelForPreviewHandler:",
+          "types": "@24@0:8@16",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "previewHandler:previewActionsForMedia:defaultActionProvider:loggingExtra:adProductItemPk:",
+          "types": "@56@0:8@16@24@?32@40@48",
+          "imp": "0x10c146dc8"
+        },
+        {
+          "selector": "previewHandlerShouldOmitMainGridOnlyActions:",
+          "types": "B24@0:8@16",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "previewHandlerPreviewEnabled:",
+          "types": "B24@0:8@16",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "previewHandlerDidLoad:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "previewHandlerDidDismiss:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "accessibilityScroll:",
+          "types": "B24@0:8q16",
+          "imp": "0x10b576090"
+        },
+        {
+          "selector": "minimizedViewerPresenter:didCoverWithViewController:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x107701744"
+        },
+        {
+          "selector": "minimizedViewerPresenter:didEndCoverWithViewController:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x107701780"
+        },
+        {
+          "selector": "contentInsetsForAlertBar",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x10b99dc88"
+        },
+        {
+          "selector": "playbackContentOffsetY",
+          "types": "d16@0:8",
+          "imp": "0x1078a7644"
+        },
+        {
+          "selector": "playbackFocusRectInWindow",
+          "types": "{CGRect={CGPoint=dd}{CGSize=dd}}16@0:8",
+          "imp": "0x10b99d8f4"
+        },
+        {
+          "selector": "zoomTransitionWillPrepareWithContext:",
+          "types": "v24@0:8@16",
+          "imp": "0x10433a710"
+        },
+        {
+          "selector": "zoomTransitionWillBeginWithContext:",
+          "types": "v24@0:8@16",
+          "imp": "0x109b80ebc"
+        },
+        {
+          "selector": "shouldZoomFromTransition",
+          "types": "B16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "prepareBackwardZoomTransitionWithContext:completionHandler:",
+          "types": "v32@0:8@16@?24",
+          "imp": "0x109047458"
+        },
+        {
+          "selector": "transitionZoomViewFromItem:withZoomContext:shouldMoveToVisiblePosition:",
+          "types": "@36@0:8@16@24B32",
+          "imp": "0x10b42a0b4"
+        },
+        {
+          "selector": "magicMoveSubviews",
+          "types": "@16@0:8",
+          "imp": "0x10607cb3c"
+        },
+        {
+          "selector": "didCompleteBackwardZoomTransitionWithZoomContext:",
+          "types": "v24@0:8@16",
+          "imp": "0x105cab0a8"
+        },
+        {
+          "selector": "discoveryGridAdSectionController:didTapImageAdItem:",
+          "types": "v32@0:8@16@24",
+          "imp": "0x108fc59e0"
+        },
+        {
+          "selector": "discoveryGridAdSectionController:didTapVideoAdItem:videoCell:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x108fc59e0"
+        },
+        {
+          "selector": "infoViewWasTapped:",
+          "types": "v24@0:8@16",
+          "imp": "0x10395b94c"
+        },
+        {
+          "selector": "infoViewTextButtonTapped:",
+          "types": "v24@0:8@16",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "discoveryContainerSectionController:didShowContainerItems:containerInfo:listAdapter:",
+          "types": "v48@0:8@16@24@32@40",
+          "imp": "0x10c283e20"
+        },
+        {
+          "selector": "discoveryContainerSectionController:didSelectContainerItem:listAdapter:",
+          "types": "v40@0:8@16@24@32",
+          "imp": "0x109055d5c"
+        },
+        {
+          "selector": "discoveryContainerSectionController:withHeaderView:shouldFadeHeaderView:shouldFadeOnlyBackground:",
+          "types": "v40@0:8@16@24B32B36",
+          "imp": "0x10b605104"
+        },
+        {
+          "selector": "user:blocked:messagingOnlyBlocked:",
+          "types": "v32@0:8@16B24B28",
+          "imp": "0x10c282abc"
+        },
+        {
+          "selector": "collapsibleNavigationCoordinator:didUpdateNavigationBarPercentCollapsed:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "collapsibleNavigationCoordinator:didUpdateTabBarPercentCollapsed:",
+          "types": "v32@0:8@16d24",
+          "imp": "0x10000870c"
+        },
+        {
+          "selector": "performanceLoadingIndicatorDidAppearWithLoggingExtras:",
+          "types": "v24@0:8@16",
+          "imp": "0x109c23690"
+        },
+        {
+          "selector": "performanceLoadingIndicatorDidDisappear",
+          "types": "v16@0:8",
+          "imp": "0x109c236a0"
+        },
+        {
+          "selector": "globalInformationProviderItemsAtPosition:",
+          "types": "@32@0:8{CGPoint=dd}16",
+          "imp": "0x108816570"
+        },
+        {
+          "selector": "removePrivacyOverlayView",
+          "types": "v16@0:8",
+          "imp": "0x108bff3ac"
+        },
+        {
+          "selector": "nonPersonalizedFeedSettingDidChangeWithIsNonPersonalized:",
+          "types": "v20@0:8B16",
+          "imp": "0x108f4d3f4"
+        },
+        {
+          "selector": "headLoadQPLLogger",
+          "types": "@16@0:8",
+          "imp": "0x106d6d880"
+        },
+        {
+          "selector": "setHeadLoadQPLLogger:",
+          "types": "v24@0:8@16",
+          "imp": "0x106d6d1c0"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x1001c7288"
+        }
+      ],
+      "class_methods": []
+    },
+    {
+      "class": "IGExploreViewController",
+      "address": "0x1154215c8",
+      "super_address": "0x58",
+      "methods": [
+        {
+          "selector": "initWithUserSession:configuration:isLeftBackButtonNone:",
+          "types": "@36@0:8@16@24B32",
+          "imp": "0x10678f424"
+        },
+        {
+          "selector": "dealloc",
+          "types": "v16@0:8",
+          "imp": "0x107d68180"
+        },
+        {
+          "selector": "presentationOptions",
+          "types": "q16@0:8",
+          "imp": "0x10604349c"
+        },
+        {
+          "selector": "analyticsModule",
+          "types": "@16@0:8",
+          "imp": "0x10678dc30"
+        },
+        {
+          "selector": "viewDidLoad",
+          "types": "v16@0:8",
+          "imp": "0x106a21560"
+        },
+        {
+          "selector": "viewWillLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x106da6cb0"
+        },
+        {
+          "selector": "viewDidLayoutSubviews",
+          "types": "v16@0:8",
+          "imp": "0x106dd5294"
+        },
+        {
+          "selector": "updateVerticalBarItems",
+          "types": "v16@0:8",
+          "imp": "0x106dd52bc"
+        },
+        {
+          "selector": "viewSafeAreaInsetsDidChange",
+          "types": "v16@0:8",
+          "imp": "0x106a257c4"
+        },
+        {
+          "selector": "preferredContentInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x106db54c8"
+        },
+        {
+          "selector": "preferredTabBarBehavior",
+          "types": "q16@0:8",
+          "imp": "0x106a14d40"
+        },
+        {
+          "selector": "preferredMinimizableInsets",
+          "types": "{UIEdgeInsets=dddd}16@0:8",
+          "imp": "0x1073a31f0"
+        },
+        {
+          "selector": "viewWillAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x106a20988"
+        },
+        {
+          "selector": "viewDidAppear:",
+          "types": "v20@0:8B16",
+          "imp": "0x106a20f6c"
+        },
+        {
+          "selector": "viewWillDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10876ef18"
+        },
+        {
+          "selector": "viewDidDisappear:",
+          "types": "v20@0:8B16",
+          "imp": "0x10beffc5c"
+        },
+        {
+          "selector": "surfaceFormat",
+          "types": "q16@0:8",
+          "imp": "0x106269dac"
+        },
+        {
+          "selector": "prefersNavigationBarHidden",
+          "types": "B16@0:8",
+          "imp": "0x106a14dd8"
+        },
+        {
+          "selector": "statusBarStyle",
+          "types": "q16@0:8",
+          "imp": "0x106d2bed8"
+        },
+        {
+          "selector": "disableNavigationEvent",
+          "types": "B16@0:8",
+          "imp": "0x106033970"
+        },
+        {
+          "selector": "disableSwipingRightBetweenTabs",
+          "types": "B16@0:8",
+          "imp": "0x10b6a1b54"
+        },
+        {
+          "selector": "applicationWillEnterForegroundListener",
+          "types": "v16@0:8",
+          "imp": "0x10ac3b514"
+        },
+        {
+          "selector": "_lazyInitAndGetShimmeringGridView",
+          "types": "@16@0:8",
+          "imp": "0x106a1be18"
+        },
+        {
+          "selector": "_didTapEventsViewModeButton",
+          "types": "v16@0:8",
+          "imp": "0x10b611ef8"
+        },
+        {
+          "selector": "setCustomContentViewController:",
+          "types": "v24@0:8@16",
+          "imp": "0x10c946450"
+        },
+        {
+          "selector": "ig_keyViewControllers",
+          "types": "@16@0:8",
+          "imp": "0x106a14d7c"
+        },
+        {
+          "selector": "enableExtendedTopScrollawayNav",
+          "types": "B16@0:8",
+          "imp": "0x106a157ac"
+        },
+        {
+          "selector": ".cxx_destruct",
+          "types": "v16@0:8",
+          "imp": "0x101335614"
+        }
+      ],
+      "class_methods": []
+    }
+  ]
+}
