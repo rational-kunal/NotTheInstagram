@@ -1,5 +1,10 @@
 # Reel navigation restriction — Instagram 455.0.0
 
+The new Reels-tab block, two-minute session bypass and three-second playback
+delay are documented in [tab-session-notes.md](tab-session-notes.md). The
+implementation narrative below records the earlier blanket restriction; its
+successful device report must not be applied to the new feature without testing.
+
 ## Goal and current status
 
 Keep the reel the user explicitly opened playable, while blocking both swipes
