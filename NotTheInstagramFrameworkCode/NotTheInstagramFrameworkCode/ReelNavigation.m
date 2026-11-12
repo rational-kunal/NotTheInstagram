@@ -1,15 +1,15 @@
 #import "ReelNavigation.h"
-#import "ReelRuntime.h"
+#import "RuntimeHooks.h"
 #import "ReelTabSession.h"
 #import "ReelPlaybackGate.h"
-#import <objc/message.h>
 
 static IMP NTIReelOriginalLoad, NTIReelOriginalAppear, NTIReelOriginalLayout;
 static IMP NTIReelOriginalSetAdvanceDisabled, NTIReelOriginalSetAutoAdvance;
 static IMP NTIReelOriginalAdvanceDisabled, NTIReelOriginalAutoAdvance;
 static IMP NTIReelOriginalTimer, NTIReelOriginalCountdown, NTIReelOriginalEngineEnabled;
 static Class NTIReelFeedClass;
-static NSHashTable *NTIReelFeeds, *NTIReelEngines;
+static NSHashTable<UIViewController *> *NTIReelFeeds;
+static NSHashTable *NTIReelEngines;
 static NSString *const NTIReelNavigationEnabledKey = @"NTIReelNavigationEnabled";
 static char NTIReelFeedStateKey;
 
@@ -103,21 +103,17 @@ static void NTIReelDidLayout(UIViewController *controller, SEL selector) {
 // Timed auto-scroll is never enabled by us. Preserve native behavior only when
 // this engine can be tied to a bypassed tab feed; unknown ownership stays blocked.
 static UIViewController *NTIReelEngineFeed(id engine) {
-    SEL getter = NSSelectorFromString(@"feedDelegate");
-    if (!NTIReelMethodMatches(class_getInstanceMethod([engine class], getter), @encode(id), 0, NULL)) return nil;
-    id delegate = ((id (*)(id, SEL))objc_msgSend)(engine, getter);
-    if ([delegate isKindOfClass:NTIReelFeedClass]) return delegate;
-    if ([delegate isKindOfClass:UIResponder.class]) {
-        for (UIResponder *next = delegate; next; next = next.nextResponder) {
-            if ([next isKindOfClass:NTIReelFeedClass]) return (UIViewController *)next;
-        }
+    id delegate = NTIObjectValue(engine, sel_registerName("feedDelegate"));
+    if (![delegate isKindOfClass:UIResponder.class]) return nil;
+    for (UIResponder *next = delegate; next; next = next.nextResponder) {
+        if ([next isKindOfClass:NTIReelFeedClass]) return (UIViewController *)next;
     }
     return nil;
 }
 static BOOL NTIReelEngineAllowed(id engine) {
-    if (!NSThread.isMainThread) return NO;
+    if (!NSThread.isMainThread || !NTIReelAllowsNavigation(NTIReelEngineFeed(engine))) return NO;
     [NTIReelEngines addObject:engine];
-    return NTIReelAllowsNavigation(NTIReelEngineFeed(engine));
+    return YES;
 }
 static BOOL NTIReelEngineEnabled(id engine, SEL selector) {
     return NTIReelEngineAllowed(engine) && ((BOOL (*)(id, SEL))NTIReelOriginalEngineEnabled)(engine, selector);
@@ -132,32 +128,32 @@ static void NTIReelRefreshSessions(void) {
     for (UIViewController *controller in NTIReelFeeds.allObjects) NTIReelApplyPolicy(controller);
     for (id engine in NTIReelEngines.allObjects) {
         if (NTIReelAllowsNavigation(NTIReelEngineFeed(engine))) continue;
+        [NTIReelEngines removeObject:engine];
         SEL cancel = NSSelectorFromString(@"invalidateTimer");
-        if (NTIReelMethodMatches(class_getInstanceMethod([engine class], cancel), @encode(void), 0, NULL)) {
+        if (NTIMethodMatches(class_getInstanceMethod([engine class], cancel), @encode(void), 0, NULL)) {
             ((void (*)(id, SEL))objc_msgSend)(engine, cancel);
         }
     }
 }
 static void NTIInstallReelAutoScrollHooks(void) {
     Class engine = NSClassFromString(@"_TtC19IGSundialAutoScroll19IGSundialAutoScroll");
-    const NTIReelHook hooks[] = {
+    const NTIHook hooks[] = {
         {"restartCurrentTimerIfNeededWithMediaAccess:mediaMap:block:", (IMP)NTIReelAutoScrollTimer,
             &NTIReelOriginalTimer, @encode(void), 3, {@encode(id), @encode(id), "@?"}},
         {"setReelDuration:onCountdownFinishedCallBack:", (IMP)NTIReelAutoScrollCountdown,
             &NTIReelOriginalCountdown, @encode(void), 2, {@encode(double), "@?"}},
         {"isEnabled", (IMP)NTIReelEngineEnabled, &NTIReelOriginalEngineEnabled, @encode(BOOL), 0, {NULL}},
     };
-    for (size_t i = 0; i < sizeof(hooks) / sizeof(hooks[0]); i++) NTIReelInstallHooks(engine, &hooks[i], 1);
+    for (size_t i = 0; i < sizeof(hooks) / sizeof(hooks[0]); i++) NTIInstallHooks(engine, &hooks[i], 1);
 }
-static void NTIInstallReelNavigation(NSString *identifier) {
-    if (![identifier isEqualToString:@"com.burbn.instagram"] && ![identifier hasPrefix:@"com.burbn.instagram."]) return;
-    if (NTIReelOriginalLoad) return;
+static void NTIInstallReelNavigation(void) {
     Class feed = NSClassFromString(@"IGSundialFeedViewController");
-    if (!feed || !NTIReelMethodMatches(class_getInstanceMethod(feed, NSSelectorFromString(@"collectionView")), @encode(id), 0, NULL)) return;
+    if (![feed isSubclassOfClass:UIViewController.class] ||
+        !NTIMethodMatches(class_getInstanceMethod(feed, sel_registerName("collectionView")), @encode(id), 0, NULL)) return;
     NTIReelFeedClass = feed;
     NTIReelFeeds = NSHashTable.weakObjectsHashTable;
     NTIReelEngines = NSHashTable.weakObjectsHashTable;
-    const NTIReelHook hooks[] = {
+    const NTIHook hooks[] = {
         {"setAdvanceToNextItemDisabled:", (IMP)NTIReelSetDisabled, &NTIReelOriginalSetAdvanceDisabled, @encode(void), 1, {@encode(BOOL)}},
         {"setAutoAdvanceToNextItem:", (IMP)NTIReelSetAutoAdvance, &NTIReelOriginalSetAutoAdvance, @encode(void), 1, {@encode(BOOL)}},
         {"advanceToNextItemDisabled", (IMP)NTIReelAdvanceDisabled, &NTIReelOriginalAdvanceDisabled, @encode(BOOL), 0, {NULL}},
@@ -166,10 +162,10 @@ static void NTIInstallReelNavigation(NSString *identifier) {
         {"viewWillAppear:", (IMP)NTIReelWillAppear, &NTIReelOriginalAppear, @encode(void), 1, {@encode(BOOL)}},
         {"viewDidLayoutSubviews", (IMP)NTIReelDidLayout, &NTIReelOriginalLayout, @encode(void), 0, {NULL}},
     };
-    if (!NTIReelInstallHooks(feed, hooks, sizeof(hooks) / sizeof(hooks[0]))) return;
+    if (!NTIInstallHooks(feed, hooks, sizeof(hooks) / sizeof(hooks[0]))) return;
     NTIInstallReelAutoScrollHooks();
     // Keep the previously working restriction if the new tab/playback APIs differ.
-    if (NTIInstallReelPlaybackGate()) [NTIReelTabSession installHooks];
+    NTIInstallReelPlaybackGate();
     [NSNotificationCenter.defaultCenter addObserverForName:NTIReelTabSessionDidChangeNotification
         object:nil queue:NSOperationQueue.mainQueue usingBlock:^(NSNotification *note) { NTIReelRefreshSessions(); }];
 }
@@ -183,6 +179,6 @@ static void NTIInstallReelNavigation(NSString *identifier) {
     [NSUserDefaults.standardUserDefaults setBool:enabled forKey:NTIReelNavigationEnabledKey];
 }
 + (void)load {
-    if (self.isEnabled) NTIInstallReelNavigation(NSBundle.mainBundle.bundleIdentifier);
+    if (NTIIsInstagram(NSBundle.mainBundle.bundleIdentifier) && self.isEnabled) NTIInstallReelNavigation();
 }
 @end

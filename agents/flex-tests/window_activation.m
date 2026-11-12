@@ -86,5 +86,18 @@ int main(void) { @autoreleasepool {
     before = manager.presentations;
     [legacy.gestureRecognizers.firstObject fire];
     check(manager.presentations == before, @"background legacy app cannot open FLEX");
+    app.applicationState = UIApplicationStateActive;
+    UIGestureRecognizer *detached = legacy.gestureRecognizers.firstObject;
+    detached.view = nil;
+    [detached fire];
+    check(manager.presentations == before, @"detached gesture cannot open FLEX");
+
+    UIWindow *otherSceneWindow = UIWindow.new;
+    UIWindow *newSceneWindow = UIWindow.new;
+    app.windows = @[otherSceneWindow];
+    scene.windows = @[modern, newSceneWindow];
+    [integration refreshWindows:[NSNotification notificationWithName:UISceneDidActivateNotification object:scene]];
+    check(newSceneWindow.gestureRecognizers.count == 1 && otherSceneWindow.gestureRecognizers.count == 0,
+          @"scene activation visits only the activated scene's windows");
     return failures ? 1 : 0;
 } }

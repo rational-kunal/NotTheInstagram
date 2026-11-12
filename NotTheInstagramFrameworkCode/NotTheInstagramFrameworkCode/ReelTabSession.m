@@ -1,12 +1,11 @@
 #import "ReelTabSession.h"
-#import "ReelRuntime.h"
-#import <objc/message.h>
+#import "RuntimeHooks.h"
 
 NSString *const NTIReelTabSessionDidChangeNotification = @"NTIReelTabSessionDidChange";
 static const NSTimeInterval NTIReelBypassWait = 120.0;
 static const NSTimeInterval NTIReelInitialPlaybackDelay = 3.0;
 static const NSTimeInterval NTIReelPlaybackDelayIncrement = 0.5;
-static NSString *const NTIReelRootClassName = @"_TtC13IGSundialTabs30IGSundialRootTabViewController";
+static Class NTIReelRootClass, NTIReelTabClass;
 static char NTIReelTabSessionKey;
 static char NTIReelRootVisibleKey;
 static BOOL NTIReelTabHooksInstalled;
@@ -34,21 +33,9 @@ static IMP NTITabOriginalWillDisappear, NTITabOriginalLayout, NTITabOriginalSele
 - (void)endSession;
 @end
 
-static BOOL NTITabObjectGetterMatches(id object, SEL selector) {
-    return object && NTIReelMethodMatches(class_getInstanceMethod(object_getClass(object), selector),
-                                         @encode(id), 0, NULL);
-}
-
-static id NTITabObjectValue(id object, const char *name) {
-    SEL selector = sel_registerName(name);
-    return NTITabObjectGetterMatches(object, selector)
-        ? ((id (*)(id, SEL))objc_msgSend)(object, selector) : nil;
-}
-
 static UIViewController *NTITabControllerForRoot(UIViewController *root) {
-    Class tabClass = NSClassFromString(@"IGTabBarController");
     for (UIViewController *parent = root.parentViewController; parent; parent = parent.parentViewController) {
-        if ([parent isKindOfClass:tabClass]) return parent;
+        if ([parent isKindOfClass:NTIReelTabClass]) return parent;
     }
     return nil;
 }
@@ -64,13 +51,10 @@ static id NTITabSelectedReelsSurface(UIViewController *root, UIViewController *t
     // Instagram's predicate also recognizes the Homecoming Reels route, whose
     // surface does not have the legacy CLIPS label.
     SEL isReels = sel_registerName("isOnDiscoverVideo");
-    if (!NTIReelMethodMatches(class_getInstanceMethod(object_getClass(tabController), isReels),
+    if (!NTIMethodMatches(class_getInstanceMethod(object_getClass(tabController), isReels),
                               @encode(BOOL), 0, NULL) ||
         !((BOOL (*)(id, SEL))objc_msgSend)(tabController, isReels)) return nil;
-    id surface = NTITabObjectValue(tabController, "selectedTabBarSurface");
-    if (!surface) return nil;
-
-    id selected = NTITabObjectValue(tabController, "selectedViewController");
+    id selected = NTIObjectValue(tabController, @selector(selectedViewController));
     if (![selected isKindOfClass:UIViewController.class]) return nil;
     UIViewController *branch = selected;
     if ([branch isKindOfClass:UINavigationController.class]) {
@@ -78,27 +62,24 @@ static id NTITabSelectedReelsSurface(UIViewController *root, UIViewController *t
     }
     // A post can use the same root class, including on top of the Reels tab's
     // own stack. Only the root branch that the tab controller selected qualifies.
-    Class rootClass = NSClassFromString(NTIReelRootClassName);
     for (UIViewController *current = root; current && current != tabController; current = current.parentViewController) {
-        if (NTITabIsPushedController(current) || (current != root && [current isKindOfClass:rootClass])) return nil;
-        if (current == branch) return surface;
+        if (NTITabIsPushedController(current) || (current != root && [current isKindOfClass:NTIReelRootClass])) return nil;
+        if (current == branch) return NTIObjectValue(tabController, sel_registerName("selectedTabBarSurface"));
     }
     return nil;
 }
 
 static BOOL NTITabSurfacesEqual(id first, id second) {
-    return first == second || (first && second && [first isEqual:second]);
+    return first == second || [first isEqual:second];
 }
 
 @implementation NTIReelTabSession
 
 + (instancetype)sessionForController:(UIViewController *)controller {
     if (!NTIReelTabHooksInstalled || !NSThread.isMainThread) return nil;
-    Class rootClass = NSClassFromString(NTIReelRootClassName);
-    if (!rootClass) return nil;
     for (UIViewController *current = controller; current; current = current.parentViewController) {
         if (NTITabIsPushedController(current)) return nil;
-        if (![current isKindOfClass:rootClass]) continue;
+        if (![current isKindOfClass:NTIReelRootClass]) continue;
         UIViewController *tabController = NTITabControllerForRoot(current);
         id surface = NTITabSelectedReelsSurface(current, tabController);
         if (!surface) return nil;
@@ -112,7 +93,6 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
             session.foreground = UIApplication.sharedApplication.applicationState == UIApplicationStateActive;
             session.accessibilityValues = [NSMapTable weakToStrongObjectsMapTable];
             objc_setAssociatedObject(current, &NTIReelTabSessionKey, session, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            if (!NTIReelTabSessions) NTIReelTabSessions = [NSHashTable weakObjectsHashTable];
             [NTIReelTabSessions addObject:session];
             NSNotificationCenter *center = NSNotificationCenter.defaultCenter;
             [center addObserver:session selector:@selector(applicationWillResign:)
@@ -143,7 +123,7 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
     [self.timer invalidate];
     self.timer = nil;
     self.waitStarted = 0;
-    self.continueButton.hidden = YES;
+    if (!self.continueButton.hidden) self.continueButton.hidden = YES;
 }
 
 - (void)restoreAccessibility {
@@ -161,7 +141,7 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
     self.lastPlayedIdentity = nil;
     self.lastPlayedPlayer = nil;
     [self stopWaiting];
-    [self refreshBlocker];
+    [self refreshBlockerForSelection:NTITabSelectedReelsSurface(self.controller, self.tabController) != nil];
     if (changed) [self notifyChange];
 }
 
@@ -262,17 +242,18 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
     [root addSubview:blocker];
 }
 
-- (void)refreshBlocker {
-    if (!NTITabSelectedReelsSurface(self.controller, self.tabController)) {
+- (void)refreshBlockerForSelection:(BOOL)selected {
+    if (!selected) {
         [self restoreAccessibility];
         [self.blocker removeFromSuperview];
         self.blocker = nil;
+        self.continueButton = nil;
         return;
     }
     [self buildBlockerIfNeeded];
     UIView *root = self.controller.viewIfLoaded;
     BOOL blocked = !self.bypassed;
-    self.blocker.hidden = !blocked;
+    if (self.blocker.hidden == blocked) self.blocker.hidden = !blocked;
     if (!blocked) {
         [self restoreAccessibility];
         return;
@@ -291,7 +272,7 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
 
 - (BOOL)canWait {
     return self.active && self.visible && !self.bypassed && self.controller.viewIfLoaded.window &&
-           self.foreground && UIApplication.sharedApplication.applicationState == UIApplicationStateActive && [self isSelected];
+           self.foreground && UIApplication.sharedApplication.applicationState == UIApplicationStateActive;
 }
 
 - (BOOL)isPlaybackVisible {
@@ -328,14 +309,15 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
     self.timer = [NSTimer timerWithTimeInterval:remaining repeats:NO block:^(NSTimer *timer) {
         NTIReelTabSession *session = weakSelf;
         session.timer = nil;
-        if ([session canWait]) [session completeWaitOrSchedule];
+        if ([session canWait] && [session isSelected]) [session completeWaitOrSchedule];
         else [session stopWaiting];
     }];
     [NSRunLoop.mainRunLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)refresh {
-    BOOL selected = [self isSelected];
+    id surface = NTITabSelectedReelsSurface(self.controller, self.tabController);
+    BOOL selected = surface && NTITabSurfacesEqual(self.surface, surface);
     BOOL foreground = self.foreground && UIApplication.sharedApplication.applicationState == UIApplicationStateActive;
     if ((!selected || !foreground) && (self.active || self.bypassed)) {
         [self endSession];
@@ -343,8 +325,8 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
     }
     BOOL changed = !self.active && selected && foreground && self.visible;
     if (changed) self.active = YES;
-    [self refreshBlocker];
-    if ([self canWait]) {
+    [self refreshBlockerForSelection:surface != nil];
+    if (selected && [self canWait]) {
         if (!self.waitStarted) self.waitStarted = NSProcessInfo.processInfo.systemUptime;
         if (!self.timer && self.continueButton.hidden) [self completeWaitOrSchedule];
     } else {
@@ -354,11 +336,11 @@ static BOOL NTITabSurfacesEqual(id first, id second) {
 }
 
 - (void)continueForSession:(UIButton *)button {
-    if (!self.waitStarted || ![self canWait] ||
+    if (!self.waitStarted || ![self canWait] || ![self isSelected] ||
         NSProcessInfo.processInfo.systemUptime - self.waitStarted < NTIReelBypassWait) return;
     self.bypassed = YES;
     [self stopWaiting];
-    [self refreshBlocker];
+    [self refreshBlockerForSelection:YES];
     [self notifyChange];
     UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, self.controller.viewIfLoaded);
 }
@@ -385,9 +367,9 @@ static void NTITabDidLoad(UIViewController *controller, SEL selector) {
 }
 
 static void NTITabWillAppear(UIViewController *controller, SEL selector, BOOL animated) {
-    [NTITabSessionForLifecycle(controller) refreshBlocker];
+    [NTITabSessionForLifecycle(controller) refreshBlockerForSelection:YES];
     ((void (*)(id, SEL, BOOL))NTITabOriginalWillAppear)(controller, selector, animated);
-    [NTITabSessionForLifecycle(controller) refreshBlocker];
+    [NTITabSessionForLifecycle(controller) refreshBlockerForSelection:YES];
 }
 
 static void NTITabDidAppear(UIViewController *controller, SEL selector, BOOL animated) {
@@ -395,8 +377,6 @@ static void NTITabDidAppear(UIViewController *controller, SEL selector, BOOL ani
     objc_setAssociatedObject(controller, &NTIReelRootVisibleKey, @YES, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     NTIReelTabSession *session = NTITabSessionForLifecycle(controller);
     BOOL wasActive = session.active;
-    session.visible = YES;
-    session.surface = NTITabSelectedReelsSurface(controller, session.tabController);
     [session refresh];
     if (wasActive == session.active) [session notifyChange];
 }
@@ -432,33 +412,32 @@ static void NTITabSelect(id controller, SEL selector, id surface, BOOL action, B
 
 + (BOOL)installHooks {
     if (NTITabOriginalLoad) return NTIReelTabHooksInstalled;
-    Class root = NSClassFromString(NTIReelRootClassName);
+    Class root = NSClassFromString(@"_TtC13IGSundialTabs30IGSundialRootTabViewController");
     Class tab = NSClassFromString(@"IGTabBarController");
-    const NTIReelHook lifecycle[] = {
+    const NTIHook lifecycle[] = {
         {"viewDidLoad", (IMP)NTITabDidLoad, &NTITabOriginalLoad, @encode(void), 0, {NULL}},
         {"viewWillAppear:", (IMP)NTITabWillAppear, &NTITabOriginalWillAppear, @encode(void), 1, {@encode(BOOL)}},
         {"viewDidAppear:", (IMP)NTITabDidAppear, &NTITabOriginalDidAppear, @encode(void), 1, {@encode(BOOL)}},
         {"viewWillDisappear:", (IMP)NTITabWillDisappear, &NTITabOriginalWillDisappear, @encode(void), 1, {@encode(BOOL)}},
         {"viewDidLayoutSubviews", (IMP)NTITabDidLayout, &NTITabOriginalLayout, @encode(void), 0, {NULL}},
     };
-    const NTIReelHook selection = {
+    const NTIHook selection = {
         "_setSelectedTabBarSurface:isTabBarAction:animated:navigationAction:skipMainFeedFetch:animateIndicator:",
         (IMP)NTITabSelect, &NTITabOriginalSelect, @encode(void), 6,
         {@encode(id), @encode(BOOL), @encode(BOOL), @encode(NSUInteger), @encode(BOOL), @encode(BOOL)}
     };
-    if (!root || !tab ||
-        !NTIReelMethodMatches(class_getInstanceMethod(tab, sel_registerName("isOnDiscoverVideo")), @encode(BOOL), 0, NULL) ||
-        !NTIReelMethodMatches(class_getInstanceMethod(tab, sel_registerName("selectedTabBarSurface")), @encode(id), 0, NULL) ||
-        !NTIReelMethodMatches(class_getInstanceMethod(tab, @selector(selectedViewController)), @encode(id), 0, NULL)) return NO;
-    for (size_t index = 0; index < sizeof(lifecycle) / sizeof(lifecycle[0]); index++) {
-        const NTIReelHook *hook = &lifecycle[index];
-        if (!NTIReelMethodMatches(class_getInstanceMethod(root, sel_registerName(hook->selector)), hook->returnType,
-                                  hook->argumentCount, hook->argumentTypes)) return NO;
-    }
-    if (!NTIReelMethodMatches(class_getInstanceMethod(tab, sel_registerName(selection.selector)), selection.returnType,
-                              selection.argumentCount, selection.argumentTypes)) return NO;
-    NTIReelTabHooksInstalled = NTIReelInstallHooks(root, lifecycle, sizeof(lifecycle) / sizeof(lifecycle[0])) &&
-                              NTIReelInstallHooks(tab, &selection, 1);
-    return NTIReelTabHooksInstalled;
+    if (![root isSubclassOfClass:UIViewController.class] || ![tab isSubclassOfClass:UIViewController.class] ||
+        !NTIMethodMatches(class_getInstanceMethod(tab, sel_registerName("isOnDiscoverVideo")), @encode(BOOL), 0, NULL) ||
+        !NTIMethodMatches(class_getInstanceMethod(tab, sel_registerName("selectedTabBarSurface")), @encode(id), 0, NULL) ||
+        !NTIMethodMatches(class_getInstanceMethod(tab, @selector(selectedViewController)), @encode(id), 0, NULL)) return NO;
+    size_t lifecycleCount = sizeof(lifecycle) / sizeof(lifecycle[0]);
+    if (!NTIHooksMatch(root, lifecycle, lifecycleCount) || !NTIHooksMatch(tab, &selection, 1)) return NO;
+    NTIReelRootClass = root;
+    NTIReelTabClass = tab;
+    NTIReelTabSessions = NSHashTable.weakObjectsHashTable;
+    NTIReplaceHooks(root, lifecycle, lifecycleCount);
+    NTIReplaceHooks(tab, &selection, 1);
+    NTIReelTabHooksInstalled = YES;
+    return YES;
 }
 @end

@@ -1,10 +1,17 @@
 #import <UIKit/UIKit.h>
-#import <objc/runtime.h>
+#import "RuntimeHooks.h"
 
 static IMP NTIOriginalGridWillLayout;
 static Class NTIExploreClass;
 static Class NTIListClass;
 static char NTIPlaceholderKey;
+
+@interface NTIExplorePlaceholder : UIImageView
+@property (nonatomic, weak) UIView *list;
+@property (nonatomic) BOOL originallyHidden;
+@end
+@implementation NTIExplorePlaceholder
+@end
 
 static BOOL NTIIsExploreTab(UIViewController *controller) {
     for (UIViewController *parent = controller.parentViewController; parent; parent = parent.parentViewController) {
@@ -15,53 +22,51 @@ static BOOL NTIIsExploreTab(UIViewController *controller) {
 
 static void NTIGridWillLayout(UIViewController *controller, SEL selector) {
     ((void (*)(id, SEL))NTIOriginalGridWillLayout)(controller, selector);
-    // The same grid controller may be used elsewhere in Instagram.
-    if (!NTIIsExploreTab(controller)) return;
 
-    // The search bar is outside this grid. Hide only its direct collection view.
-    UIView *root = controller.view;
+    // The search bar is outside this grid. Find only its direct collection view.
+    UIView *root = controller.viewIfLoaded;
     UIView *list = nil;
-    for (UIView *child in root.subviews) {
-        if ([child isKindOfClass:NTIListClass]) { list = child; break; }
+    if (NTIIsExploreTab(controller)) {
+        for (UIView *child in root.subviews) {
+            if ([child isKindOfClass:NTIListClass]) { list = child; break; }
+        }
+    }
+    NTIExplorePlaceholder *placeholder = objc_getAssociatedObject(controller, &NTIPlaceholderKey);
+    if (placeholder && (!list || placeholder.list != list || placeholder.superview != root)) {
+        placeholder.list.hidden = placeholder.originallyHidden;
+        [placeholder removeFromSuperview];
+        objc_setAssociatedObject(controller, &NTIPlaceholderKey, nil, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        placeholder = nil;
     }
     if (!list) return;
 
-    UIView *placeholder = objc_getAssociatedObject(controller, &NTIPlaceholderKey);
-    if (!placeholder || placeholder.superview != root) {
-        [placeholder removeFromSuperview];
-        placeholder = [[UIView alloc] initWithFrame:list.frame];
+    if (!placeholder) {
+        UIImageSymbolConfiguration *size = [UIImageSymbolConfiguration configurationWithPointSize:44];
+        placeholder = [[NTIExplorePlaceholder alloc] initWithImage:[UIImage systemImageNamed:@"magnifyingglass" withConfiguration:size]];
+        placeholder.list = list;
+        placeholder.originallyHidden = list.hidden;
         placeholder.backgroundColor = UIColor.systemBackgroundColor;
+        placeholder.tintColor = UIColor.secondaryLabelColor;
+        placeholder.contentMode = UIViewContentModeCenter;
         placeholder.userInteractionEnabled = NO;
         placeholder.accessibilityElementsHidden = YES;
-        UIImageView *icon = [[UIImageView alloc] initWithImage:[UIImage systemImageNamed:@"magnifyingglass"]];
-        icon.tintColor = UIColor.secondaryLabelColor;
-        icon.contentMode = UIViewContentModeScaleAspectFit;
-        icon.frame = CGRectMake(0, 0, 52, 52);
-        icon.center = CGPointMake(CGRectGetMidX(placeholder.bounds), CGRectGetMidY(placeholder.bounds));
-        icon.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin |
-                                UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-        [placeholder addSubview:icon];
         [root insertSubview:placeholder aboveSubview:list];
         objc_setAssociatedObject(controller, &NTIPlaceholderKey, placeholder, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     }
-    placeholder.frame = list.frame;
-    list.hidden = YES;
+    if (!CGRectEqualToRect(placeholder.frame, list.frame)) placeholder.frame = list.frame;
+    if (!list.hidden) list.hidden = YES;
 }
 
 @interface NTIExploreGrid : NSObject
 @end
 @implementation NTIExploreGrid
 + (void)load {
-    NSString *identifier = NSBundle.mainBundle.bundleIdentifier;
-    if (![identifier isEqualToString:@"com.burbn.instagram"] &&
-        ![identifier hasPrefix:@"com.burbn.instagram."]) return;
+    if (!NTIIsInstagram(NSBundle.mainBundle.bundleIdentifier)) return;
     Class grid = NSClassFromString(@"IGExploreGridViewController");
     NTIExploreClass = NSClassFromString(@"IGExploreViewController");
     NTIListClass = NSClassFromString(@"IGListCollectionView");
-    Method method = grid ? class_getInstanceMethod(grid, @selector(viewWillLayoutSubviews)) : NULL;
-    if (!method || !NTIExploreClass || !NTIListClass) return;
-    // Preserve Instagram's layout before updating the placeholder.
-    NTIOriginalGridWillLayout = method_getImplementation(method);
-    class_replaceMethod(grid, @selector(viewWillLayoutSubviews), (IMP)NTIGridWillLayout, method_getTypeEncoding(method));
+    if (!NTIExploreClass || !NTIListClass) return;
+    const NTIHook hook = {"viewWillLayoutSubviews", (IMP)NTIGridWillLayout, &NTIOriginalGridWillLayout, @encode(void), 0, {NULL}};
+    NTIInstallHooks(grid, &hook, 1);
 }
 @end

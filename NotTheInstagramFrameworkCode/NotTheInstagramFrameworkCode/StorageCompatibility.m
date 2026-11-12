@@ -2,7 +2,7 @@
 #import <Security/Security.h>
 #import <dlfcn.h>
 #import <mach-o/dyld.h>
-#import <objc/runtime.h>
+#import "RuntimeHooks.h"
 #import "Vendor/fishhook/fishhook.h"
 
 // Re-signing can remove access to Meta's storage groups. Retry only the known
@@ -11,6 +11,7 @@ static NSString *const NTIMetaKeychainGroup = @"group.com.facebook.family";
 static NSString *const NTIProbeService = @"wtf.rational.NotTheInstagram.keychain-group-probe";
 static NSString *NTIImageRoot;
 static NSString *NTIBundleIdentifier;
+static NSString *NTIInstalledAppGroup;
 static NSURL *NTIAppGroupsURL;
 static NSLock *NTIKeychainGroupLock;
 static NSString *NTIKeychainGroup;
@@ -20,7 +21,7 @@ static OSStatus (*NTIOriginalAdd)(CFDictionaryRef, CFTypeRef *);
 static OSStatus (*NTIOriginalCopyMatching)(CFDictionaryRef, CFTypeRef *);
 static OSStatus (*NTIOriginalUpdate)(CFDictionaryRef, CFDictionaryRef);
 static OSStatus (*NTIOriginalDelete)(CFDictionaryRef);
-static NSURL *(*NTIOriginalContainerURL)(id, SEL, NSString *);
+static IMP NTIOriginalContainerURL;
 
 #pragma mark - Keychain storage
 
@@ -29,13 +30,13 @@ static NSURL *(*NTIOriginalContainerURL)(id, SEL, NSString *);
 // deleted immediately. A private replacement group keeps broad group queries
 // from reading/deleting items in Instagram's ordinary default group.
 static NSString *NTIProbeKeychainGroup(NSString *requestedGroup) {
-    NSDictionary *identity = @{
+    NSMutableDictionary *cleanup = [@{
         (__bridge id)kSecClass: (__bridge id)kSecClassGenericPassword,
         (__bridge id)kSecAttrService: NTIProbeService,
         (__bridge id)kSecAttrAccount: NSUUID.UUID.UUIDString,
-    };
-    NSMutableDictionary *probe = identity.mutableCopy;
-    if (requestedGroup) probe[(__bridge id)kSecAttrAccessGroup] = requestedGroup;
+    } mutableCopy];
+    if (requestedGroup) cleanup[(__bridge id)kSecAttrAccessGroup] = requestedGroup;
+    NSMutableDictionary *probe = cleanup.mutableCopy;
     probe[(__bridge id)kSecValueData] = NSData.data;
     probe[(__bridge id)kSecAttrAccessible] = (__bridge id)kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly;
     probe[(__bridge id)kSecReturnAttributes] = @YES;
@@ -49,12 +50,10 @@ static NSString *NTIProbeKeychainGroup(NSString *requestedGroup) {
     id group = [attributes isKindOfClass:NSDictionary.class]
         ? attributes[(__bridge id)kSecAttrAccessGroup] : nil;
     // Delete only this probe's unique identity; never reuse a caller's query.
-    NSMutableDictionary *cleanup = identity.mutableCopy;
     if ([group isKindOfClass:NSString.class] && [group length] > 0) {
         cleanup[(__bridge id)kSecAttrAccessGroup] = group;
     } else {
         group = nil;
-        if (requestedGroup) cleanup[(__bridge id)kSecAttrAccessGroup] = requestedGroup;
         NSLog(@"[NTI] keychain probe did not return an access group");
     }
     OSStatus cleanupStatus = NTIOriginalDelete((__bridge CFDictionaryRef)cleanup);
@@ -103,19 +102,23 @@ static NSDictionary *NTIMapGroup(CFDictionaryRef dictionary, NSString *group) {
     return mapped;
 }
 
+static NSString *NTIRetryGroup(OSStatus status, CFDictionaryRef query, CFDictionaryRef attributes) {
+    if (status != errSecMissingEntitlement || (!NTIHasMetaGroup(query) && !NTIHasMetaGroup(attributes))) return nil;
+    return NTIReplacementKeychainGroup();
+}
+
 typedef OSStatus (*NTIKeychainResultFunction)(CFDictionaryRef, CFTypeRef *);
 static OSStatus NTICallWithResult(NTIKeychainResultFunction original, CFDictionaryRef query, CFTypeRef *result) {
     // Forward the final retained result to the caller. If a retry replaces an
     // intermediate result, release that object first to preserve CF ownership.
     CFTypeRef value = NULL;
     OSStatus status = original(query, result ? &value : NULL);
-    if (status == errSecMissingEntitlement && NTIHasMetaGroup(query)) {
-        NSString *group = NTIReplacementKeychainGroup();
-        if (group) {
-            if (value) { CFRelease(value); value = NULL; }
-            NSDictionary *mapped = NTIMapGroup(query, group);
-            status = original((__bridge CFDictionaryRef)mapped, result ? &value : NULL);
-        }
+    NSString *group = NTIRetryGroup(status, query, NULL);
+    if (group) {
+        if (value) CFRelease(value);
+        value = NULL;
+        NSDictionary *mapped = NTIMapGroup(query, group);
+        status = original((__bridge CFDictionaryRef)mapped, result ? &value : NULL);
     }
     if (result) *result = value;
     return status;
@@ -133,9 +136,7 @@ static OSStatus NTISecItemCopyMatching(CFDictionaryRef query, CFTypeRef *result)
 // Each hook tries the original call first, preserving successes and other errors.
 static OSStatus NTISecItemUpdate(CFDictionaryRef query, CFDictionaryRef attributes) {
     OSStatus status = NTIOriginalUpdate(query, attributes);
-    if (status != errSecMissingEntitlement ||
-        (!NTIHasMetaGroup(query) && !NTIHasMetaGroup(attributes))) return status;
-    NSString *group = NTIReplacementKeychainGroup();
+    NSString *group = NTIRetryGroup(status, query, attributes);
     if (!group) return status;
     NSDictionary *mappedQuery = NTIMapGroup(query, group);
     // An update may specify the access group in either dictionary.
@@ -146,8 +147,7 @@ static OSStatus NTISecItemUpdate(CFDictionaryRef query, CFDictionaryRef attribut
 
 static OSStatus NTISecItemDelete(CFDictionaryRef query) {
     OSStatus status = NTIOriginalDelete(query);
-    if (status != errSecMissingEntitlement || !NTIHasMetaGroup(query)) return status;
-    NSString *group = NTIReplacementKeychainGroup();
+    NSString *group = NTIRetryGroup(status, query, NULL);
     if (!group) return status;
     NSDictionary *mapped = NTIMapGroup(query, group);
     return NTIOriginalDelete((__bridge CFDictionaryRef)mapped);
@@ -160,11 +160,11 @@ static BOOL NTIRecognizesAppGroup(NSString *identifier) {
     return [identifier isEqualToString:@"group.com.burbn.instagram"] ||
            [identifier isEqualToString:@"group.com.facebook.family"] ||
            [identifier isEqualToString:@"group.com.facebook.msysstorage"] ||
-           [identifier isEqualToString:[@"group." stringByAppendingString:NTIBundleIdentifier]];
+           [identifier isEqualToString:NTIInstalledAppGroup];
 }
 
 static NSURL *NTIContainerURL(id manager, SEL selector, NSString *identifier) {
-    NSURL *original = NTIOriginalContainerURL(manager, selector, identifier);
+    NSURL *original = ((NSURL *(*)(id, SEL, NSString *))NTIOriginalContainerURL)(manager, selector, identifier);
     if (original || !NTIRecognizesAppGroup(identifier)) return original;
     // Instagram expects a real path even when its shared group is unavailable.
     // A separate persistent folder per group preserves the app's stored files.
@@ -181,17 +181,6 @@ static NSURL *NTIContainerURL(id manager, SEL selector, NSString *identifier) {
     static dispatch_once_t once;
     dispatch_once(&once, ^{ NSLog(@"[NTI] using persistent app-owned container for unavailable Instagram groups"); });
     return directory;
-}
-
-static BOOL NTIInstallContainerHook(void) {
-    Class managerClass = NSFileManager.class;
-    SEL selector = @selector(containerURLForSecurityApplicationGroupIdentifier:);
-    Method method = class_getInstanceMethod(managerClass, selector);
-    if (!method) return NO;
-    NTIOriginalContainerURL = (void *)method_getImplementation(method);
-    // Redirect the Objective-C lookup; the replacement still calls the original.
-    class_replaceMethod(managerClass, selector, (IMP)NTIContainerURL, method_getTypeEncoding(method));
-    return YES;
 }
 
 #pragma mark - Hook installation
@@ -212,7 +201,7 @@ static void NTIRebindImage(const struct mach_header *header, intptr_t slide) {
         NSString *path = NTINormalizeImagePath([NSString stringWithUTF8String:image.dli_fname]);
         // Only rewrite imports belonging to Instagram, leaving system images alone.
         if (![path hasPrefix:NTIImageRoot]) return;
-        struct rebinding bindings[] = {
+        static const struct rebinding bindings[] = {
             {"SecItemAdd", (void *)NTISecItemAdd},
             {"SecItemCopyMatching", (void *)NTISecItemCopyMatching},
             {"SecItemUpdate", (void *)NTISecItemUpdate},
@@ -233,9 +222,9 @@ static void NTIRebindImage(const struct mach_header *header, intptr_t slide) {
     // with dispatch_once during startup. Main-queue installation would be late.
     NSBundle *bundle = NSBundle.mainBundle;
     NSString *identifier = bundle.bundleIdentifier;
-    if (![identifier isEqualToString:@"com.burbn.instagram"] &&
-        ![identifier hasPrefix:@"com.burbn.instagram."]) return;
+    if (!NTIIsInstagram(identifier)) return;
     NTIBundleIdentifier = identifier;
+    NTIInstalledAppGroup = [@"group." stringByAppendingString:identifier];
     NTIImageRoot = [NTINormalizeImagePath(bundle.bundlePath) stringByAppendingString:@"/"];
     NSURL *support = [NSFileManager.defaultManager URLsForDirectory:NSApplicationSupportDirectory
                                                         inDomains:NSUserDomainMask].firstObject;
@@ -245,7 +234,9 @@ static void NTIRebindImage(const struct mach_header *header, intptr_t slide) {
     NTIOriginalCopyMatching = dlsym(RTLD_DEFAULT, "SecItemCopyMatching");
     NTIOriginalUpdate = dlsym(RTLD_DEFAULT, "SecItemUpdate");
     NTIOriginalDelete = dlsym(RTLD_DEFAULT, "SecItemDelete");
-    BOOL containerHook = NTIInstallContainerHook();
+    const NTIHook container = {"containerURLForSecurityApplicationGroupIdentifier:", (IMP)NTIContainerURL,
+        &NTIOriginalContainerURL, @encode(id), 1, {@encode(id)}};
+    BOOL containerHook = NTIAppGroupsURL && NTIInstallHooks(NSFileManager.class, &container, 1);
     BOOL keychainReady = NTIOriginalAdd && NTIOriginalCopyMatching && NTIOriginalUpdate && NTIOriginalDelete;
     // dyld invokes this for existing images and for images loaded later.
     if (keychainReady) _dyld_register_func_for_add_image(NTIRebindImage);

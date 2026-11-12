@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "RuntimeHooks.h"
 @import FLEX;
 
 // Keep the explorer out of ordinary use. A three-finger double tap opens it
@@ -10,9 +11,7 @@
 @implementation NTIFLEXIntegration
 
 + (void)load {
-    NSString *identifier = NSBundle.mainBundle.bundleIdentifier;
-    if (![identifier isEqualToString:@"com.burbn.instagram"] &&
-        ![identifier hasPrefix:@"com.burbn.instagram."]) return;
+    if (!NTIIsInstagram(NSBundle.mainBundle.bundleIdentifier)) return;
 
     // UIKit work must wait until after image loading and run on the main queue.
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -35,8 +34,8 @@
 - (void)installOnWindow:(UIWindow *)window {
     // Ignore keyboard, system overlays, and FLEX's own explorer window.
     if (window.hidden || window.windowLevel != UIWindowLevelNormal ||
-        [window isKindOfClass:NSClassFromString(@"FLEXWindow")] ||
-        [self.installedWindows containsObject:window]) return;
+        [self.installedWindows containsObject:window] ||
+        [window isKindOfClass:NSClassFromString(@"FLEXWindow")]) return;
 
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]
         initWithTarget:self action:@selector(openExplorer:)];
@@ -52,6 +51,10 @@
 }
 
 - (void)refreshWindows:(NSNotification *)notification {
+    if ([notification.object isKindOfClass:UIWindowScene.class]) {
+        for (UIWindow *window in ((UIWindowScene *)notification.object).windows) [self installOnWindow:window];
+        return;
+    }
     // Instagram still uses the pre-scene application lifecycle. Its windows
     // are absent from connectedScenes and legitimately have no windowScene.
 #pragma clang diagnostic push
@@ -75,8 +78,9 @@
 }
 
 - (void)openExplorer:(UITapGestureRecognizer *)gesture {
-    if (gesture.state != UIGestureRecognizerStateRecognized) return;
-    UIWindowScene *scene = gesture.view.window.windowScene;
+    UIWindow *window = gesture.view.window;
+    if (gesture.state != UIGestureRecognizerStateRecognized || !window || window.hidden) return;
+    UIWindowScene *scene = window.windowScene;
     if (scene) {
         if (scene.activationState != UISceneActivationStateForegroundActive) return;
         [FLEXManager.sharedManager showExplorerFromScene:scene];

@@ -39,7 +39,7 @@ All paths below are relative to the project root.
 | --- | --- |
 | `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelNavigation.h` | Existing saved master switch. |
 | `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelNavigation.m` | Per-feed native flag requests, backing-state enforcement, scoped collection paging, engine ownership and cancellation. |
-| `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelRuntime.h` | Internal ABI checks and safe class-local method replacements. |
+| `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/RuntimeHooks.h` | Internal ABI checks and safe class-local method replacements. |
 | `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelTabSession.h` / `.m` | Root-tab identity, continuous foreground wait, consent button, in-memory bypass, blocker and accessibility restoration. |
 | `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelPlaybackGate.h` / `.m` | Deferred play requests, per-media identity, weak ownership, blur and cancellation on native pause/stop/reuse or session changes. |
 
