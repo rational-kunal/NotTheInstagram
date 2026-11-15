@@ -5,10 +5,17 @@ classes and methods were investigated against Instagram 455.0.0. Each hook
 checks the Instagram bundle ID, including Sideloadly suffixes. Runtime hooks
 check their method signatures before installation.
 
-The framework source is grouped into `Features/` for Home, Reels, and
-Explore, `Compatibility/` for launch and storage hooks, `Diagnostics/`
-for FLEX, and `Runtime/` for shared hook validation. Xcode discovers
-these folders through the synchronized source group.
+The framework source is grouped into `Features/` for Home, Reels, Explore,
+and the usage label, `Compatibility/` for launch and storage hooks,
+`Diagnostics/` for FLEX, and `Runtime/` for shared hook validation. Xcode
+discovers these folders through the synchronized source group.
+
+## Show time spent today and this week
+
+A label at the bottom of Instagram shows how long the app has been active
+today and during the current Monday-start week. It lets taps and swipes pass
+through. Totals are saved locally from the first launch with the feature.
+[Usage label](usage-label/README.md)
 
 ## Reveal Home posts three at a time
 
