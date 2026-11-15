@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "RuntimeHooks.h"
+#import "../Runtime/RuntimeHooks.h"
 
 typedef void (*NTIPresentImplementation)(id, SEL, UIViewController *, BOOL, void (^)(void));
 static IMP NTIOriginalPresent;

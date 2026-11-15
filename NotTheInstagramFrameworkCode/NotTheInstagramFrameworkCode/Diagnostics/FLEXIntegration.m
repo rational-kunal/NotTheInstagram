@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "RuntimeHooks.h"
+#import "../Runtime/RuntimeHooks.h"
 @import FLEX;
 
 // Keep the explorer out of ordinary use. A three-finger double tap opens it

@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-#import "RuntimeHooks.h"
+#import "../Runtime/RuntimeHooks.h"
 
 static IMP NTIOriginalGridWillLayout;
 static Class NTIExploreClass;

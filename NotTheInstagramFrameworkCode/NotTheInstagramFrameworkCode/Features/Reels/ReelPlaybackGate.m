@@ -1,5 +1,5 @@
 #import "ReelPlaybackGate.h"
-#import "RuntimeHooks.h"
+#import "../../Runtime/RuntimeHooks.h"
 #import "ReelTabSession.h"
 
 @class NTIReelPlaybackRequest;

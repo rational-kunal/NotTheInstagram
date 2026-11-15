@@ -35,6 +35,11 @@ static inline id NTIObjectValue(id object, SEL selector) {
     return ((id (*)(id, SEL))objc_msgSend)(object, selector);
 }
 
+static inline BOOL NTIBoolValueIs(id object, SEL selector, BOOL expected) {
+    return NTIMethodMatches(class_getInstanceMethod(object_getClass(object), selector), @encode(BOOL), 0, NULL) &&
+        ((BOOL (*)(id, SEL))objc_msgSend)(object, selector) == expected;
+}
+
 static inline BOOL NTIHooksMatch(Class cls, const NTIHook *hooks, size_t count) {
     if (!cls) return NO;
     for (size_t i = 0; i < count; i++) {

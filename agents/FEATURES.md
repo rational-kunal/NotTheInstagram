@@ -5,6 +5,18 @@ classes and methods were investigated against Instagram 455.0.0. Each hook
 checks the Instagram bundle ID, including Sideloadly suffixes. Runtime hooks
 check their method signatures before installation.
 
+The framework source is grouped into `Features/` for Home, Reels, and
+Explore, `Compatibility/` for launch and storage hooks, `Diagnostics/`
+for FLEX, and `Runtime/` for shared hook validation. Xcode discovers
+these folders through the synchronized source group.
+
+## Reveal Home posts three at a time
+
+Home reveals three posts at each boundary. The waits are 8, 11, and then
+14 seconds for subsequent boundaries. The spinner must remain visible
+while the wait runs. The native request handles fetching the next page.
+[Home Feed pagination](home-feed-investigation/README.md)
+
 ## Open a Reel without entering an endless feed
 
 A Reel opened from a post, message, or other viewer plays immediately. Swiping
@@ -15,7 +27,7 @@ and disables scrolling on the Reel collection. It also blocks the native
 auto-scroll engine unless it can tie that engine to an unlocked Reels tab.
 The framework keeps track of Instagram's requested settings so it can restore
 them when the tab is unlocked.
-[Reel navigation](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelNavigation.m)
+[Reel navigation](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Features/Reels/ReelNavigation.m)
 
 ## Pause before entering the Reels tab
 
@@ -31,7 +43,7 @@ measure the wait, and the button checks the full wait again before unlocking.
 The pause screen hides covered content from VoiceOver and restores its previous
 accessibility state on unlock. The Reel features share a saved switch that
 defaults to on and takes effect after relaunch.
-[Tab session](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelTabSession.m)
+[Tab session](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Features/Reels/ReelTabSession.m)
 
 ## Add a pause between Reels
 
@@ -46,7 +58,7 @@ forwarding the saved play request. Layout and session changes can recheck a
 pending request, and Instagram's pause, stop, and reuse calls cancel it.
 Ordinary videos outside a Reel feed use the original player without allocating
 delay state.
-[Playback gate](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelPlaybackGate.m)
+[Playback gate](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Features/Reels/ReelPlaybackGate.m)
 
 ## Keep search while hiding the Explore grid
 
@@ -57,7 +69,7 @@ The framework hides the grid's direct collection view only under Explore.
 One lightweight placeholder fills the same area. If Instagram replaces the
 collection or lays out the controller in a different context, the previous
 collection's hidden state is restored. Instagram can still fetch grid data.
-[Explore grid](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ExploreGrid.m)
+[Explore grid](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Features/ExploreGrid.m)
 
 ## Skip the TestFlight update prompt
 
@@ -67,7 +79,7 @@ dialogs use UIKit's normal presentation path.
 
 The framework identifies the specific TestFlight update controller when
 Instagram asks UIKit to present it.
-[Beta update bypass](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/BetaUpdateBypass.m)
+[Beta update bypass](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Compatibility/BetaUpdateBypass.m)
 
 ## Keep login storage working after sideloading
 
@@ -79,7 +91,7 @@ known Meta folders that iOS denies, it creates a persistent folder inside the
 app's container. For keychain calls that fail because the app lacks access to
 Meta's family group, it retries against a separate app-owned group after
 Security verifies access. Credentials stay in the iOS keychain.
-[Storage compatibility](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/StorageCompatibility.m)
+[Storage compatibility](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Compatibility/StorageCompatibility.m)
 
 ## Open FLEX for inspection
 
@@ -89,13 +101,14 @@ The framework attaches one gesture to each eligible app window, including
 legacy windows and windows managed by scenes. The gesture allows simultaneous
 recognition and keeps ordinary touches flowing to Instagram. It opens FLEX in
 the active scene or active legacy app.
-[FLEX integration](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/FLEXIntegration.m)
+[FLEX integration](../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Diagnostics/FLEXIntegration.m)
 
 ## Build and verification
 
 Run `./scripts/build-framework.sh` and attach the resulting
 `latest-framework/NotTheInstagramFrameworkCode.framework` in Sideloadly.
 The refactored framework builds for arm64 iOS devices. A UIKit simulator
-fixture passed 21 checks across Reels, Explore, the beta prompt, and shared
-folders. Ten FLEX checks and six simulated keychain checks also passed.
+fixture passed 26 checks across Home pagination, Reels, Explore, the beta
+prompt, and shared folders. Ten FLEX checks and six simulated keychain
+checks also passed.
 On-device verification inside Instagram is pending.

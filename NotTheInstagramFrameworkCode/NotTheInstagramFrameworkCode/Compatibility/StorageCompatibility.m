@@ -2,8 +2,8 @@
 #import <Security/Security.h>
 #import <dlfcn.h>
 #import <mach-o/dyld.h>
-#import "RuntimeHooks.h"
-#import "Vendor/fishhook/fishhook.h"
+#import "../Runtime/RuntimeHooks.h"
+#import "../Vendor/fishhook/fishhook.h"
 
 // Re-signing can remove access to Meta's storage groups. Retry only the known
 // failures using storage permitted to this installed copy of Instagram.

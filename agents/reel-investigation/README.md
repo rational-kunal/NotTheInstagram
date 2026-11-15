@@ -24,9 +24,9 @@ device check, especially for the disabled setting.
 
 ## Files and responsibilities
 
-- `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelNavigation.h`:
+- `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Features/Reels/ReelNavigation.h`:
   small internal API for future settings UI; no Instagram private types exposed.
-- `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/ReelNavigation.m`:
+- `NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Features/Reels/ReelNavigation.m`:
   preference storage, private-method compatibility checks, hook installation,
   stored flag enforcement, feed paging restriction and timer suppression.
 - This note: retained investigation findings, decisions, validation and follow-up

@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 @import FLEX;
-#import "../../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/FLEXIntegration.m"
+#import "../../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Diagnostics/FLEXIntegration.m"
 @implementation UIView
 @end
 @implementation UIScene

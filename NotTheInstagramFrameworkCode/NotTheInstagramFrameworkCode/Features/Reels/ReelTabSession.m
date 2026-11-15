@@ -1,5 +1,5 @@
 #import "ReelTabSession.h"
-#import "RuntimeHooks.h"
+#import "../../Runtime/RuntimeHooks.h"
 
 NSString *const NTIReelTabSessionDidChangeNotification = @"NTIReelTabSessionDidChange";
 static const NSTimeInterval NTIReelBypassWait = 120.0;
@@ -14,7 +14,7 @@ static IMP NTITabOriginalLoad, NTITabOriginalWillAppear, NTITabOriginalDidAppear
 static IMP NTITabOriginalWillDisappear, NTITabOriginalLayout, NTITabOriginalSelect;
 
 @interface NTIReelTabSession ()
-@property (nonatomic, weak, readwrite) UIViewController *controller;
+@property (nonatomic, weak, nullable) UIViewController *controller;
 @property (nonatomic, weak) UIViewController *tabController;
 @property (nonatomic, strong) id surface;
 @property (nonatomic, readwrite, getter=isBypassed) BOOL bypassed;
@@ -50,10 +50,7 @@ static id NTITabSelectedReelsSurface(UIViewController *root, UIViewController *t
     if (!tabController || NTITabControllerForRoot(root) != tabController) return nil;
     // Instagram's predicate also recognizes the Homecoming Reels route, whose
     // surface does not have the legacy CLIPS label.
-    SEL isReels = sel_registerName("isOnDiscoverVideo");
-    if (!NTIMethodMatches(class_getInstanceMethod(object_getClass(tabController), isReels),
-                              @encode(BOOL), 0, NULL) ||
-        !((BOOL (*)(id, SEL))objc_msgSend)(tabController, isReels)) return nil;
+    if (!NTIBoolValueIs(tabController, sel_registerName("isOnDiscoverVideo"), YES)) return nil;
     id selected = NTIObjectValue(tabController, @selector(selectedViewController));
     if (![selected isKindOfClass:UIViewController.class]) return nil;
     UIViewController *branch = selected;

@@ -1,5 +1,5 @@
 #import "ReelNavigation.h"
-#import "RuntimeHooks.h"
+#import "../../Runtime/RuntimeHooks.h"
 #import "ReelTabSession.h"
 #import "ReelPlaybackGate.h"
 

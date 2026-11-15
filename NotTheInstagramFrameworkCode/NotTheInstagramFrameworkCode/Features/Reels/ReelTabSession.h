@@ -17,7 +17,6 @@ FOUNDATION_EXPORT NSString *const NTIReelTabSessionDidChangeNotification;
 /// Grows slightly after each newly started reel; resets when the session ends.
 @property (nonatomic, readonly) NSTimeInterval playbackDelay;
 - (void)recordPlaybackWithIdentity:(nullable NSString *)identity player:(UIView *)player;
-@property (nonatomic, weak, readonly, nullable) UIViewController *controller;
 @end
 
 NS_ASSUME_NONNULL_END
