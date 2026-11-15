@@ -1,0 +1,32 @@
+name: Something broke
+description: A feature stopped working, or Instagram misbehaves with the framework injected.
+title: "Broken: "
+labels: ["bug"]
+body:
+  - type: input
+    id: instagram
+    attributes:
+      label: Instagram version
+      description: On the iPhone, Settings > General > iPhone Storage > Instagram shows it. Everything was tested on 455.0.0.
+      placeholder: 455.0.0
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: iPhone and iOS version
+      placeholder: iPhone 15, iOS 27.0.1
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshot or screen recording
+      description: Optional. Blur names and messages you don't want public.

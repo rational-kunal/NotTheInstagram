@@ -4,7 +4,7 @@
 
 I can't delete Instagram. My friends are there and memes get sent on DM. But I kept looking up and realizing an hour was gone. So I built an iOS framework that gets injected into Instagram and makes the infinite parts slow and a little boring. DMs, posts, stories and search keep working.
 
-> 📝 **The story behind it:** [I used an AI agent to make my Instagram boring](TODO) <!-- TODO: replace TODO with the published blog URL -->
+> 📝 **The story behind it:** [I used an AI agent to make my Instagram boring](https://rationalkunal.in/writing/make-instagram-boring-with-an-ai-agent/)
 
 <table align="center">
   <tr>
@@ -37,7 +37,7 @@ The classes were found with FLEX (what is on screen) and [Hopper](https://www.ho
 
 ## Try it yourself
 
-You need a Mac with Xcode, an iPhone (iOS 15+), an Apple account, [Sideloadly](https://sideloadly.io/), and a decrypted Instagram IPA. I can't share the IPA. Everything was tested on **Instagram 455.0.0**.
+You need a Mac with Xcode, an iPhone (iOS 15+), an Apple account, [Sideloadly](https://sideloadly.io/), and a decrypted Instagram IPA. I can't share the IPA. Everything was tested on **Instagram 455.0.0**, on an iPhone 15 with iOS 27.0.1.
 
 1. Clone and build the framework:
 
@@ -65,9 +65,9 @@ If you find this fun or useful, a star helps other people find it. It would also
 
 ## Want something changed in Instagram?
 
-You don't need to be technical. [Open an issue](https://github.com/rational-kunal/NotTheInstagram/issues/new) and describe what you want Instagram to do, or stop doing, in plain English.
+You don't need to be technical. [Open an issue](https://github.com/rational-kunal/NotTheInstagram/issues/new/choose) and describe what you want Instagram to do, or stop doing, in plain English. Or add it to [What would you change in Instagram?](https://github.com/rational-kunal/NotTheInstagram/discussions/1)
 
-A few ideas already on my list: hide like counts, turn the app grayscale after 30 minutes, hide "Suggested for you" posts. If your idea is interesting, I'll try building it. Pull requests are welcome too.
+A few ideas already on my list: [hide like counts](https://github.com/rational-kunal/NotTheInstagram/issues/2), [turn the app grayscale after 30 minutes](https://github.com/rational-kunal/NotTheInstagram/issues/3), [hide "Suggested for you" posts](https://github.com/rational-kunal/NotTheInstagram/issues/4). If your idea is interesting, I'll try building it. Pull requests are welcome too. The grayscale one is a good first one, since it doesn't touch Instagram's own classes.
 
 ---
 
