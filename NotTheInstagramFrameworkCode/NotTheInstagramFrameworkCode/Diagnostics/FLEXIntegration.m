@@ -1,9 +1,14 @@
-#import <UIKit/UIKit.h>
+#import "FLEXIntegration.h"
 #import "../Runtime/RuntimeHooks.h"
 @import FLEX;
 
-// Keep the explorer out of ordinary use. A three-finger double tap opens it
-// without replacing Instagram's window methods or cancelling its touches.
+static __weak UIView *NTIFLEXUsageLabel;
+
+void NTISetFLEXUsageLabel(UIView *label) {
+    NTIFLEXUsageLabel = label;
+}
+
+// Keep the explorer out of ordinary use and leave Instagram's touches intact.
 @interface NTIFLEXIntegration : NSObject <UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSHashTable<UIWindow *> *installedWindows;
 @end
@@ -26,7 +31,7 @@
         [center addObserver:integration selector:@selector(refreshWindows:)
                        name:UISceneDidActivateNotification object:nil];
         [integration refreshWindows:nil];
-        NSLog(@"[NTI] FLEX activation v2 ready: double-tap with three fingers (attached windows=%lu)",
+        NSLog(@"[NTI] FLEX activation v3 ready: double-tap with three fingers or hold the usage label (attached windows=%lu)",
               (unsigned long)integration.installedWindows.count);
     });
 }
@@ -37,15 +42,20 @@
         [self.installedWindows containsObject:window] ||
         [window isKindOfClass:NSClassFromString(@"FLEXWindow")]) return;
 
-    UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc]
-        initWithTarget:self action:@selector(openExplorer:)];
-    gesture.numberOfTouchesRequired = 3;
-    gesture.numberOfTapsRequired = 2;
-    gesture.cancelsTouchesInView = NO;
-    gesture.delaysTouchesBegan = NO;
-    gesture.delaysTouchesEnded = NO;
-    gesture.delegate = self;
-    [window addGestureRecognizer:gesture];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+        initWithTarget:self action:@selector(openFromTap:)];
+    tap.numberOfTouchesRequired = 3;
+    tap.numberOfTapsRequired = 2;
+    UILongPressGestureRecognizer *hold = [[UILongPressGestureRecognizer alloc]
+        initWithTarget:self action:@selector(openFromHold:)];
+    hold.minimumPressDuration = 1;
+    for (UIGestureRecognizer *gesture in @[tap, hold]) {
+        gesture.cancelsTouchesInView = NO;
+        gesture.delaysTouchesBegan = NO;
+        gesture.delaysTouchesEnded = NO;
+        gesture.delegate = self;
+        [window addGestureRecognizer:gesture];
+    }
     [self.installedWindows addObject:window];
     NSLog(@"[NTI] FLEX opener attached (scene=%d)", window.windowScene != nil);
 }
@@ -77,10 +87,22 @@
     }
 }
 
-- (void)openExplorer:(UITapGestureRecognizer *)gesture {
-    UIWindow *window = gesture.view.window;
-    if (gesture.state != UIGestureRecognizerStateRecognized || !window || window.hidden) return;
+- (void)openFromTap:(UITapGestureRecognizer *)tap {
+    if (tap.state == UIGestureRecognizerStateRecognized) {
+        [self openExplorerInWindow:(UIWindow *)tap.view trigger:@"three-finger tap"];
+    }
+}
+
+- (void)openFromHold:(UILongPressGestureRecognizer *)hold {
+    if (hold.state == UIGestureRecognizerStateBegan) {
+        [self openExplorerInWindow:(UIWindow *)hold.view trigger:@"usage label"];
+    }
+}
+
+- (void)openExplorerInWindow:(UIWindow *)window trigger:(NSString *)trigger {
+    if (!window || window.hidden) return;
     UIWindowScene *scene = window.windowScene;
+    NSLog(@"[NTI] FLEX gesture recognized (%@, scene=%d)", trigger, scene != nil);
     if (scene) {
         if (scene.activationState != UISceneActivationStateForegroundActive) return;
         [FLEXManager.sharedManager showExplorerFromScene:scene];
@@ -89,6 +111,13 @@
         [FLEXManager.sharedManager showExplorer];
     }
     NSLog(@"[NTI] FLEX open requested (scene=%d)", scene != nil);
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gesture shouldReceiveTouch:(UITouch *)touch {
+    if (![gesture isKindOfClass:UILongPressGestureRecognizer.class]) return YES;
+    UIView *label = NTIFLEXUsageLabel;
+    return label.window && label.window == gesture.view && !label.hidden &&
+        CGRectContainsPoint(label.bounds, [touch locationInView:label]);
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer

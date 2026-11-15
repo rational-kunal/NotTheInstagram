@@ -15,8 +15,8 @@ app. FLEX's license prohibits including it in an App Store submission.
 2. Replace Sideloadly's framework attachment with
    `latest-framework/NotTheInstagramFrameworkCode.framework` and install using
    the existing signing and bundle identifier settings.
-3. In Instagram, double-tap with three fingers to open FLEX. Close its toolbar
-   normally; the same gesture opens it again.
+3. In Instagram, double-tap with three fingers or hold the usage label at the
+   bottom for one second to open FLEX. Either gesture can reopen the toolbar.
 
 FLEX starts hidden. The integration does not explicitly enable network capture;
 FLEX's own settings control it. Capturing NSURLSession traffic does not imply
@@ -83,3 +83,12 @@ recognition. Logs distinguish attachment from a recognized action:
 The phone was discoverable through CoreDevice during diagnosis, but no live
 debugger or actual touch replay was used. The exact installed-window state and
 possible system-level gesture interception remain unverified.
+
+## Follow-up — 2026-11-15
+
+Live iPhone Console logs showed the v2 opener attaching to a scene window,
+without an open request in the capture. The v3 integration keeps the original
+gesture and accepts a one-finger hold starting inside the usage label. It now
+logs gesture recognition before checking whether the app or scene is active.
+The activation fixture covers the new gesture and rejects touches outside the
+label. The device build succeeded. The new gesture still needs an iPhone test.

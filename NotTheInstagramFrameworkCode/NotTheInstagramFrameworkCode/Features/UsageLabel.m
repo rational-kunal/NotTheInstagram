@@ -1,4 +1,5 @@
 #import <UIKit/UIKit.h>
+#import "../Diagnostics/FLEXIntegration.h"
 #import "../Runtime/RuntimeHooks.h"
 
 static NSString *const UsageDefaultsKey = @"com.not-the-instagram.usage-label.daily-seconds.v1";
@@ -158,6 +159,7 @@ static NSString *NTIUsageDuration(NSTimeInterval seconds) {
     badge.layer.zPosition = 1000;
     [window addSubview:badge];
     self.badge = badge;
+    NTISetFLEXUsageLabel(badge);
     UILayoutGuide *safeArea = window.safeAreaLayoutGuide;
     [NSLayoutConstraint activateConstraints:@[
         [badge.centerXAnchor constraintEqualToAnchor:safeArea.centerXAnchor],

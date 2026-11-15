@@ -3,6 +3,9 @@
 #import "../../NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/Diagnostics/FLEXIntegration.m"
 @implementation UIView
 @end
+@implementation UITouch
+- (CGPoint)locationInView:(UIView *)view { return self.location; }
+@end
 @implementation UIScene
 @end
 @implementation UIWindowScene
@@ -13,11 +16,16 @@
     return self;
 }
 - (void)fire {
-    self.state = UIGestureRecognizerStateRecognized;
+    [self fireWithState:UIGestureRecognizerStateRecognized];
+}
+- (void)fireWithState:(UIGestureRecognizerState)state {
+    self.state = state;
     ((void (*)(id, SEL, id))[self.target methodForSelector:self.action])(self.target, self.action, self);
 }
 @end
 @implementation UITapGestureRecognizer
+@end
+@implementation UILongPressGestureRecognizer
 @end
 @implementation UIWindow
 - (instancetype)init {
@@ -59,16 +67,17 @@ int main(void) { @autoreleasepool {
     UIWindow *legacy = UIWindow.new;
     app.windows = @[legacy];
     [integration refreshWindows:nil];
-    check(legacy.gestureRecognizers.count == 1, @"existing legacy window receives opener");
+    check([legacy.gestureRecognizers.firstObject isKindOfClass:UITapGestureRecognizer.class], @"existing legacy window receives opener");
     [legacy.gestureRecognizers.firstObject fire];
     check(manager.presentations == 1, @"recognized gesture opens FLEX without a scene");
     UIWindow *replacement = UIWindow.new;
     [integration windowBecameVisible:[NSNotification notificationWithName:UIWindowDidBecomeVisibleNotification object:replacement]];
-    check(replacement.gestureRecognizers.count == 1, @"replacement legacy window receives opener");
+    check([replacement.gestureRecognizers.firstObject isKindOfClass:UITapGestureRecognizer.class], @"replacement legacy window receives opener");
     [replacement.gestureRecognizers.firstObject fire];
     check(manager.presentations == 2, @"replacement window can reopen FLEX");
+    NSUInteger gestureCount = legacy.gestureRecognizers.count;
     [integration refreshWindows:nil];
-    check(legacy.gestureRecognizers.count == 1, @"activation does not duplicate recognizers");
+    check(legacy.gestureRecognizers.count == gestureCount, @"activation does not duplicate recognizers");
     UIWindowScene *scene = UIWindowScene.new;
     UIWindow *modern = UIWindow.new;
     modern.windowScene = scene;
@@ -97,7 +106,26 @@ int main(void) { @autoreleasepool {
     app.windows = @[otherSceneWindow];
     scene.windows = @[modern, newSceneWindow];
     [integration refreshWindows:[NSNotification notificationWithName:UISceneDidActivateNotification object:scene]];
-    check(newSceneWindow.gestureRecognizers.count == 1 && otherSceneWindow.gestureRecognizers.count == 0,
+    check(newSceneWindow.gestureRecognizers.count > 0 && otherSceneWindow.gestureRecognizers.count == 0,
           @"scene activation visits only the activated scene's windows");
+
+    scene.activationState = UISceneActivationStateForegroundActive;
+    UIView *label = UIView.new;
+    label.window = modern;
+    label.bounds = CGRectMake(0, 0, 160, 18);
+    NTISetFLEXUsageLabel(label);
+    UIGestureRecognizer *hold = modern.gestureRecognizers.lastObject;
+    BOOL hasHold = [hold isKindOfClass:UILongPressGestureRecognizer.class] &&
+        [hold.delegate respondsToSelector:@selector(gestureRecognizer:shouldReceiveTouch:)];
+    UITouch *touch = UITouch.new;
+    touch.location = CGPointMake(40, 8);
+    BOOL acceptsLabel = hasHold && [hold.delegate gestureRecognizer:hold shouldReceiveTouch:touch];
+    before = manager.presentations;
+    if (acceptsLabel) [hold fireWithState:UIGestureRecognizerStateBegan];
+    check(manager.presentations == before + 1 && manager.lastScene == scene,
+          @"holding the usage label opens FLEX in its scene without a three-finger gesture");
+    touch.location = CGPointMake(40, 80);
+    check(hasHold && ![hold.delegate gestureRecognizer:hold shouldReceiveTouch:touch],
+          @"holding elsewhere does not activate the usage-label opener");
     return failures ? 1 : 0;
 } }

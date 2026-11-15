@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <dispatch/dispatch.h>
 typedef NSInteger UIGestureRecognizerState;
-enum { UIGestureRecognizerStateRecognized = 3 };
+enum { UIGestureRecognizerStateBegan = 1, UIGestureRecognizerStateRecognized = 3 };
 typedef NSInteger UISceneActivationState;
 enum { UISceneActivationStateForegroundActive = 0, UISceneActivationStateBackground = 2 };
 typedef NSInteger UIApplicationState;
@@ -10,11 +10,19 @@ static const double UIWindowLevelNormal = 0;
 #define UIWindowDidBecomeVisibleNotification @"WindowVisible"
 #define UIApplicationDidBecomeActiveNotification @"ApplicationActive"
 #define UISceneDidActivateNotification @"SceneActive"
-@class UIWindow, UIWindowScene, UIGestureRecognizer;
+@class UIWindow, UIWindowScene, UIGestureRecognizer, UITouch;
 @protocol UIGestureRecognizerDelegate <NSObject>
+@optional
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gesture shouldReceiveTouch:(UITouch *)touch;
 @end
 @interface UIView : NSObject
 @property (nonatomic, weak) UIWindow *window;
+@property CGRect bounds;
+@property BOOL hidden;
+@end
+@interface UITouch : NSObject
+@property CGPoint location;
+- (CGPoint)locationInView:(UIView *)view;
 @end
 @interface UIScene : NSObject
 @property UISceneActivationState activationState;
@@ -33,13 +41,16 @@ static const double UIWindowLevelNormal = 0;
 @property SEL action;
 - (instancetype)initWithTarget:(id)target action:(SEL)action;
 - (void)fire;
+- (void)fireWithState:(UIGestureRecognizerState)state;
 @end
 @interface UITapGestureRecognizer : UIGestureRecognizer
 @property NSUInteger numberOfTouchesRequired;
 @property NSUInteger numberOfTapsRequired;
 @end
+@interface UILongPressGestureRecognizer : UIGestureRecognizer
+@property NSTimeInterval minimumPressDuration;
+@end
 @interface UIWindow : UIView
-@property BOOL hidden;
 @property double windowLevel;
 @property (nonatomic, strong) UIWindowScene *windowScene;
 @property (nonatomic, strong) NSMutableArray<UIGestureRecognizer *> *gestureRecognizers;
