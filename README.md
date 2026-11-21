@@ -1,74 +1,84 @@
 # NotTheInstagram
 
-**Instagram, with friction added to the endless parts.**
+I couldn't delete Instagram, so I made it boring.
 
-I can't delete Instagram. My friends are there and memes get sent on DM. But I kept looking up and realizing an hour was gone. So I built an iOS framework that gets injected into Instagram and makes the infinite parts slow and a little boring. DMs, posts, stories and search keep working.
+My friends are there, and so are the memes in my DMs. What I wanted gone was the hour that disappears into the feed. This is a small experiment: a framework that gets injected into Instagram on my iPhone, slows down the endless parts and leaves the rest alone.
 
-> 📝 **The story behind it:** [I used an AI agent to make my Instagram boring](https://rationalkunal.in/writing/make-instagram-boring-with-an-ai-agent/)
+**[Read how I built it with an AI agent →](https://rationalkunal.in/writing/make-instagram-boring-with-an-ai-agent/)**
 
 <table align="center">
   <tr>
     <td align="center"><img src="docs/home-feed.gif" alt="Home feed stops at a spinner after three posts" width="200"><br><sub>Home feed, 3 posts at a time</sub></td>
     <td align="center"><img src="docs/reels-pause.gif" alt="Reels tab opens on a pause screen" width="200"><br><sub>Reels tab opens on a pause</sub></td>
-    <td align="center"><img src="docs/explore.png" alt="Explore with search and no reel grid" width="260"><br><sub>Explore without the reel grid</sub></td>
+    <td align="center"><img src="docs/explore-phone.png" alt="Explore with search and no reel grid" width="200"><br><sub>Explore without the reel grid</sub></td>
   </tr>
 </table>
 
-## What it changes
+## What changes
 
-| Where | What happens |
-| --- | --- |
-| Home feed | Shows 3 posts, then waits. 8 seconds, then 11, then 14. |
-| Explore | The reel grid is replaced by a magnifying glass. Search still works. |
-| Reels tab | Opens on a pause screen. After 2 minutes, a "Continue for this session" button shows up. |
-| Reels | Each reel waits before playing: 3 seconds, plus half a second for every reel after. |
-| Reels from DMs | Play alone. No swiping into the next one. |
-| Usage label | A small label at the bottom shows time spent today and this week. |
+- The home feed shows three posts, then makes you wait. 8 seconds, then 11, then 14.
+- The Reels tab opens on a pause screen. Stay on it for two minutes and a "Continue for this session" button appears.
+- Inside, each reel waits behind a blur before it plays: 3 seconds, plus half a second for every reel after.
+- A reel opened outside the Reels tab, like one a friend sends you, plays alone. No swiping into the next one.
+- Explore keeps its search bar and loses the grid.
+- A small label at the bottom shows your time on Instagram today and this week.
 
-It also fixes login for the sideloaded copy, skips the TestFlight "update available" screen, and includes [FLEX](https://github.com/FLEXTool/FLEX) for poking around (three-finger double tap, or hold the usage label for a second).
+DMs, stories, posts, profiles and search work like before.
 
 ## How it works
 
-[Sideloadly](https://sideloadly.io/) adds the framework to a decrypted Instagram IPA and installs it on the iPhone. When Instagram launches, the framework hooks a few of Instagram's Objective-C methods and changes only the part it cares about.
+A lot of Instagram is written in Objective-C, which looks up the code behind each method while the app is running. Code loaded into the app can swap in its own version and still call the original. The framework does that for a handful of methods:
 
-Every hook checks the method's exact signature before replacing anything. If an Instagram update changes a method, that one feature turns off and the app keeps working.
+- When the feed is about to show more posts, it shows three and puts a spinner after them.
+- When a reel asks to play, it holds the request behind a blur for a few seconds.
+- When the Explore grid lays itself out, it hides the grid.
 
-The classes were found with FLEX (what is on screen) and [Hopper](https://www.hopperapp.com/) (what is in the binary). An AI coding agent did most of the digging. Its notes live in [`agents/`](agents/), and [`AGENTS.md`](AGENTS.md) tells any agent how to work in this repo.
+Before swapping anything, it checks that the method still takes the arguments and returns the type it expects. If an Instagram update changes it, the framework leaves that method alone.
 
-## Try it yourself
+[Sideloadly](https://sideloadly.io/) puts it on the phone. It takes a decrypted Instagram IPA, adds the framework, re-signs the app with your Apple account and installs it. Re-signing cuts the app off from Meta's shared keychain and folders, which logs you out on every launch and crashes Instagram. The framework points those calls to storage the app owns. The [blog post](https://rationalkunal.in/writing/make-instagram-boring-with-an-ai-agent/) has the whole debugging story.
 
-You need a Mac with Xcode, an iPhone (iOS 15+), an Apple account, [Sideloadly](https://sideloadly.io/), and a decrypted Instagram IPA. I can't share the IPA. Everything was tested on **Instagram 455.0.0**, on an iPhone 15 with iOS 27.0.1.
+## Try it
 
-1. Clone and build the framework:
+You need a Mac with Xcode, an iPhone on iOS 16.3 or later, an Apple account, [Sideloadly](https://sideloadly.io/), and a decrypted Instagram IPA. I can't share the IPA, so you'll need to find one yourself. Everything was built and tested on Instagram 455.0.0. Treat other versions as untested.
+
+1. Build the framework:
 
    ```bash
    git clone https://github.com/rational-kunal/NotTheInstagram.git
+   cd NotTheInstagram
+   ./scripts/build-framework.sh
    ```
 
-   ```bash
-   cd NotTheInstagram && ./scripts/build-framework.sh
-   ```
+2. In Sideloadly, pick the IPA and open **Advanced Options**. Under **Tweak Injection**, tick **Inject dylibs/frameworks**, click **+framework**, and add `latest-framework/NotTheInstagramFrameworkCode.framework`. Then hit **Start**.
 
-   The framework lands in `latest-framework/NotTheInstagramFrameworkCode.framework`.
+3. Open Instagram and log in once. It stays logged in after that.
 
-2. In Sideloadly, pick your IPA and open **Advanced Options**. Under **Tweak Injection**, tick **Inject dylibs/frameworks**, click **+framework** and add the built framework. Then hit **Start**.
+With a free Apple account, the app stops opening after 7 days. Run Sideloadly again to renew it.
 
-3. Open Instagram and log in once. It should stay logged in after that.
+The framework doesn't send data anywhere. Time-spent numbers stay on the phone, and your login stays in the iOS keychain. Instagram doesn't allow modified apps, so try this on an account you're okay experimenting with.
 
-Want to change something? Open the repo in your coding agent and ask. Each feature lives in its own file under `Features/`, so a new one is mostly: find the class with FLEX, find the method in Hopper, write the hook.
+## Change it
 
-> ⚠️ Instagram doesn't allow modified clients. Try this on an account you are okay experimenting with.
+Each feature is one file or folder:
 
-## ⭐ Like it?
+```
+NotTheInstagramFrameworkCode/NotTheInstagramFrameworkCode/
+├── Features/
+│   ├── HomeFeed/        three posts, then a wait
+│   ├── Reels/           pause screen, reel delay, one reel at a time
+│   ├── ExploreGrid.m    search without the grid
+│   └── UsageLabel.m     time today and this week
+├── Compatibility/       login storage, TestFlight update prompt
+├── Diagnostics/         FLEX
+└── Runtime/             the check every hook goes through
+```
 
-If you find this fun or useful, a star helps other people find it. It would also make my day.
+A new feature usually goes like this. Open [FLEX](https://github.com/FLEXTool/FLEX) on the screen you want to change (three-finger double tap, or hold the time label for a second) to get the class name. Find the method in [Hopper](https://www.hopperapp.com/). Write the hook.
 
-## Want something changed in Instagram?
+I did most of this with a coding agent. [`AGENTS.md`](AGENTS.md) is what it reads first, and [`agents/`](agents/) has its notes from every investigation, so your agent can pick up where mine left off.
 
-You don't need to be technical. [Open an issue](https://github.com/rational-kunal/NotTheInstagram/issues/new/choose) and describe what you want Instagram to do, or stop doing, in plain English. Or add it to [What would you change in Instagram?](https://github.com/rational-kunal/NotTheInstagram/discussions/1)
+## Want something changed?
 
-A few ideas already on my list: [hide like counts](https://github.com/rational-kunal/NotTheInstagram/issues/2), [turn the app grayscale after 30 minutes](https://github.com/rational-kunal/NotTheInstagram/issues/3), [hide "Suggested for you" posts](https://github.com/rational-kunal/NotTheInstagram/issues/4). If your idea is interesting, I'll try building it. Pull requests are welcome too. The grayscale one is a good first one, since it doesn't touch Instagram's own classes.
+You don't need to be technical. [Open an issue](https://github.com/rational-kunal/NotTheInstagram/issues/new/choose) and describe what Instagram should do, or stop doing, in plain words. Or add it to [What would you change in Instagram?](https://github.com/rational-kunal/NotTheInstagram/discussions/1)
 
----
-
-<sub>A personal project, built for fun and learning.</sub>
+If you liked this, a star helps other people find it.
